@@ -97,10 +97,10 @@
     <Compile Include="db_Forms\settingsForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="db_Modules\exportExcel.Designer.vb">
+    <Compile Include="db_Forms\exportExcel.Designer.vb">
       <DependentUpon>exportExcel.vb</DependentUpon>
     </Compile>
-    <Compile Include="db_Modules\exportExcel.vb">
+    <Compile Include="db_Forms\exportExcel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="db_Modules\load_and_close.vb" />
@@ -171,7 +171,7 @@
     <EmbeddedResource Include="db_Forms\settingsForm.resx">
       <DependentUpon>settingsForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="db_Modules\exportExcel.resx">
+    <EmbeddedResource Include="db_Forms\exportExcel.resx">
       <DependentUpon>exportExcel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="db_Forms\mainForm.resx">

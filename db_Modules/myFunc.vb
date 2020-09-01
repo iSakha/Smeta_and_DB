@@ -41,7 +41,7 @@ Module myFunc
         mainForm.dts = New DataSet
 
         ws = mainForm.i_pivot_wsDict(_iDepartment)(_iCategory)
-        'Console.WriteLine(ws.Name)
+        Console.WriteLine(ws.Name)
         For k As Integer = 0 To ws.Tables.Count - 1
 
             xlTable = ws.Tables(k)
@@ -136,11 +136,11 @@ Module myFunc
 
                     dt = New DataTable
                     dt.TableName = xlTable.Name
-
+                    Console.WriteLine(dt.TableName)
                     'Adding the Columns
                     For i = 0 To c_xlTable - 1
                         dt.Columns.Add(rng.Value(0, i))
-                        Console.WriteLine(rng.Value(0, i))
+                        'Console.WriteLine(rng.Value(0, i))
                     Next i
 
                     dt.Columns(0).DataType = System.Type.GetType("System.Int32")               ' Department
@@ -787,6 +787,7 @@ Module myFunc
 
         Dim columnWidth(12) As Integer
         columnWidth = {4, 52, 9, 42, 25, 37, 11, 44, 13, 13, 13, 13}
+        columnWidth = {4, 4, 9, 52, 9, 42, 25, 37, 11, 44, 13, 13, 13, 13, 13, 13, 13, 13}
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
         Dim Excel As ExcelPackage = New ExcelPackage()
         Dim objExcel, objExcelFile As Object
