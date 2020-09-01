@@ -588,7 +588,8 @@ Public Class mainForm
         paramForm.dgv.Columns(0).Visible = False           ' Department
         paramForm.dgv.Columns(1).Visible = False           ' Category
         paramForm.dgv.Columns(2).Width = 55                ' ID
-        paramForm.dgv.Columns(3).Width = 230               ' Fixture
+        paramForm.dgv.Columns(3).MinimumWidth = 230               ' Fixture
+        paramForm.dgv.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill               ' Fixture
         paramForm.dgv.Columns(4).Width = 65                ' Q-ty
         paramForm.dgv.Columns(5).Visible = False
         paramForm.dgv.Columns(6).Visible = False

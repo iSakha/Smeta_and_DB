@@ -40,15 +40,19 @@ Partial Class paramForm
         '
         'dgv
         '
+        Me.dgv.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
-        Me.dgv.Location = New System.Drawing.Point(-43, 52)
+        Me.dgv.Location = New System.Drawing.Point(5, 52)
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(1056, 625)
         Me.dgv.TabIndex = 4
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Silver
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
