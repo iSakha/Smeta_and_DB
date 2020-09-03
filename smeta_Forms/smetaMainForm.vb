@@ -190,5 +190,37 @@ Public Class smetaMainForm
 
     Private Sub btn_writeToExcel_Click(sender As Object, e As EventArgs) Handles btn_writeToExcel.Click
 
+        Dim dgv As DataGridView = DGV_smeta
+        Dim row As DataGridViewRow
+        Dim startRow As Integer = 10
+
+        mainForm.sSmetaDir = My.Settings.smetaDBpath
+        Dim path As String
+        path = mainForm.sSmetaDir & "\SmetaTemplate.xlsx"
+
+        Dim ws As ExcelWorksheet
+        Dim excelFile = New FileInfo(path)
+
+        Console.WriteLine(dgv.Rows.Count)
+        Console.WriteLine("Crow")
+
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial
+        Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
+
+        ws = Excel.Workbook.Worksheets("Smeta")
+
+        For Each row In dgv.Rows
+            'Console.WriteLine(dgv.Rows.Count)
+
+            ws.Cells(startRow, 3).Value = row.Cells(3).Value
+            startRow = startRow + 1
+
+        Next row
+
+        Excel.Save()
+
+
     End Sub
+
+
 End Class

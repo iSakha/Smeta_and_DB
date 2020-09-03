@@ -79,11 +79,13 @@ Partial Class smetaMainForm
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_writeToExcel = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DGV_smeta, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DGV_db
@@ -266,6 +268,7 @@ Partial Class smetaMainForm
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.PictureBox1)
         Me.TabPage2.Controls.Add(Me.btn_writeToExcel)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.cmb_eventCity)
@@ -613,6 +616,15 @@ Partial Class smetaMainForm
         Me.btn_writeToExcel.Text = "Write To Excel"
         Me.btn_writeToExcel.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 295)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(144, 123)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -636,6 +648,7 @@ Partial Class smetaMainForm
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.DGV_smeta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -698,4 +711,5 @@ Partial Class smetaMainForm
     Friend WithEvents lbl_cat_smeta As Label
     Friend WithEvents lbl_depart_smeta As Label
     Friend WithEvents btn_writeToExcel As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

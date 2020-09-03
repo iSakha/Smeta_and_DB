@@ -26,6 +26,7 @@ Public Class loginForm
         If cmb_login.SelectedItem = "superAdmin" Then
             passwordForm.Show()
         End If
+        txt_pass.Select()
     End Sub
 
 

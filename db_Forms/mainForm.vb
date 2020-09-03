@@ -6,8 +6,8 @@ Imports System.IO
 
 Public Class mainForm
 
-    Public sDir As String
-    Public sFilePath As String
+    Public sDir, sSmetaDir As String
+    Public sFilePath, sSmetaDB_Path As String
     Public sFileName As String
 
     Public fileNames As Collection
