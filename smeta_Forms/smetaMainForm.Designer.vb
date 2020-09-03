@@ -78,6 +78,7 @@ Partial Class smetaMainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_writeToExcel = New System.Windows.Forms.Button()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -265,6 +266,7 @@ Partial Class smetaMainForm
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btn_writeToExcel)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.cmb_eventCity)
         Me.TabPage2.Controls.Add(Me.txt_daysQty)
@@ -602,6 +604,15 @@ Partial Class smetaMainForm
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Мероприятие"
         '
+        'btn_writeToExcel
+        '
+        Me.btn_writeToExcel.Location = New System.Drawing.Point(8, 549)
+        Me.btn_writeToExcel.Name = "btn_writeToExcel"
+        Me.btn_writeToExcel.Size = New System.Drawing.Size(156, 30)
+        Me.btn_writeToExcel.TabIndex = 16
+        Me.btn_writeToExcel.Text = "Write To Excel"
+        Me.btn_writeToExcel.UseVisualStyleBackColor = True
+        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -686,4 +697,5 @@ Partial Class smetaMainForm
     Friend WithEvents lbl_cat_value As Label
     Friend WithEvents lbl_cat_smeta As Label
     Friend WithEvents lbl_depart_smeta As Label
+    Friend WithEvents btn_writeToExcel As Button
 End Class

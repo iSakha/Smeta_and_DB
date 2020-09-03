@@ -188,4 +188,7 @@ Public Class smetaMainForm
         txt_daysQty.Text = days
     End Sub
 
+    Private Sub btn_writeToExcel_Click(sender As Object, e As EventArgs) Handles btn_writeToExcel.Click
+
+    End Sub
 End Class
