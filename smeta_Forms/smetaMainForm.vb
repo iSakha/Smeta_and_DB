@@ -187,12 +187,19 @@ Public Class smetaMainForm
         Dim days = diff.Days
         txt_daysQty.Text = days
     End Sub
-
+    '===================================================================================
+    '             === Write Smeta to Excel file ===
+    '===================================================================================
     Private Sub btn_writeToExcel_Click(sender As Object, e As EventArgs) Handles btn_writeToExcel.Click
 
         Dim dgv As DataGridView = DGV_smeta
         Dim row As DataGridViewRow
         Dim startRow As Integer = 10
+
+        Dim currentDepartment, currentCategory As Integer
+
+        currentDepartment = 0
+        currentCategory = 0
 
         mainForm.sSmetaDir = My.Settings.smetaDBpath
         Dim path As String
@@ -201,20 +208,36 @@ Public Class smetaMainForm
         Dim ws As ExcelWorksheet
         Dim excelFile = New FileInfo(path)
 
-        Console.WriteLine(dgv.Rows.Count)
-        Console.WriteLine("Crow")
-
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
         Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
 
         ws = Excel.Workbook.Worksheets("Smeta")
 
         For Each row In dgv.Rows
-            'Console.WriteLine(dgv.Rows.Count)
+            If row.Cells(0).Value > 0 Then
+                If row.Cells(0).Value = currentDepartment Then
+                    If row.Cells(1).Value = currentCategory Then
+                    Else
+                        currentCategory = row.Cells(1).Value
+                        ws.Cells(startRow, 2).Value = currentCategory
+                        startRow = startRow + 1
+                    End If
+                Else
+                    currentDepartment = row.Cells(0).Value
+                    ws.Cells(startRow, 1).Value = currentDepartment
+                    startRow = startRow + 1
+                    currentCategory = 0
+                    If row.Cells(1).Value = currentCategory Then
+                    Else
+                        currentCategory = row.Cells(1).Value
+                        ws.Cells(startRow, 2).Value = currentCategory
+                        startRow = startRow + 1
+                    End If
+                End If
 
-            ws.Cells(startRow, 3).Value = row.Cells(3).Value
-            startRow = startRow + 1
-
+                ws.Cells(startRow, 3).Value = row.Cells(3).Value
+                startRow = startRow + 1
+            End If
         Next row
 
         Excel.Save()
