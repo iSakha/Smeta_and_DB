@@ -150,4 +150,3 @@ C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.vbproj.CopyComplete
 C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.exe
 C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.xml
 C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.pdb
-C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.vbproj.CoreCompileInputs.cache

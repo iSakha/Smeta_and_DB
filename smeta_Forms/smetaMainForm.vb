@@ -195,6 +195,10 @@ Public Class smetaMainForm
         Dim dgv As DataGridView = DGV_smeta
         Dim row As DataGridViewRow
         Dim startRow As Integer = 10
+        Dim xlTbl As ExcelTable
+
+        Dim sDepartmentName As List(Of String)
+        Dim sCategoryName As List(Of String)
 
         Dim currentDepartment, currentCategory As Integer
 
@@ -211,39 +215,63 @@ Public Class smetaMainForm
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
         Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
 
-        ws = Excel.Workbook.Worksheets("Smeta")
+        ws = Excel.Workbook.Worksheets("Serv")
+        xlTbl = ws.Tables("Department")
 
-        For Each row In dgv.Rows
-            If row.Cells(0).Value > 0 Then
-                If row.Cells(0).Value = currentDepartment Then
-                    If row.Cells(1).Value = currentCategory Then
-                    Else
-                        currentCategory = row.Cells(1).Value
-                        ws.Cells(startRow, 2).Value = currentCategory
-                        startRow = startRow + 1
-                    End If
-                Else
-                    currentDepartment = row.Cells(0).Value
-                    ws.Cells(startRow, 1).Value = currentDepartment
-                    startRow = startRow + 1
-                    currentCategory = 0
-                    If row.Cells(1).Value = currentCategory Then
-                    Else
-                        currentCategory = row.Cells(1).Value
-                        ws.Cells(startRow, 2).Value = currentCategory
-                        startRow = startRow + 1
-                    End If
-                End If
+        sDepartmentName = New List(Of String)
 
-                ws.Cells(startRow, 3).Value = row.Cells(3).Value
-                startRow = startRow + 1
-            End If
-        Next row
+        For i As Integer = 0 To xlTbl.Address.End.Row
+            sDepartmentName.Add(ws.Cells(i + 3, 2).Value)
+            Console.WriteLine(sDepartmentName(i))
+        Next i
+        'ws = Excel.Workbook.Worksheets("Smeta")
 
-        Excel.Save()
+        'For Each row In dgv.Rows
+        '    If row.Cells(0).Value > 0 Then
 
+        '        If row.Cells(0).Value = currentDepartment Then
+
+        '            If row.Cells(1).Value = currentCategory Then
+        '            Else
+        '                currentCategory = row.Cells(1).Value
+        '                ws.Cells(startRow, 2).Value = currentCategory
+
+        '                startRow = startRow + 1
+        '            End If
+        '        Else
+        '            currentDepartment = row.Cells(0).Value
+        '            ws.Cells(startRow, 1).Value = sDepartmentName(currentDepartment - 1)
+        '            startRow = startRow + 1
+        '            currentCategory = 0
+        '            If row.Cells(1).Value = currentCategory Then
+        '            Else
+        '                currentCategory = row.Cells(1).Value
+        '                ws.Cells(startRow, 2).Value = currentCategory
+        '                startRow = startRow + 1
+        '            End If
+        '        End If
+
+        '        ws.Cells(startRow, 3).Value = row.Cells(3).Value
+        '        startRow = startRow + 1
+
+        '    End If
+        'Next row
+
+        'Excel.Save()
+
+        currentDepartment = 2
+
+        loadCategoryName(ws, currentDepartment)
 
     End Sub
 
+    Function loadCategoryName(_ws As ExcelWorksheet, _currentDepartment As Integer)
+        Dim catName As String
+        Dim xlTbl As ExcelTable
+
+        xlTbl = _ws.Tables(_currentDepartment)
+
+        Return (catName)
+    End Function
 
 End Class
