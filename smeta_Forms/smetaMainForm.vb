@@ -209,67 +209,78 @@ Public Class smetaMainForm
         Dim path As String
         path = mainForm.sSmetaDir & "\SmetaTemplate.xlsx"
 
-        Dim ws As ExcelWorksheet
+        Dim wsSmeta, wsServ As ExcelWorksheet
         Dim excelFile = New FileInfo(path)
 
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
         Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
 
-        ws = Excel.Workbook.Worksheets("Serv")
-        xlTbl = ws.Tables("Department")
+        wsServ = Excel.Workbook.Worksheets("Serv")
+        xlTbl = wsServ.Tables("Department")
 
         sDepartmentName = New List(Of String)
 
         For i As Integer = 0 To xlTbl.Address.End.Row
-            sDepartmentName.Add(ws.Cells(i + 3, 2).Value)
+            sDepartmentName.Add(wsServ.Cells(i + 3, 2).Value)
             Console.WriteLine(sDepartmentName(i))
         Next i
-        'ws = Excel.Workbook.Worksheets("Smeta")
+        wsSmeta = Excel.Workbook.Worksheets("Smeta")
 
-        'For Each row In dgv.Rows
-        '    If row.Cells(0).Value > 0 Then
+        For Each row In dgv.Rows
+            If row.Cells(0).Value > 0 Then
 
-        '        If row.Cells(0).Value = currentDepartment Then
+                If row.Cells(0).Value = currentDepartment Then
 
-        '            If row.Cells(1).Value = currentCategory Then
-        '            Else
-        '                currentCategory = row.Cells(1).Value
-        '                ws.Cells(startRow, 2).Value = currentCategory
+                    If row.Cells(1).Value = currentCategory Then
+                    Else
+                        currentCategory = row.Cells(1).Value
+                        sCategoryName = loadCategoryName(wsServ, currentDepartment)
+                        wsSmeta.Cells(startRow, 2).Value = sCategoryName(currentCategory - 1)
 
-        '                startRow = startRow + 1
-        '            End If
-        '        Else
-        '            currentDepartment = row.Cells(0).Value
-        '            ws.Cells(startRow, 1).Value = sDepartmentName(currentDepartment - 1)
-        '            startRow = startRow + 1
-        '            currentCategory = 0
-        '            If row.Cells(1).Value = currentCategory Then
-        '            Else
-        '                currentCategory = row.Cells(1).Value
-        '                ws.Cells(startRow, 2).Value = currentCategory
-        '                startRow = startRow + 1
-        '            End If
-        '        End If
+                        startRow = startRow + 1
+                    End If
+                Else
+                    currentDepartment = row.Cells(0).Value
+                    wsSmeta.Cells(startRow, 1).Value = sDepartmentName(currentDepartment - 1)
+                    startRow = startRow + 1
+                    currentCategory = 0
+                    sCategoryName = loadCategoryName(wsServ, currentDepartment)
+                    If row.Cells(1).Value = currentCategory Then
+                    Else
+                        currentCategory = row.Cells(1).Value
+                        wsSmeta.Cells(startRow, 2).Value = sCategoryName(currentCategory - 1)
+                        startRow = startRow + 1
+                    End If
+                End If
 
-        '        ws.Cells(startRow, 3).Value = row.Cells(3).Value
-        '        startRow = startRow + 1
+                wsSmeta.Cells(startRow, 3).Value = row.Cells(3).Value
+                startRow = startRow + 1
 
-        '    End If
-        'Next row
+            End If
+        Next row
 
-        'Excel.Save()
+        Excel.Save()
 
-        currentDepartment = 2
+        'currentDepartment = 2
 
-        loadCategoryName(ws, currentDepartment)
+        'loadCategoryName(ws, currentDepartment)
 
     End Sub
-
+    '===================================================================================
+    '             === Load list of Categories ===
+    '===================================================================================
     Function loadCategoryName(_ws As ExcelWorksheet, _currentDepartment As Integer)
-        Dim catName As String
+        Dim catName As List(Of String)
         Dim xlTbl As ExcelTable
 
         xlTbl = _ws.Tables(_currentDepartment)
+
+        catName = New List(Of String)
+
+        For i As Integer = 0 To xlTbl.Address.End.Row
+            catName.Add(_ws.Cells(i + 2, xlTbl.Address.Start.Column).Value)
+
+        Next i
 
         Return (catName)
     End Function
