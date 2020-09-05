@@ -157,7 +157,7 @@ Module smetaFunc
         _DGV.RowHeadersVisible = False
 
         _DGV.Columns(0).Width = 30
-        _DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Dep
 
         For Each r As DataGridViewRow In _DGV.Rows
             Select Case r.Cells(0).Value
@@ -203,47 +203,48 @@ Module smetaFunc
 
 
         _DGV.Columns(1).Width = 30
-        _DGV.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Cat
         _DGV.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(2).MinimumWidth = 80
         _DGV.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        _DGV.Columns(2).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(2).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' ID
         _DGV.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(3).MinimumWidth = 430
         _DGV.Columns(3).DefaultCellStyle.BackColor = Color.FromArgb(242, 245, 245)
-        _DGV.Columns(3).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(3).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' Fixture
         _DGV.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(4).MinimumWidth = 50
-        _DGV.Columns(4).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(4).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' Q-ty
         _DGV.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        _DGV.Columns(5).Visible = False
-        _DGV.Columns(6).Visible = False
-        _DGV.Columns(7).Visible = False
-        _DGV.Columns(8).Visible = False
-        _DGV.Columns(9).Visible = False
+        _DGV.Columns(5).Visible = False                                                                             ' BelImlight
+        _DGV.Columns(6).Visible = False                                                                             ' PRLightigTouring
+        _DGV.Columns(7).Visible = False                                                                             ' BlackOut
+        _DGV.Columns(8).Visible = False                                                                             ' Vision
+        _DGV.Columns(9).Visible = False                                                                             ' Stage
         _DGV.Columns(10).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(10).MinimumWidth = 60
         _DGV.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        _DGV.Columns(10).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(10).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' Weight
         _DGV.Columns(11).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(11).MinimumWidth = 68
         _DGV.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        _DGV.Columns(11).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(11).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' Power
         _DGV.Columns(12).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(12).MinimumWidth = 60
         _DGV.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        _DGV.Columns(12).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
-        _DGV.Columns(13).Visible = False
-        _DGV.Columns(14).Visible = False
-        _DGV.Columns(15).Visible = False
-        _DGV.Columns(16).Visible = False
-        _DGV.Columns(17).Visible = False
-        _DGV.Columns(18).Visible = False
-        _DGV.Columns(19).Visible = False
+        _DGV.Columns(12).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' Price
+        _DGV.Columns(13).Visible = False                                                                            ' Result
+        _DGV.Columns(14).Visible = False                                                                            ' R2
+        _DGV.Columns(15).Visible = False                                                                            ' R3
+        _DGV.Columns(16).Visible = False                                                                            ' R4          
+        _DGV.Columns(17).Visible = False                                                                            ' R5
+        _DGV.Columns(18).Visible = False                                                                            ' R6
+        _DGV.Columns(19).Visible = False                                                                            ' R7
         _DGV.Columns(20).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         _DGV.Columns(20).MinimumWidth = 60
         _DGV.Columns(20).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        _DGV.Columns(20).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(20).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' R8
+
 
     End Sub
 

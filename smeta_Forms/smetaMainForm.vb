@@ -194,13 +194,15 @@ Public Class smetaMainForm
 
         Dim dgv As DataGridView = DGV_smeta
         Dim row As DataGridViewRow
-        Dim startRow As Integer = 10
+        Dim startRow As Integer = 2
         Dim xlTbl As ExcelTable
 
         Dim sDepartmentName As List(Of String)
         Dim sCategoryName As List(Of String)
 
         Dim currentDepartment, currentCategory As Integer
+
+        Dim colFont As Color = Color.FromArgb(0, 32, 96)
 
         currentDepartment = 0
         currentCategory = 0
@@ -216,54 +218,91 @@ Public Class smetaMainForm
         Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
 
         wsServ = Excel.Workbook.Worksheets("Serv")
+        wsSmeta = Excel.Workbook.Worksheets("Smeta")
+
         xlTbl = wsServ.Tables("Department")
 
         sDepartmentName = New List(Of String)
 
+        '   Create List of DepartmentNames
+        '----------------------------------------------------------------------------
         For i As Integer = 0 To xlTbl.Address.End.Row
             sDepartmentName.Add(wsServ.Cells(i + 3, 2).Value)
-            Console.WriteLine(sDepartmentName(i))
+            'Console.WriteLine(sDepartmentName(i))
         Next i
-        wsSmeta = Excel.Workbook.Worksheets("Smeta")
+
+        '   Copy rows from Smeta datagridview to Excel sheet "Smeta"
+        '----------------------------------------------------------------------------
 
         For Each row In dgv.Rows
             If row.Cells(0).Value > 0 Then
 
                 If row.Cells(0).Value = currentDepartment Then
-
+                    '    Nothing
                     If row.Cells(1).Value = currentCategory Then
+                        '    Nothing
                     Else
+                        '   write CATEGORY name
                         currentCategory = row.Cells(1).Value
                         sCategoryName = loadCategoryName(wsServ, currentDepartment)
-                        wsSmeta.Cells(startRow, 2).Value = sCategoryName(currentCategory - 1)
-
+                        wsSmeta.Cells(startRow, 3, startRow, 6).Merge = True
+                        wsSmeta.Cells(startRow, 3).Value = sCategoryName(currentCategory - 1)
+                        wsSmeta.Cells(startRow, 3).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+                        wsSmeta.Cells(startRow, 3).Style.Font.Size = 12
+                        wsSmeta.Cells(startRow, 3).Style.Font.Bold = True
+                        wsSmeta.Cells(startRow, 3).Style.Font.Italic = True
                         startRow = startRow + 1
                     End If
                 Else
+                    '   write DEPARTMENT name
+                    startRow = discount(startRow)
                     currentDepartment = row.Cells(0).Value
-                    wsSmeta.Cells(startRow, 1).Value = sDepartmentName(currentDepartment - 1)
+                    wsSmeta.Cells(startRow, 3, startRow, 7).Merge = True
+                    wsSmeta.Cells(startRow, 3).Value = sDepartmentName(currentDepartment - 1)
+                    wsSmeta.Cells(startRow, 3).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+                    wsSmeta.Cells(startRow, 3).Style.Font.Size = 13
+                    wsSmeta.Cells(startRow, 3).Style.Font.Bold = True
+                    wsSmeta.Cells(startRow, 3).Style.Font.Color.SetColor(colFont)
+
+                    startRow = startRow + 1
+                    createDepHeader(startRow, wsSmeta)
                     startRow = startRow + 1
                     currentCategory = 0
                     sCategoryName = loadCategoryName(wsServ, currentDepartment)
                     If row.Cells(1).Value = currentCategory Then
                     Else
+                        '   write CATEGORY name
                         currentCategory = row.Cells(1).Value
-                        wsSmeta.Cells(startRow, 2).Value = sCategoryName(currentCategory - 1)
+                        wsSmeta.Cells(startRow, 3, startRow, 6).Merge = True
+                        wsSmeta.Cells(startRow, 3).Value = sCategoryName(currentCategory - 1)
+                        wsSmeta.Cells(startRow, 3).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+                        wsSmeta.Cells(startRow, 3).Style.Font.Size = 12
+                        wsSmeta.Cells(startRow, 3).Style.Font.Bold = True
+                        wsSmeta.Cells(startRow, 3).Style.Font.Italic = True
                         startRow = startRow + 1
                     End If
                 End If
 
-                wsSmeta.Cells(startRow, 3).Value = row.Cells(3).Value
+                '   write data to excel row (fixture,price, qty etc...)
+
+                wsSmeta.Cells(startRow, 3).Value = row.Cells(3).Value                                 ' Наименование, name
+                wsSmeta.Cells(startRow, 4).Value = row.Cells(4).Value                                 ' Кол-во всего, qtt
+                wsSmeta.Cells(startRow, 5).Value = row.Cells(10).Value                                ' Вес, weight
+                wsSmeta.Cells(startRow, 6).Value = row.Cells(11).Value                                ' Мощность, power
+                wsSmeta.Cells(startRow, 7).Value = (row.Cells(10).Value) * (row.Cells(20).Value)      ' Вес общ, weight total
+                wsSmeta.Cells(startRow, 8).Value = row.Cells(20).Value                                ' заказанное кол-во, to take
+                wsSmeta.Cells(startRow, 9).Value = 0                                                  ' Резерв
+                wsSmeta.Cells(startRow, 10).Value = row.Cells(12).Value                               ' аренда 1 прибора, price per unit
+                wsSmeta.Cells(startRow, 11).Value = (row.Cells(12).Value) * (row.Cells(20).Value)     ' Стоимость общая, total cost
+
+
+
                 startRow = startRow + 1
 
             End If
         Next row
 
         Excel.Save()
-
-        'currentDepartment = 2
-
-        'loadCategoryName(ws, currentDepartment)
 
     End Sub
     '===================================================================================
@@ -284,5 +323,51 @@ Public Class smetaMainForm
 
         Return (catName)
     End Function
+    Sub createDepHeader(_rowIndex As Integer, _ws As ExcelWorksheet)
 
+        Dim col_1 As Color = Color.FromArgb(242, 245, 245)
+        Dim col_2 As Color = Color.FromArgb(220, 220, 220)
+        Dim col_3 As Color = Color.FromArgb(217, 217, 217)
+        Dim col_4 As Color = Color.FromArgb(255, 102, 0)
+        Dim rng As ExcelRange = _ws.Cells(_rowIndex, 3, _rowIndex, 11)
+
+        _ws.Cells(_rowIndex, 3).Value = "Наименование, name"
+        _ws.Cells(_rowIndex, 4).Value = "Кол-во всего, qtt"
+        _ws.Cells(_rowIndex, 5).Value = "Вес, weight"
+        _ws.Cells(_rowIndex, 6).Value = "Мощность, power"
+        _ws.Cells(_rowIndex, 7).Value = "Вес общ, weight total"
+        _ws.Cells(_rowIndex, 8).Value = "заказанное кол-во, to take"
+        _ws.Cells(_rowIndex, 9).Value = "Резерв"
+        _ws.Cells(_rowIndex, 10).Value = "аренда 1 прибора, price per unit"
+        _ws.Cells(_rowIndex, 11).Value = "Стоимость общая, total cost"
+
+        _ws.Row(_rowIndex).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+        _ws.Row(_rowIndex).Style.VerticalAlignment = Style.ExcelVerticalAlignment.Center
+        _ws.Row(_rowIndex).Style.WrapText = True
+        _ws.Row(_rowIndex).Height = 36
+        _ws.Row(_rowIndex).Style.Font.Size = 9
+        _ws.Cells(_rowIndex, 3).Style.Font.Size = 10
+        rng.Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+        rng.Style.Fill.BackgroundColor.SetColor(col_1)
+        _ws.Cells(_rowIndex, 8).Style.Font.Color.SetColor(col_4)
+        _ws.Cells(_rowIndex, 9).Style.Fill.BackgroundColor.SetColor(col_3)
+        _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
+        _ws.Cells(_rowIndex, 10).Style.Font.Bold = True
+        _ws.Cells(_rowIndex, 11).Style.Font.Bold = True
+
+        rng.Style.Border.Top.Style = Style.ExcelBorderStyle.Thin
+        rng.Style.Border.Top.Color.SetColor(col_2)
+        rng.Style.Border.Left.Style = Style.ExcelBorderStyle.Thin
+        rng.Style.Border.Left.Color.SetColor(col_2)
+        rng.Style.Border.Right.Style = Style.ExcelBorderStyle.Thin
+        rng.Style.Border.Right.Color.SetColor(col_2)
+        rng.Style.Border.Bottom.Style = Style.ExcelBorderStyle.Thin
+        rng.Style.Border.Bottom.Color.SetColor(col_2)
+
+    End Sub
+
+    Function discount(_rowIndex As Integer)
+        _rowIndex = _rowIndex + 5
+        Return (_rowIndex)
+    End Function
 End Class
