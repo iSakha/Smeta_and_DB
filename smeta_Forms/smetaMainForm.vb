@@ -203,6 +203,13 @@ Public Class smetaMainForm
         Dim currentDepartment, currentCategory As Integer
 
         Dim colFont As Color = Color.FromArgb(0, 32, 96)
+        Dim colBack As Color = Color.FromArgb(242, 245, 245)
+        Dim colBorder As Color = Color.FromArgb(200, 200, 220)
+        Dim colQtyFont As Color = Color.FromArgb(255, 102, 0)
+        Dim colBackQty As Color = Color.FromArgb(255, 204, 153)
+        Dim colBackReserv As Color = Color.FromArgb(217, 217, 217)
+
+        Dim rng As ExcelRange
 
         currentDepartment = 0
         currentCategory = 0
@@ -295,7 +302,43 @@ Public Class smetaMainForm
                 wsSmeta.Cells(startRow, 10).Value = row.Cells(12).Value                               ' аренда 1 прибора, price per unit
                 wsSmeta.Cells(startRow, 11).Value = (row.Cells(12).Value) * (row.Cells(20).Value)     ' Стоимость общая, total cost
 
+                ' format data
 
+                rng = wsSmeta.Cells(startRow, 3, startRow, 11)
+
+                wsSmeta.Row(startRow).Style.Font.Italic = True
+
+                wsSmeta.Row(startRow).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+                wsSmeta.Cells(startRow, 3).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Left
+
+                wsSmeta.Cells(startRow, 3).Style.Font.Bold = True
+                wsSmeta.Cells(startRow, 8, startRow, 11).Style.Font.Bold = True
+                wsSmeta.Cells(startRow, 8).Style.Font.Color.SetColor(colQtyFont)
+
+
+                wsSmeta.Cells(startRow, 3).Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+                wsSmeta.Cells(startRow, 7).Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+                wsSmeta.Cells(startRow, 10).Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+                wsSmeta.Cells(startRow, 11).Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+                wsSmeta.Cells(startRow, 8).Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+                wsSmeta.Cells(startRow, 9).Style.Fill.PatternType = Style.ExcelFillStyle.Solid
+
+
+                wsSmeta.Cells(startRow, 3).Style.Fill.BackgroundColor.SetColor(colBack)
+                wsSmeta.Cells(startRow, 7).Style.Fill.BackgroundColor.SetColor(colBack)
+                wsSmeta.Cells(startRow, 10).Style.Fill.BackgroundColor.SetColor(colBack)
+                wsSmeta.Cells(startRow, 11).Style.Fill.BackgroundColor.SetColor(colBack)
+                wsSmeta.Cells(startRow, 8).Style.Fill.BackgroundColor.SetColor(colBackQty)
+                wsSmeta.Cells(startRow, 9).Style.Fill.BackgroundColor.SetColor(colBackReserv)
+
+                rng.Style.Border.Top.Style = Style.ExcelBorderStyle.Thin
+                rng.Style.Border.Top.Color.SetColor(colBorder)
+                rng.Style.Border.Left.Style = Style.ExcelBorderStyle.Thin
+                rng.Style.Border.Left.Color.SetColor(colBorder)
+                rng.Style.Border.Right.Style = Style.ExcelBorderStyle.Thin
+                rng.Style.Border.Right.Color.SetColor(colBorder)
+                rng.Style.Border.Bottom.Style = Style.ExcelBorderStyle.Thin
+                rng.Style.Border.Bottom.Color.SetColor(colBorder)
 
                 startRow = startRow + 1
 
@@ -326,7 +369,7 @@ Public Class smetaMainForm
     Sub createDepHeader(_rowIndex As Integer, _ws As ExcelWorksheet)
 
         Dim col_1 As Color = Color.FromArgb(242, 245, 245)
-        Dim col_2 As Color = Color.FromArgb(220, 220, 220)
+        Dim col_2 As Color = Color.FromArgb(200, 200, 220)
         Dim col_3 As Color = Color.FromArgb(217, 217, 217)
         Dim col_4 As Color = Color.FromArgb(255, 102, 0)
         Dim rng As ExcelRange = _ws.Cells(_rowIndex, 3, _rowIndex, 11)
