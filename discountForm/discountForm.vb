@@ -52,8 +52,15 @@
     Private Sub txt_light_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_light_discount.TextChanged
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
-                If checkIsNumber() Then
+                If IsNumeric(txt_light_discount.Text) Then
                     txt_summary_light_discount.Text = Math.Round(CInt(txt_summary_light.Text) - (CInt(txt_summary_light.Text) * CInt(txt_light_discount.Text) / 100))
+                    If CInt(txt_light_discount.Text) > 0 Then
+                        chbx_lighting.Checked = True
+                    End If
+                Else
+                        txt_light_discount.Clear()
+                    txt_summary_light_discount.Clear()
+                    chbx_lighting.Checked = False
                 End If
             End If
         Next
@@ -62,8 +69,15 @@
     Private Sub txt_screen_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_screen_discount.TextChanged
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
-                If checkIsNumber() Then
+                If IsNumeric(txt_screen_discount.Text) Then
                     txt_summary_screen_discount.Text = Math.Round(CInt(txt_summary_screen.Text) - (CInt(txt_summary_screen.Text) * CInt(txt_screen_discount.Text) / 100))
+                    If CInt(txt_screen_discount.Text) > 0 Then
+                        chbx_screen.Checked = True
+                    End If
+                Else
+                    txt_screen_discount.Clear()
+                    txt_summary_screen_discount.Clear()
+                    chbx_screen.Checked = False
                 End If
             End If
         Next
@@ -72,8 +86,15 @@
     Private Sub txt_commut_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_commut_discount.TextChanged
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
-                If checkIsNumber() Then
+                If IsNumeric(txt_commut_discount.Text) Then
                     txt_summary_comm_discount.Text = Math.Round(CInt(txt_summary_comm.Text) - (CInt(txt_summary_comm.Text) * CInt(txt_commut_discount.Text) / 100))
+                    If CInt(txt_commut_discount.Text) > 0 Then
+                        chbx_commutation.Checked = True
+                    End If
+                Else
+                    txt_commut_discount.Clear()
+                    txt_summary_comm_discount.Clear()
+                    chbx_commutation.Checked = False
                 End If
             End If
         Next
@@ -82,8 +103,15 @@
     Private Sub txt_truss_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_truss_discount.TextChanged
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
-                If checkIsNumber() Then
+                If IsNumeric(txt_truss_discount.Text) Then
                     txt_summary_truss_discount.Text = Math.Round(CInt(txt_summary_truss.Text) - (CInt(txt_summary_truss.Text) * CInt(txt_truss_discount.Text) / 100))
+                    If CInt(txt_truss_discount.Text) > 0 Then
+                        chbx_truss.Checked = True
+                    End If
+                Else
+                    txt_truss_discount.Clear()
+                    txt_summary_truss_discount.Clear()
+                    chbx_truss.Checked = False
                 End If
             End If
         Next
@@ -92,8 +120,15 @@
     Private Sub txt_constr_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_constr_discount.TextChanged
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
-                If checkIsNumber() Then
+                If IsNumeric(txt_constr_discount.Text) Then
                     txt_summary_constr_discount.Text = Math.Round(CInt(txt_summary_constr.Text) - (CInt(txt_summary_constr.Text) * CInt(txt_constr_discount.Text) / 100))
+                    If CInt(txt_constr_discount.Text) > 0 Then
+                        chbx_constr.Checked = True
+                    End If
+                Else
+                    txt_constr_discount.Clear()
+                    txt_summary_constr_discount.Clear()
+                    chbx_constr.Checked = False
                 End If
             End If
         Next
@@ -102,14 +137,19 @@
     Private Sub txt_sound_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_sound_discount.TextChanged
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
-                If checkIsNumber() Then
+                If IsNumeric(txt_sound_discount.Text) Then
                     txt_summary_sound_discount.Text = Math.Round(CInt(txt_summary_sound.Text) - (CInt(txt_summary_sound.Text) * CInt(txt_sound_discount.Text) / 100))
+                    If CInt(txt_sound_discount.Text) > 0 Then
+                        chbx_sound.Checked = True
+                    End If
+                Else
+                    txt_sound_discount.Clear()
+                    txt_summary_sound_discount.Clear()
+                    chbx_sound.Checked = False
                 End If
             End If
         Next
     End Sub
 
-    Function checkIsNumber()
-        Return (True)
-    End Function
+
 End Class

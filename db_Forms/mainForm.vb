@@ -50,7 +50,12 @@ Public Class mainForm
     Public qtyLighting, qtyScreen, qtyComm, qtyTruss, qtyConstr, qtySound As Integer
     Public weightLighting, weightScreen, weightComm, weightTruss, weightConstr, weightSound As Integer
 
+    Public discountPriceLighting, discountPriceScreen, discountPriceComm, discountPriceTruss _
+        , discountPriceConstr, discountPriceSound As Integer
+
+
     Public price(6) As Integer
+    Public discountPrice(6) As Integer
     Public qty(6) As Integer
     Public weight(6) As Integer
 
