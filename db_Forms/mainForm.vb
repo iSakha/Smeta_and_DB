@@ -43,6 +43,8 @@ Public Class mainForm
         constr_dscnt_status, sound_dscnt_status As Boolean
     Public light_dscnt_val, screen_dscnt_val, comm_dscnt_val, truss_dscnt_val,
         constr_dscnt_val, sound_dscnt_val As Integer
+    Public discountStatus(6) As Boolean
+    Public discountValue(6) As Integer
 
     '===================================================================================
     '             === mainForm_Load ===

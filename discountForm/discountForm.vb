@@ -131,6 +131,20 @@
         mainForm.constr_dscnt_val = CInt(txt_constr_discount.Text)
         mainForm.sound_dscnt_val = CInt(txt_sound_discount.Text)
 
+        mainForm.discountStatus(0) = mainForm.light_dscnt_status
+        mainForm.discountStatus(1) = mainForm.screen_dscnt_status
+        mainForm.discountStatus(2) = mainForm.comm_dscnt_status
+        mainForm.discountStatus(3) = mainForm.truss_dscnt_status
+        mainForm.discountStatus(4) = mainForm.constr_dscnt_status
+        mainForm.discountStatus(5) = mainForm.sound_dscnt_status
+
+        mainForm.discountValue(0) = mainForm.light_dscnt_val
+        mainForm.discountValue(1) = mainForm.screen_dscnt_val
+        mainForm.discountValue(2) = mainForm.comm_dscnt_val
+        mainForm.discountValue(3) = mainForm.truss_dscnt_val
+        mainForm.discountValue(4) = mainForm.constr_dscnt_val
+        mainForm.discountValue(5) = mainForm.sound_dscnt_val
+
         Me.Close()
 
     End Sub
