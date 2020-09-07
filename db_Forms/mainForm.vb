@@ -39,6 +39,11 @@ Public Class mainForm
     Public sumFormFlag As Boolean = False
     Public editFormFlag As Boolean = False
 
+    Public light_dscnt_status, screen_dscnt_status, comm_dscnt_status, truss_dscnt_status,
+        constr_dscnt_status, sound_dscnt_status As Boolean
+    Public light_dscnt_val, screen_dscnt_val, comm_dscnt_val, truss_dscnt_val,
+        constr_dscnt_val, sound_dscnt_val As Integer
+
     '===================================================================================
     '             === mainForm_Load ===
     '===================================================================================

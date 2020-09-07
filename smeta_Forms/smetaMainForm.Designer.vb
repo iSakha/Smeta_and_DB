@@ -37,6 +37,7 @@ Partial Class smetaMainForm
         Me.btn_screen_smeta = New System.Windows.Forms.Button()
         Me.btn_lighting_smeta = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btn_writeToExcel = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cmb_eventCity = New System.Windows.Forms.ComboBox()
         Me.txt_daysQty = New System.Windows.Forms.TextBox()
@@ -78,7 +79,7 @@ Partial Class smetaMainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btn_writeToExcel = New System.Windows.Forms.Button()
+        Me.btn_discount = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
@@ -269,6 +270,7 @@ Partial Class smetaMainForm
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.PictureBox1)
+        Me.TabPage2.Controls.Add(Me.btn_discount)
         Me.TabPage2.Controls.Add(Me.btn_writeToExcel)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.cmb_eventCity)
@@ -289,6 +291,15 @@ Partial Class smetaMainForm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Smeta"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btn_writeToExcel
+        '
+        Me.btn_writeToExcel.Location = New System.Drawing.Point(8, 549)
+        Me.btn_writeToExcel.Name = "btn_writeToExcel"
+        Me.btn_writeToExcel.Size = New System.Drawing.Size(156, 30)
+        Me.btn_writeToExcel.TabIndex = 16
+        Me.btn_writeToExcel.Text = "Write To Excel"
+        Me.btn_writeToExcel.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -607,14 +618,14 @@ Partial Class smetaMainForm
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Мероприятие"
         '
-        'btn_writeToExcel
+        'btn_discount
         '
-        Me.btn_writeToExcel.Location = New System.Drawing.Point(8, 549)
-        Me.btn_writeToExcel.Name = "btn_writeToExcel"
-        Me.btn_writeToExcel.Size = New System.Drawing.Size(156, 30)
-        Me.btn_writeToExcel.TabIndex = 16
-        Me.btn_writeToExcel.Text = "Write To Excel"
-        Me.btn_writeToExcel.UseVisualStyleBackColor = True
+        Me.btn_discount.Location = New System.Drawing.Point(8, 519)
+        Me.btn_discount.Name = "btn_discount"
+        Me.btn_discount.Size = New System.Drawing.Size(156, 30)
+        Me.btn_discount.TabIndex = 16
+        Me.btn_discount.Text = "Set Discount"
+        Me.btn_discount.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -712,4 +723,5 @@ Partial Class smetaMainForm
     Friend WithEvents lbl_depart_smeta As Label
     Friend WithEvents btn_writeToExcel As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btn_discount As Button
 End Class

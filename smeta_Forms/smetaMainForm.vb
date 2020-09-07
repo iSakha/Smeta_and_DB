@@ -262,7 +262,7 @@ Public Class smetaMainForm
                     End If
                 Else
                     '   write DEPARTMENT name
-                    startRow = discount(startRow)
+                    startRow = discount(startRow, wsSmeta)
                     currentDepartment = row.Cells(0).Value
                     wsSmeta.Cells(startRow, 3, startRow, 7).Merge = True
                     wsSmeta.Cells(startRow, 3).Value = sDepartmentName(currentDepartment - 1)
@@ -409,8 +409,16 @@ Public Class smetaMainForm
 
     End Sub
 
-    Function discount(_rowIndex As Integer)
-        _rowIndex = _rowIndex + 5
+    Function discount(_rowIndex As Integer, _ws As ExcelWorksheet)
+        _rowIndex = _rowIndex + 3
+
+        '_ws.Cells(_rowIndex, 1).Value = discountForm.light_dscnt_val
+        Console.WriteLine(mainForm.light_dscnt_val)
+        _rowIndex = _rowIndex + 2
         Return (_rowIndex)
     End Function
+
+    Private Sub btn_discount_Click(sender As Object, e As EventArgs) Handles btn_discount.Click
+        discountForm.Show()
+    End Sub
 End Class
