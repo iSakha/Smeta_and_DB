@@ -80,19 +80,22 @@ Partial Class smetaMainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.btn_USD = New System.Windows.Forms.Button()
-        Me.btn_euro = New System.Windows.Forms.Button()
-        Me.btn_rusRUB = New System.Windows.Forms.Button()
-        Me.btn_belRUB = New System.Windows.Forms.Button()
+        Me.rbtn_usd = New System.Windows.Forms.RadioButton()
+        Me.rbtn_euro = New System.Windows.Forms.RadioButton()
+        Me.rbtn_rub = New System.Windows.Forms.RadioButton()
+        Me.rbtn_byn = New System.Windows.Forms.RadioButton()
+        Me.lbl_currency = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DGV_smeta, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGV_db
@@ -275,7 +278,7 @@ Partial Class smetaMainForm
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Panel1)
+        Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.btn_discount)
         Me.TabPage2.Controls.Add(Me.btn_writeToExcel)
         Me.TabPage2.Controls.Add(Me.Label9)
@@ -633,24 +636,22 @@ Partial Class smetaMainForm
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Мероприятие"
         '
-        'Panel1
+        'Panel2
         '
-        Me.Panel1.Controls.Add(Me.btn_belRUB)
-        Me.Panel1.Controls.Add(Me.btn_rusRUB)
-        Me.Panel1.Controls.Add(Me.btn_euro)
-        Me.Panel1.Controls.Add(Me.btn_USD)
-        Me.Panel1.Controls.Add(Me.RadioButton2)
-        Me.Panel1.Controls.Add(Me.RadioButton1)
-        Me.Panel1.Location = New System.Drawing.Point(8, 280)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(156, 141)
-        Me.Panel1.TabIndex = 17
+        Me.Panel2.Controls.Add(Me.rbtn_byn)
+        Me.Panel2.Controls.Add(Me.rbtn_rub)
+        Me.Panel2.Controls.Add(Me.rbtn_euro)
+        Me.Panel2.Controls.Add(Me.rbtn_usd)
+        Me.Panel2.Location = New System.Drawing.Point(88, 10)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(61, 100)
+        Me.Panel2.TabIndex = 17
         '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(7, 42)
+        Me.RadioButton1.Location = New System.Drawing.Point(9, 42)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(45, 17)
         Me.RadioButton1.TabIndex = 0
@@ -661,76 +662,80 @@ Partial Class smetaMainForm
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(7, 65)
+        Me.RadioButton2.Location = New System.Drawing.Point(9, 19)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(62, 17)
-        Me.RadioButton2.TabIndex = 0
+        Me.RadioButton2.TabIndex = 1
         Me.RadioButton2.Text = "Безнал"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'btn_USD
+        'rbtn_usd
         '
-        Me.btn_USD.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton
-        Me.btn_USD.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_USD.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_USD.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.btn_USD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_USD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
-        Me.btn_USD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_USD.Location = New System.Drawing.Point(88, 13)
-        Me.btn_USD.Name = "btn_USD"
-        Me.btn_USD.Size = New System.Drawing.Size(60, 23)
-        Me.btn_USD.TabIndex = 1
-        Me.btn_USD.Text = "USD"
-        Me.btn_USD.UseVisualStyleBackColor = False
+        Me.rbtn_usd.AutoSize = True
+        Me.rbtn_usd.Checked = True
+        Me.rbtn_usd.Location = New System.Drawing.Point(3, 3)
+        Me.rbtn_usd.Name = "rbtn_usd"
+        Me.rbtn_usd.Size = New System.Drawing.Size(48, 17)
+        Me.rbtn_usd.TabIndex = 0
+        Me.rbtn_usd.TabStop = True
+        Me.rbtn_usd.Text = "USD"
+        Me.rbtn_usd.UseVisualStyleBackColor = True
         '
-        'btn_euro
+        'rbtn_euro
         '
-        Me.btn_euro.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton
-        Me.btn_euro.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_euro.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_euro.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.btn_euro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_euro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
-        Me.btn_euro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_euro.Location = New System.Drawing.Point(88, 42)
-        Me.btn_euro.Name = "btn_euro"
-        Me.btn_euro.Size = New System.Drawing.Size(60, 23)
-        Me.btn_euro.TabIndex = 1
-        Me.btn_euro.Text = "Euro"
-        Me.btn_euro.UseVisualStyleBackColor = False
+        Me.rbtn_euro.AutoSize = True
+        Me.rbtn_euro.Location = New System.Drawing.Point(3, 27)
+        Me.rbtn_euro.Name = "rbtn_euro"
+        Me.rbtn_euro.Size = New System.Drawing.Size(47, 17)
+        Me.rbtn_euro.TabIndex = 0
+        Me.rbtn_euro.Text = "Euro"
+        Me.rbtn_euro.UseVisualStyleBackColor = True
         '
-        'btn_rusRUB
+        'rbtn_rub
         '
-        Me.btn_rusRUB.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton
-        Me.btn_rusRUB.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_rusRUB.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_rusRUB.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.btn_rusRUB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_rusRUB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
-        Me.btn_rusRUB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_rusRUB.Location = New System.Drawing.Point(88, 71)
-        Me.btn_rusRUB.Name = "btn_rusRUB"
-        Me.btn_rusRUB.Size = New System.Drawing.Size(60, 23)
-        Me.btn_rusRUB.TabIndex = 1
-        Me.btn_rusRUB.Text = "RUB"
-        Me.btn_rusRUB.UseVisualStyleBackColor = False
+        Me.rbtn_rub.AutoSize = True
+        Me.rbtn_rub.Location = New System.Drawing.Point(3, 51)
+        Me.rbtn_rub.Name = "rbtn_rub"
+        Me.rbtn_rub.Size = New System.Drawing.Size(45, 17)
+        Me.rbtn_rub.TabIndex = 0
+        Me.rbtn_rub.Text = "Rub"
+        Me.rbtn_rub.UseVisualStyleBackColor = True
         '
-        'btn_belRUB
+        'rbtn_byn
         '
-        Me.btn_belRUB.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton
-        Me.btn_belRUB.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_belRUB.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn_belRUB.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
-        Me.btn_belRUB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btn_belRUB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGoldenrodYellow
-        Me.btn_belRUB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_belRUB.Location = New System.Drawing.Point(88, 100)
-        Me.btn_belRUB.Name = "btn_belRUB"
-        Me.btn_belRUB.Size = New System.Drawing.Size(60, 23)
-        Me.btn_belRUB.TabIndex = 1
-        Me.btn_belRUB.Text = "BYN"
-        Me.btn_belRUB.UseVisualStyleBackColor = False
+        Me.rbtn_byn.AutoSize = True
+        Me.rbtn_byn.Location = New System.Drawing.Point(3, 75)
+        Me.rbtn_byn.Name = "rbtn_byn"
+        Me.rbtn_byn.Size = New System.Drawing.Size(47, 17)
+        Me.rbtn_byn.TabIndex = 0
+        Me.rbtn_byn.Text = "BYN"
+        Me.rbtn_byn.UseVisualStyleBackColor = True
+        '
+        'lbl_currency
+        '
+        Me.lbl_currency.AutoSize = True
+        Me.lbl_currency.BackColor = System.Drawing.SystemColors.Info
+        Me.lbl_currency.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_currency.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_currency.Location = New System.Drawing.Point(2, 78)
+        Me.lbl_currency.Name = "lbl_currency"
+        Me.lbl_currency.Size = New System.Drawing.Size(83, 24)
+        Me.lbl_currency.TabIndex = 19
+        Me.lbl_currency.Text = "Label10"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.Panel2)
+        Me.GroupBox1.Controls.Add(Me.lbl_currency)
+        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.RadioButton2)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 263)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(157, 116)
+        Me.GroupBox1.TabIndex = 20
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Select currency"
         '
         'smetaMainForm
         '
@@ -755,8 +760,10 @@ Partial Class smetaMainForm
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.DGV_smeta, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -820,11 +827,13 @@ Partial Class smetaMainForm
     Friend WithEvents lbl_depart_smeta As Label
     Friend WithEvents btn_writeToExcel As Button
     Friend WithEvents btn_discount As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lbl_currency As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents rbtn_byn As RadioButton
+    Friend WithEvents rbtn_rub As RadioButton
+    Friend WithEvents rbtn_euro As RadioButton
+    Friend WithEvents rbtn_usd As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents btn_belRUB As Button
-    Friend WithEvents btn_rusRUB As Button
-    Friend WithEvents btn_euro As Button
-    Friend WithEvents btn_USD As Button
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

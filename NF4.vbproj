@@ -79,6 +79,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="currencyForm\currencyForm.Designer.vb">
+      <DependentUpon>currencyForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="currencyForm\currencyForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="db_Forms\editForm.Designer.vb">
       <DependentUpon>editForm.vb</DependentUpon>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="smeta_Modules\smetaFunc.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="currencyForm\currencyForm.resx">
+      <DependentUpon>currencyForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="db_Forms\editForm.resx">
       <DependentUpon>editForm.vb</DependentUpon>
     </EmbeddedResource>

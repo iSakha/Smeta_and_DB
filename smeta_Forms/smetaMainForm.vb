@@ -52,6 +52,8 @@ Public Class smetaMainForm
         lbl_depart_value.BackColor = btn_lighting_smeta.BackColor
         DGV_db.ClearSelection()
 
+        lbl_currency.Text = "USD"
+
     End Sub
 
     '           Fill up locations combobox
@@ -489,5 +491,27 @@ Public Class smetaMainForm
 
     Private Sub btn_discount_Click(sender As Object, e As EventArgs) Handles btn_discount.Click
         discountForm.Show()
+    End Sub
+    '===================================================================================
+    '             === Currency select ===
+    '===================================================================================
+    Private Sub rbtn_usd_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_usd.CheckedChanged
+        lbl_currency.Text = "USD"
+        currencyForm.Show()
+    End Sub
+
+    Private Sub rbtn_euro_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_euro.CheckedChanged
+        lbl_currency.Text = "Euro"
+        currencyForm.Show()
+    End Sub
+
+    Private Sub rbtn_rub_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_rub.CheckedChanged
+        lbl_currency.Text = "Rub"
+        currencyForm.Show()
+    End Sub
+
+    Private Sub rbtn_byn_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_byn.CheckedChanged
+        lbl_currency.Text = "BYN"
+        currencyForm.Show()
     End Sub
 End Class
