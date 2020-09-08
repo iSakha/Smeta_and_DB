@@ -36,23 +36,25 @@ Partial Class discountForm
         Me.txt_truss_discount = New System.Windows.Forms.TextBox()
         Me.txt_constr_discount = New System.Windows.Forms.TextBox()
         Me.txt_sound_discount = New System.Windows.Forms.TextBox()
-        Me.txt_plus_light = New System.Windows.Forms.TextBox()
-        Me.txt_minus_light = New System.Windows.Forms.TextBox()
-        Me.txt_plus_screen = New System.Windows.Forms.TextBox()
-        Me.txt_minus_screen = New System.Windows.Forms.TextBox()
-        Me.txt_plus_commut = New System.Windows.Forms.TextBox()
-        Me.txt_minus_commut = New System.Windows.Forms.TextBox()
-        Me.txt_plus_truss = New System.Windows.Forms.TextBox()
-        Me.txt_minus_truss = New System.Windows.Forms.TextBox()
-        Me.txt_plus_constr = New System.Windows.Forms.TextBox()
-        Me.txt_minus_constr = New System.Windows.Forms.TextBox()
-        Me.txt_plus_sound = New System.Windows.Forms.TextBox()
-        Me.txt_minus_sound = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btn_cancel_discount
         '
-        Me.btn_cancel_discount.Location = New System.Drawing.Point(161, 209)
+        Me.btn_cancel_discount.Location = New System.Drawing.Point(240, 238)
         Me.btn_cancel_discount.Name = "btn_cancel_discount"
         Me.btn_cancel_discount.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancel_discount.TabIndex = 21
@@ -61,7 +63,7 @@ Partial Class discountForm
         '
         'btn_discount_OK
         '
-        Me.btn_discount_OK.Location = New System.Drawing.Point(63, 210)
+        Me.btn_discount_OK.Location = New System.Drawing.Point(142, 239)
         Me.btn_discount_OK.Name = "btn_discount_OK"
         Me.btn_discount_OK.Size = New System.Drawing.Size(75, 23)
         Me.btn_discount_OK.TabIndex = 20
@@ -71,7 +73,7 @@ Partial Class discountForm
         'chbx_commutation
         '
         Me.chbx_commutation.AutoSize = True
-        Me.chbx_commutation.Location = New System.Drawing.Point(12, 64)
+        Me.chbx_commutation.Location = New System.Drawing.Point(12, 112)
         Me.chbx_commutation.Name = "chbx_commutation"
         Me.chbx_commutation.Size = New System.Drawing.Size(141, 17)
         Me.chbx_commutation.TabIndex = 13
@@ -81,7 +83,7 @@ Partial Class discountForm
         'chbx_sound
         '
         Me.chbx_sound.AutoSize = True
-        Me.chbx_sound.Location = New System.Drawing.Point(12, 142)
+        Me.chbx_sound.Location = New System.Drawing.Point(12, 190)
         Me.chbx_sound.Name = "chbx_sound"
         Me.chbx_sound.Size = New System.Drawing.Size(57, 17)
         Me.chbx_sound.TabIndex = 14
@@ -91,7 +93,7 @@ Partial Class discountForm
         'chbx_constr
         '
         Me.chbx_constr.AutoSize = True
-        Me.chbx_constr.Location = New System.Drawing.Point(12, 116)
+        Me.chbx_constr.Location = New System.Drawing.Point(12, 164)
         Me.chbx_constr.Name = "chbx_constr"
         Me.chbx_constr.Size = New System.Drawing.Size(139, 17)
         Me.chbx_constr.TabIndex = 15
@@ -101,7 +103,7 @@ Partial Class discountForm
         'chbx_truss
         '
         Me.chbx_truss.AutoSize = True
-        Me.chbx_truss.Location = New System.Drawing.Point(12, 90)
+        Me.chbx_truss.Location = New System.Drawing.Point(12, 138)
         Me.chbx_truss.Name = "chbx_truss"
         Me.chbx_truss.Size = New System.Drawing.Size(161, 17)
         Me.chbx_truss.TabIndex = 16
@@ -111,7 +113,7 @@ Partial Class discountForm
         'chbx_screen
         '
         Me.chbx_screen.AutoSize = True
-        Me.chbx_screen.Location = New System.Drawing.Point(12, 38)
+        Me.chbx_screen.Location = New System.Drawing.Point(12, 86)
         Me.chbx_screen.Name = "chbx_screen"
         Me.chbx_screen.Size = New System.Drawing.Size(114, 17)
         Me.chbx_screen.TabIndex = 17
@@ -121,7 +123,7 @@ Partial Class discountForm
         'chbx_lighting
         '
         Me.chbx_lighting.AutoSize = True
-        Me.chbx_lighting.Location = New System.Drawing.Point(12, 12)
+        Me.chbx_lighting.Location = New System.Drawing.Point(12, 60)
         Me.chbx_lighting.Name = "chbx_lighting"
         Me.chbx_lighting.Size = New System.Drawing.Size(117, 17)
         Me.chbx_lighting.TabIndex = 18
@@ -130,7 +132,7 @@ Partial Class discountForm
         '
         'txt_light_discount
         '
-        Me.txt_light_discount.Location = New System.Drawing.Point(211, 12)
+        Me.txt_light_discount.Location = New System.Drawing.Point(211, 60)
         Me.txt_light_discount.Name = "txt_light_discount"
         Me.txt_light_discount.Size = New System.Drawing.Size(48, 20)
         Me.txt_light_discount.TabIndex = 22
@@ -139,7 +141,7 @@ Partial Class discountForm
         '
         'txt_screen_discount
         '
-        Me.txt_screen_discount.Location = New System.Drawing.Point(211, 37)
+        Me.txt_screen_discount.Location = New System.Drawing.Point(211, 85)
         Me.txt_screen_discount.Name = "txt_screen_discount"
         Me.txt_screen_discount.Size = New System.Drawing.Size(48, 20)
         Me.txt_screen_discount.TabIndex = 22
@@ -148,7 +150,7 @@ Partial Class discountForm
         '
         'txt_commut_discount
         '
-        Me.txt_commut_discount.Location = New System.Drawing.Point(211, 62)
+        Me.txt_commut_discount.Location = New System.Drawing.Point(211, 110)
         Me.txt_commut_discount.Name = "txt_commut_discount"
         Me.txt_commut_discount.Size = New System.Drawing.Size(48, 20)
         Me.txt_commut_discount.TabIndex = 22
@@ -157,7 +159,7 @@ Partial Class discountForm
         '
         'txt_truss_discount
         '
-        Me.txt_truss_discount.Location = New System.Drawing.Point(211, 87)
+        Me.txt_truss_discount.Location = New System.Drawing.Point(211, 135)
         Me.txt_truss_discount.Name = "txt_truss_discount"
         Me.txt_truss_discount.Size = New System.Drawing.Size(48, 20)
         Me.txt_truss_discount.TabIndex = 22
@@ -166,7 +168,7 @@ Partial Class discountForm
         '
         'txt_constr_discount
         '
-        Me.txt_constr_discount.Location = New System.Drawing.Point(211, 112)
+        Me.txt_constr_discount.Location = New System.Drawing.Point(211, 160)
         Me.txt_constr_discount.Name = "txt_constr_discount"
         Me.txt_constr_discount.Size = New System.Drawing.Size(48, 20)
         Me.txt_constr_discount.TabIndex = 22
@@ -175,190 +177,162 @@ Partial Class discountForm
         '
         'txt_sound_discount
         '
-        Me.txt_sound_discount.Location = New System.Drawing.Point(211, 137)
+        Me.txt_sound_discount.Location = New System.Drawing.Point(211, 185)
         Me.txt_sound_discount.Name = "txt_sound_discount"
         Me.txt_sound_discount.Size = New System.Drawing.Size(48, 20)
         Me.txt_sound_discount.TabIndex = 22
         Me.txt_sound_discount.Text = "0"
         Me.txt_sound_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_plus_light
+        'Label1
         '
-        Me.txt_plus_light.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_plus_light.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_plus_light.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_plus_light.Location = New System.Drawing.Point(185, 12)
-        Me.txt_plus_light.Name = "txt_plus_light"
-        Me.txt_plus_light.ReadOnly = True
-        Me.txt_plus_light.Size = New System.Drawing.Size(20, 20)
-        Me.txt_plus_light.TabIndex = 23
-        Me.txt_plus_light.Text = "+"
-        Me.txt_plus_light.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(309, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Сумма"
         '
-        'txt_minus_light
+        'Label2
         '
-        Me.txt_minus_light.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_minus_light.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_minus_light.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_minus_light.Location = New System.Drawing.Point(265, 12)
-        Me.txt_minus_light.Name = "txt_minus_light"
-        Me.txt_minus_light.ReadOnly = True
-        Me.txt_minus_light.Size = New System.Drawing.Size(20, 20)
-        Me.txt_minus_light.TabIndex = 23
-        Me.txt_minus_light.Text = "-"
-        Me.txt_minus_light.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(389, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 13)
+        Me.Label2.TabIndex = 23
+        Me.Label2.Text = "Сумма со скидкой"
         '
-        'txt_plus_screen
+        'TextBox1
         '
-        Me.txt_plus_screen.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_plus_screen.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_plus_screen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_plus_screen.Location = New System.Drawing.Point(185, 37)
-        Me.txt_plus_screen.Name = "txt_plus_screen"
-        Me.txt_plus_screen.ReadOnly = True
-        Me.txt_plus_screen.Size = New System.Drawing.Size(20, 20)
-        Me.txt_plus_screen.TabIndex = 23
-        Me.txt_plus_screen.Text = "+"
-        Me.txt_plus_screen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox1.Location = New System.Drawing.Point(291, 60)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox1.TabIndex = 22
+        Me.TextBox1.Text = "0"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_minus_screen
+        'TextBox2
         '
-        Me.txt_minus_screen.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_minus_screen.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_minus_screen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_minus_screen.Location = New System.Drawing.Point(265, 37)
-        Me.txt_minus_screen.Name = "txt_minus_screen"
-        Me.txt_minus_screen.ReadOnly = True
-        Me.txt_minus_screen.Size = New System.Drawing.Size(20, 20)
-        Me.txt_minus_screen.TabIndex = 23
-        Me.txt_minus_screen.Text = "-"
-        Me.txt_minus_screen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox2.Location = New System.Drawing.Point(291, 85)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox2.TabIndex = 22
+        Me.TextBox2.Text = "0"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_plus_commut
+        'TextBox3
         '
-        Me.txt_plus_commut.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_plus_commut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_plus_commut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_plus_commut.Location = New System.Drawing.Point(185, 63)
-        Me.txt_plus_commut.Name = "txt_plus_commut"
-        Me.txt_plus_commut.ReadOnly = True
-        Me.txt_plus_commut.Size = New System.Drawing.Size(20, 20)
-        Me.txt_plus_commut.TabIndex = 23
-        Me.txt_plus_commut.Text = "+"
-        Me.txt_plus_commut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox3.Location = New System.Drawing.Point(291, 110)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox3.TabIndex = 22
+        Me.TextBox3.Text = "0"
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_minus_commut
+        'TextBox4
         '
-        Me.txt_minus_commut.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_minus_commut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_minus_commut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_minus_commut.Location = New System.Drawing.Point(265, 63)
-        Me.txt_minus_commut.Name = "txt_minus_commut"
-        Me.txt_minus_commut.ReadOnly = True
-        Me.txt_minus_commut.Size = New System.Drawing.Size(20, 20)
-        Me.txt_minus_commut.TabIndex = 23
-        Me.txt_minus_commut.Text = "-"
-        Me.txt_minus_commut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox4.Location = New System.Drawing.Point(291, 135)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox4.TabIndex = 22
+        Me.TextBox4.Text = "0"
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_plus_truss
+        'TextBox5
         '
-        Me.txt_plus_truss.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_plus_truss.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_plus_truss.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_plus_truss.Location = New System.Drawing.Point(185, 87)
-        Me.txt_plus_truss.Name = "txt_plus_truss"
-        Me.txt_plus_truss.ReadOnly = True
-        Me.txt_plus_truss.Size = New System.Drawing.Size(20, 20)
-        Me.txt_plus_truss.TabIndex = 23
-        Me.txt_plus_truss.Text = "+"
-        Me.txt_plus_truss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox5.Location = New System.Drawing.Point(291, 160)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox5.TabIndex = 22
+        Me.TextBox5.Text = "0"
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_minus_truss
+        'TextBox6
         '
-        Me.txt_minus_truss.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_minus_truss.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_minus_truss.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_minus_truss.Location = New System.Drawing.Point(265, 87)
-        Me.txt_minus_truss.Name = "txt_minus_truss"
-        Me.txt_minus_truss.ReadOnly = True
-        Me.txt_minus_truss.Size = New System.Drawing.Size(20, 20)
-        Me.txt_minus_truss.TabIndex = 23
-        Me.txt_minus_truss.Text = "-"
-        Me.txt_minus_truss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox6.Location = New System.Drawing.Point(291, 185)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox6.TabIndex = 22
+        Me.TextBox6.Text = "0"
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_plus_constr
+        'TextBox7
         '
-        Me.txt_plus_constr.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_plus_constr.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_plus_constr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_plus_constr.Location = New System.Drawing.Point(185, 112)
-        Me.txt_plus_constr.Name = "txt_plus_constr"
-        Me.txt_plus_constr.ReadOnly = True
-        Me.txt_plus_constr.Size = New System.Drawing.Size(20, 20)
-        Me.txt_plus_constr.TabIndex = 23
-        Me.txt_plus_constr.Text = "+"
-        Me.txt_plus_constr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox7.Location = New System.Drawing.Point(402, 60)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox7.TabIndex = 22
+        Me.TextBox7.Text = "0"
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_minus_constr
+        'TextBox8
         '
-        Me.txt_minus_constr.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_minus_constr.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_minus_constr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_minus_constr.Location = New System.Drawing.Point(265, 112)
-        Me.txt_minus_constr.Name = "txt_minus_constr"
-        Me.txt_minus_constr.ReadOnly = True
-        Me.txt_minus_constr.Size = New System.Drawing.Size(20, 20)
-        Me.txt_minus_constr.TabIndex = 23
-        Me.txt_minus_constr.Text = "-"
-        Me.txt_minus_constr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox8.Location = New System.Drawing.Point(402, 85)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox8.TabIndex = 22
+        Me.TextBox8.Text = "0"
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_plus_sound
+        'TextBox9
         '
-        Me.txt_plus_sound.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_plus_sound.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_plus_sound.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_plus_sound.Location = New System.Drawing.Point(185, 137)
-        Me.txt_plus_sound.Name = "txt_plus_sound"
-        Me.txt_plus_sound.ReadOnly = True
-        Me.txt_plus_sound.Size = New System.Drawing.Size(20, 20)
-        Me.txt_plus_sound.TabIndex = 23
-        Me.txt_plus_sound.Text = "+"
-        Me.txt_plus_sound.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox9.Location = New System.Drawing.Point(402, 110)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox9.TabIndex = 22
+        Me.TextBox9.Text = "0"
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_minus_sound
+        'TextBox10
         '
-        Me.txt_minus_sound.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txt_minus_sound.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_minus_sound.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_minus_sound.Location = New System.Drawing.Point(265, 137)
-        Me.txt_minus_sound.Name = "txt_minus_sound"
-        Me.txt_minus_sound.ReadOnly = True
-        Me.txt_minus_sound.Size = New System.Drawing.Size(20, 20)
-        Me.txt_minus_sound.TabIndex = 23
-        Me.txt_minus_sound.Text = "-"
-        Me.txt_minus_sound.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox10.Location = New System.Drawing.Point(402, 135)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox10.TabIndex = 22
+        Me.TextBox10.Text = "0"
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(402, 160)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox11.TabIndex = 22
+        Me.TextBox11.Text = "0"
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(402, 185)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(88, 20)
+        Me.TextBox12.TabIndex = 22
+        Me.TextBox12.Text = "0"
+        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'discountForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(299, 273)
-        Me.Controls.Add(Me.txt_minus_sound)
-        Me.Controls.Add(Me.txt_plus_sound)
-        Me.Controls.Add(Me.txt_minus_constr)
-        Me.Controls.Add(Me.txt_plus_constr)
-        Me.Controls.Add(Me.txt_minus_truss)
-        Me.Controls.Add(Me.txt_plus_truss)
-        Me.Controls.Add(Me.txt_minus_commut)
-        Me.Controls.Add(Me.txt_plus_commut)
-        Me.Controls.Add(Me.txt_minus_screen)
-        Me.Controls.Add(Me.txt_plus_screen)
-        Me.Controls.Add(Me.txt_minus_light)
-        Me.Controls.Add(Me.txt_plus_light)
+        Me.ClientSize = New System.Drawing.Size(517, 273)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextBox12)
+        Me.Controls.Add(Me.TextBox11)
+        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.txt_sound_discount)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.txt_constr_discount)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.txt_truss_discount)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.txt_commut_discount)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.txt_screen_discount)
         Me.Controls.Add(Me.txt_light_discount)
         Me.Controls.Add(Me.btn_cancel_discount)
@@ -390,16 +364,18 @@ Partial Class discountForm
     Friend WithEvents txt_truss_discount As TextBox
     Friend WithEvents txt_constr_discount As TextBox
     Friend WithEvents txt_sound_discount As TextBox
-    Friend WithEvents txt_plus_light As TextBox
-    Friend WithEvents txt_minus_light As TextBox
-    Friend WithEvents txt_plus_screen As TextBox
-    Friend WithEvents txt_minus_screen As TextBox
-    Friend WithEvents txt_plus_commut As TextBox
-    Friend WithEvents txt_minus_commut As TextBox
-    Friend WithEvents txt_plus_truss As TextBox
-    Friend WithEvents txt_minus_truss As TextBox
-    Friend WithEvents txt_plus_constr As TextBox
-    Friend WithEvents txt_minus_constr As TextBox
-    Friend WithEvents txt_plus_sound As TextBox
-    Friend WithEvents txt_minus_sound As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents TextBox12 As TextBox
 End Class

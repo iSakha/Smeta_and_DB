@@ -299,6 +299,27 @@ Module smetaFunc
         Dim totalPrice As Integer = 0
         Dim totalWeight As Integer = 0
 
+        mainForm.priceLighting = 0
+        mainForm.priceScreen = 0
+        mainForm.priceComm = 0
+        mainForm.priceTruss = 0
+        mainForm.priceConstr = 0
+        mainForm.priceSound = 0
+
+        mainForm.qtyLighting = 0
+        mainForm.qtyScreen = 0
+        mainForm.qtyComm = 0
+        mainForm.qtyTruss = 0
+        mainForm.qtyConstr = 0
+        mainForm.qtySound = 0
+
+        mainForm.weightLighting = 0
+        mainForm.weightScreen = 0
+        mainForm.weightComm = 0
+        mainForm.weightTruss = 0
+        mainForm.weightConstr = 0
+        mainForm.weightSound = 0
+
         For Each row In smetaMainForm.DGV_db.Rows
 
             If row.Cells(20).Value > 0 Then
@@ -306,23 +327,77 @@ Module smetaFunc
                 row.DefaultCellStyle.BackColor = Color.Yellow
                 targetRows.Add(row)
 
-                '           Calculate total power for lighting,screen and sound
-                If (row.Cells(0).Value = 1) Or (row.Cells(0).Value = 2) Or (row.Cells(0).Value = 6) Then
-                    totalPwr = totalPwr + (row.Cells(11).Value) * (row.Cells(20).Value)
+
+
+                ' Calculate department price,quantity and weight
+                '---------------------------------------------------------------
+
+                ' Calculate Lighting 
+
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceLighting = mainForm.priceLighting + (row.Cells(4).Value * row.Cells(12).Value)
+                    mainForm.qtyLighting = mainForm.qtyLighting = row.Cells(4).Value
+                    mainForm.weightLighting = mainForm.weightLighting = (row.Cells(4).Value * row.Cells(10).Value)
                 End If
 
-                '           Calculate total price
-                totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
+                ' Calculate Screen 
 
-                '           Calculate total weight
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceScreen = mainForm.priceScreen + (row.Cells(4).Value * row.Cells(12).Value)
+                    mainForm.qtyScreen = mainForm.qtyScreen = row.Cells(4).Value
+                    mainForm.weightScreen = mainForm.weightScreen = (row.Cells(4).Value * row.Cells(10).Value)
+                End If
 
-                totalWeight = totalWeight + (row.Cells(10).Value) * (row.Cells(20).Value)
+                ' Calculate Commutation 
 
-                smetaMainForm.txt_pwr.Text = totalPwr
-                smetaMainForm.txt_price.Text = totalPrice
-                smetaMainForm.txt_weight.Text = totalWeight
-            Else
-                row.DefaultCellStyle.BackColor = SystemColors.Window
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceComm = mainForm.priceComm + (row.Cells(4).Value * row.Cells(12).Value)
+                    mainForm.qtyComm = mainForm.qtyComm = row.Cells(4).Value
+                    mainForm.weightComm = mainForm.weightComm = (row.Cells(4).Value * row.Cells(10).Value)
+                End If
+
+                ' Calculate Truss 
+
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceTruss = mainForm.priceTruss + (row.Cells(4).Value * row.Cells(12).Value)
+                    mainForm.qtyTruss = mainForm.qtyTruss = row.Cells(4).Value
+                    mainForm.weightTruss = mainForm.weightTruss = (row.Cells(4).Value * row.Cells(10).Value)
+                End If
+
+                ' Calculate Construction 
+
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceConstr = mainForm.priceConstr + (row.Cells(4).Value * row.Cells(12).Value)
+                    mainForm.qtyConstr = mainForm.qtyConstr = row.Cells(4).Value
+                    mainForm.weightConstr = mainForm.weightConstr = (row.Cells(4).Value * row.Cells(10).Value)
+                End If
+
+                ' Calculate Sound 
+
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceSound = mainForm.priceSound + (row.Cells(4).Value * row.Cells(12).Value)
+                    mainForm.qtySound = mainForm.qtySound = row.Cells(4).Value
+                    mainForm.weightSound = mainForm.weightSound = (row.Cells(4).Value * row.Cells(10).Value)
+                End If
+
+
+                '           Calculate total power for lighting,screen and sound
+                If (row.Cells(0).Value = 1) Or (row.Cells(0).Value = 2) Or (row.Cells(0).Value = 6) Then
+                        totalPwr = totalPwr + (row.Cells(11).Value) * (row.Cells(20).Value)
+                    End If
+
+                    '           Calculate total price
+                    totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
+
+                    '           Calculate total weight
+
+                    totalWeight = totalWeight + (row.Cells(10).Value) * (row.Cells(20).Value)
+
+                    smetaMainForm.txt_pwr.Text = totalPwr
+                    smetaMainForm.txt_price.Text = totalPrice
+                    smetaMainForm.txt_weight.Text = totalWeight
+                Else
+                    row.DefaultCellStyle.BackColor = SystemColors.Window
             End If
 
         Next row

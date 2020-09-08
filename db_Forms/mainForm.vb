@@ -46,6 +46,14 @@ Public Class mainForm
     Public discountStatus(6) As Boolean
     Public discountValue(6) As Integer
 
+    Public priceLighting, priceScreen, priceComm, priceTruss, priceConstr, priceSound As Integer
+    Public qtyLighting, qtyScreen, qtyComm, qtyTruss, qtyConstr, qtySound As Integer
+    Public weightLighting, weightScreen, weightComm, weightTruss, weightConstr, weightSound As Integer
+
+    Public price(6) As Integer
+    Public qty(6) As Integer
+    Public weight(6) As Integer
+
     '===================================================================================
     '             === mainForm_Load ===
     '===================================================================================
