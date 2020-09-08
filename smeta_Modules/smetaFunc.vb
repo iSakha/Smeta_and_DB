@@ -335,69 +335,70 @@ Module smetaFunc
                 ' Calculate Lighting 
 
                 If row.Cells(0).Value = 1 Then
-                    mainForm.priceLighting = mainForm.priceLighting + (row.Cells(4).Value * row.Cells(12).Value)
-                    mainForm.qtyLighting = mainForm.qtyLighting = row.Cells(4).Value
-                    mainForm.weightLighting = mainForm.weightLighting = (row.Cells(4).Value * row.Cells(10).Value)
+                    mainForm.priceLighting = mainForm.priceLighting + (row.Cells(20).Value * row.Cells(12).Value)
+                    Console.WriteLine(mainForm.priceLighting)
+                    mainForm.qtyLighting = mainForm.qtyLighting = row.Cells(20).Value
+                    mainForm.weightLighting = mainForm.weightLighting = (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Screen 
 
-                If row.Cells(0).Value = 1 Then
-                    mainForm.priceScreen = mainForm.priceScreen + (row.Cells(4).Value * row.Cells(12).Value)
-                    mainForm.qtyScreen = mainForm.qtyScreen = row.Cells(4).Value
-                    mainForm.weightScreen = mainForm.weightScreen = (row.Cells(4).Value * row.Cells(10).Value)
+                If row.Cells(0).Value = 2 Then
+                    mainForm.priceScreen = mainForm.priceScreen + (row.Cells(20).Value * row.Cells(12).Value)
+                    mainForm.qtyScreen = mainForm.qtyScreen = row.Cells(20).Value
+                    mainForm.weightScreen = mainForm.weightScreen = (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Commutation 
 
-                If row.Cells(0).Value = 1 Then
-                    mainForm.priceComm = mainForm.priceComm + (row.Cells(4).Value * row.Cells(12).Value)
-                    mainForm.qtyComm = mainForm.qtyComm = row.Cells(4).Value
-                    mainForm.weightComm = mainForm.weightComm = (row.Cells(4).Value * row.Cells(10).Value)
+                If row.Cells(0).Value = 3 Then
+                    mainForm.priceComm = mainForm.priceComm + (row.Cells(20).Value * row.Cells(12).Value)
+                    mainForm.qtyComm = mainForm.qtyComm = row.Cells(20).Value
+                    mainForm.weightComm = mainForm.weightComm = (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Truss 
 
-                If row.Cells(0).Value = 1 Then
-                    mainForm.priceTruss = mainForm.priceTruss + (row.Cells(4).Value * row.Cells(12).Value)
-                    mainForm.qtyTruss = mainForm.qtyTruss = row.Cells(4).Value
-                    mainForm.weightTruss = mainForm.weightTruss = (row.Cells(4).Value * row.Cells(10).Value)
+                If row.Cells(0).Value = 4 Then
+                    mainForm.priceTruss = mainForm.priceTruss + (row.Cells(20).Value * row.Cells(12).Value)
+                    mainForm.qtyTruss = mainForm.qtyTruss = row.Cells(20).Value
+                    mainForm.weightTruss = mainForm.weightTruss = (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Construction 
 
-                If row.Cells(0).Value = 1 Then
-                    mainForm.priceConstr = mainForm.priceConstr + (row.Cells(4).Value * row.Cells(12).Value)
-                    mainForm.qtyConstr = mainForm.qtyConstr = row.Cells(4).Value
-                    mainForm.weightConstr = mainForm.weightConstr = (row.Cells(4).Value * row.Cells(10).Value)
+                If row.Cells(0).Value = 5 Then
+                    mainForm.priceConstr = mainForm.priceConstr + (row.Cells(20).Value * row.Cells(12).Value)
+                    mainForm.qtyConstr = mainForm.qtyConstr = row.Cells(20).Value
+                    mainForm.weightConstr = mainForm.weightConstr = (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Sound 
 
-                If row.Cells(0).Value = 1 Then
-                    mainForm.priceSound = mainForm.priceSound + (row.Cells(4).Value * row.Cells(12).Value)
-                    mainForm.qtySound = mainForm.qtySound = row.Cells(4).Value
-                    mainForm.weightSound = mainForm.weightSound = (row.Cells(4).Value * row.Cells(10).Value)
+                If row.Cells(0).Value = 6 Then
+                    mainForm.priceSound = mainForm.priceSound + (row.Cells(20).Value * row.Cells(12).Value)
+                    mainForm.qtySound = mainForm.qtySound = row.Cells(20).Value
+                    mainForm.weightSound = mainForm.weightSound = (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
 
                 '           Calculate total power for lighting,screen and sound
                 If (row.Cells(0).Value = 1) Or (row.Cells(0).Value = 2) Or (row.Cells(0).Value = 6) Then
-                        totalPwr = totalPwr + (row.Cells(11).Value) * (row.Cells(20).Value)
-                    End If
+                    totalPwr = totalPwr + (row.Cells(11).Value) * (row.Cells(20).Value)
+                End If
 
-                    '           Calculate total price
-                    totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
+                '           Calculate total price
+                totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
 
-                    '           Calculate total weight
+                '           Calculate total weight
 
-                    totalWeight = totalWeight + (row.Cells(10).Value) * (row.Cells(20).Value)
+                totalWeight = totalWeight + (row.Cells(10).Value) * (row.Cells(20).Value)
 
-                    smetaMainForm.txt_pwr.Text = totalPwr
-                    smetaMainForm.txt_price.Text = totalPrice
-                    smetaMainForm.txt_weight.Text = totalWeight
-                Else
-                    row.DefaultCellStyle.BackColor = SystemColors.Window
+                smetaMainForm.txt_pwr.Text = totalPwr
+                smetaMainForm.txt_price.Text = totalPrice
+                smetaMainForm.txt_weight.Text = totalWeight
+            Else
+                row.DefaultCellStyle.BackColor = SystemColors.Window
             End If
 
         Next row

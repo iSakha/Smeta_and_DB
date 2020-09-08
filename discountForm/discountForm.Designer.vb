@@ -38,18 +38,18 @@ Partial Class discountForm
         Me.txt_sound_discount = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.txt_summary_light = New System.Windows.Forms.TextBox()
+        Me.txt_summary_screen = New System.Windows.Forms.TextBox()
+        Me.txt_summary_comm = New System.Windows.Forms.TextBox()
+        Me.txt_summary_truss = New System.Windows.Forms.TextBox()
+        Me.txt_summary_constr = New System.Windows.Forms.TextBox()
+        Me.txt_summary_sound = New System.Windows.Forms.TextBox()
+        Me.txt_summary_light_discount = New System.Windows.Forms.TextBox()
+        Me.txt_summary_screen_discount = New System.Windows.Forms.TextBox()
+        Me.txt_summary_comm_discount = New System.Windows.Forms.TextBox()
+        Me.txt_summary_truss_discount = New System.Windows.Forms.TextBox()
+        Me.txt_summary_constr_discount = New System.Windows.Forms.TextBox()
+        Me.txt_summary_sound_discount = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btn_cancel_discount
@@ -202,113 +202,113 @@ Partial Class discountForm
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Сумма со скидкой"
         '
-        'TextBox1
+        'txt_summary_light
         '
-        Me.TextBox1.Location = New System.Drawing.Point(291, 60)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox1.TabIndex = 22
-        Me.TextBox1.Text = "0"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_light.Location = New System.Drawing.Point(291, 60)
+        Me.txt_summary_light.Name = "txt_summary_light"
+        Me.txt_summary_light.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_light.TabIndex = 22
+        Me.txt_summary_light.Text = "0"
+        Me.txt_summary_light.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox2
+        'txt_summary_screen
         '
-        Me.TextBox2.Location = New System.Drawing.Point(291, 85)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox2.TabIndex = 22
-        Me.TextBox2.Text = "0"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_screen.Location = New System.Drawing.Point(291, 85)
+        Me.txt_summary_screen.Name = "txt_summary_screen"
+        Me.txt_summary_screen.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_screen.TabIndex = 22
+        Me.txt_summary_screen.Text = "0"
+        Me.txt_summary_screen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox3
+        'txt_summary_comm
         '
-        Me.TextBox3.Location = New System.Drawing.Point(291, 110)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox3.TabIndex = 22
-        Me.TextBox3.Text = "0"
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_comm.Location = New System.Drawing.Point(291, 110)
+        Me.txt_summary_comm.Name = "txt_summary_comm"
+        Me.txt_summary_comm.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_comm.TabIndex = 22
+        Me.txt_summary_comm.Text = "0"
+        Me.txt_summary_comm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox4
+        'txt_summary_truss
         '
-        Me.TextBox4.Location = New System.Drawing.Point(291, 135)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox4.TabIndex = 22
-        Me.TextBox4.Text = "0"
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_truss.Location = New System.Drawing.Point(291, 135)
+        Me.txt_summary_truss.Name = "txt_summary_truss"
+        Me.txt_summary_truss.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_truss.TabIndex = 22
+        Me.txt_summary_truss.Text = "0"
+        Me.txt_summary_truss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox5
+        'txt_summary_constr
         '
-        Me.TextBox5.Location = New System.Drawing.Point(291, 160)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox5.TabIndex = 22
-        Me.TextBox5.Text = "0"
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_constr.Location = New System.Drawing.Point(291, 160)
+        Me.txt_summary_constr.Name = "txt_summary_constr"
+        Me.txt_summary_constr.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_constr.TabIndex = 22
+        Me.txt_summary_constr.Text = "0"
+        Me.txt_summary_constr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox6
+        'txt_summary_sound
         '
-        Me.TextBox6.Location = New System.Drawing.Point(291, 185)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox6.TabIndex = 22
-        Me.TextBox6.Text = "0"
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_sound.Location = New System.Drawing.Point(291, 185)
+        Me.txt_summary_sound.Name = "txt_summary_sound"
+        Me.txt_summary_sound.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_sound.TabIndex = 22
+        Me.txt_summary_sound.Text = "0"
+        Me.txt_summary_sound.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox7
+        'txt_summary_light_discount
         '
-        Me.TextBox7.Location = New System.Drawing.Point(402, 60)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox7.TabIndex = 22
-        Me.TextBox7.Text = "0"
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_light_discount.Location = New System.Drawing.Point(402, 60)
+        Me.txt_summary_light_discount.Name = "txt_summary_light_discount"
+        Me.txt_summary_light_discount.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_light_discount.TabIndex = 22
+        Me.txt_summary_light_discount.Text = "0"
+        Me.txt_summary_light_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox8
+        'txt_summary_screen_discount
         '
-        Me.TextBox8.Location = New System.Drawing.Point(402, 85)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox8.TabIndex = 22
-        Me.TextBox8.Text = "0"
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_screen_discount.Location = New System.Drawing.Point(402, 85)
+        Me.txt_summary_screen_discount.Name = "txt_summary_screen_discount"
+        Me.txt_summary_screen_discount.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_screen_discount.TabIndex = 22
+        Me.txt_summary_screen_discount.Text = "0"
+        Me.txt_summary_screen_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox9
+        'txt_summary_comm_discount
         '
-        Me.TextBox9.Location = New System.Drawing.Point(402, 110)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox9.TabIndex = 22
-        Me.TextBox9.Text = "0"
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_comm_discount.Location = New System.Drawing.Point(402, 110)
+        Me.txt_summary_comm_discount.Name = "txt_summary_comm_discount"
+        Me.txt_summary_comm_discount.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_comm_discount.TabIndex = 22
+        Me.txt_summary_comm_discount.Text = "0"
+        Me.txt_summary_comm_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox10
+        'txt_summary_truss_discount
         '
-        Me.TextBox10.Location = New System.Drawing.Point(402, 135)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox10.TabIndex = 22
-        Me.TextBox10.Text = "0"
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_truss_discount.Location = New System.Drawing.Point(402, 135)
+        Me.txt_summary_truss_discount.Name = "txt_summary_truss_discount"
+        Me.txt_summary_truss_discount.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_truss_discount.TabIndex = 22
+        Me.txt_summary_truss_discount.Text = "0"
+        Me.txt_summary_truss_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox11
+        'txt_summary_constr_discount
         '
-        Me.TextBox11.Location = New System.Drawing.Point(402, 160)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox11.TabIndex = 22
-        Me.TextBox11.Text = "0"
-        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_constr_discount.Location = New System.Drawing.Point(402, 160)
+        Me.txt_summary_constr_discount.Name = "txt_summary_constr_discount"
+        Me.txt_summary_constr_discount.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_constr_discount.TabIndex = 22
+        Me.txt_summary_constr_discount.Text = "0"
+        Me.txt_summary_constr_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox12
+        'txt_summary_sound_discount
         '
-        Me.TextBox12.Location = New System.Drawing.Point(402, 185)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox12.TabIndex = 22
-        Me.TextBox12.Text = "0"
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_summary_sound_discount.Location = New System.Drawing.Point(402, 185)
+        Me.txt_summary_sound_discount.Name = "txt_summary_sound_discount"
+        Me.txt_summary_sound_discount.Size = New System.Drawing.Size(88, 20)
+        Me.txt_summary_sound_discount.TabIndex = 22
+        Me.txt_summary_sound_discount.Text = "0"
+        Me.txt_summary_sound_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'discountForm
         '
@@ -317,22 +317,22 @@ Partial Class discountForm
         Me.ClientSize = New System.Drawing.Size(517, 273)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox12)
-        Me.Controls.Add(Me.TextBox11)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox10)
+        Me.Controls.Add(Me.txt_summary_sound_discount)
+        Me.Controls.Add(Me.txt_summary_constr_discount)
+        Me.Controls.Add(Me.txt_summary_sound)
+        Me.Controls.Add(Me.txt_summary_constr)
+        Me.Controls.Add(Me.txt_summary_truss_discount)
         Me.Controls.Add(Me.txt_sound_discount)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.txt_summary_truss)
+        Me.Controls.Add(Me.txt_summary_comm_discount)
         Me.Controls.Add(Me.txt_constr_discount)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.txt_summary_comm)
+        Me.Controls.Add(Me.txt_summary_screen_discount)
         Me.Controls.Add(Me.txt_truss_discount)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.txt_summary_screen)
+        Me.Controls.Add(Me.txt_summary_light_discount)
         Me.Controls.Add(Me.txt_commut_discount)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txt_summary_light)
         Me.Controls.Add(Me.txt_screen_discount)
         Me.Controls.Add(Me.txt_light_discount)
         Me.Controls.Add(Me.btn_cancel_discount)
@@ -366,16 +366,16 @@ Partial Class discountForm
     Friend WithEvents txt_sound_discount As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents txt_summary_light As TextBox
+    Friend WithEvents txt_summary_screen As TextBox
+    Friend WithEvents txt_summary_comm As TextBox
+    Friend WithEvents txt_summary_truss As TextBox
+    Friend WithEvents txt_summary_constr As TextBox
+    Friend WithEvents txt_summary_sound As TextBox
+    Friend WithEvents txt_summary_light_discount As TextBox
+    Friend WithEvents txt_summary_screen_discount As TextBox
+    Friend WithEvents txt_summary_comm_discount As TextBox
+    Friend WithEvents txt_summary_truss_discount As TextBox
+    Friend WithEvents txt_summary_constr_discount As TextBox
+    Friend WithEvents txt_summary_sound_discount As TextBox
 End Class
