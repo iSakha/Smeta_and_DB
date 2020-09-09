@@ -87,7 +87,7 @@ Public Class smetaMainForm
     '===================================================================================
     '             === Select Department buttons ===
     '===================================================================================
-
+#Region "Select Department buttons"
     '             === Lighting button ===
     '===================================================================================
     Private Sub btn_lighting_smeta_Click(sender As Object, e As EventArgs) Handles btn_lighting_smeta.Click
@@ -124,7 +124,7 @@ Public Class smetaMainForm
         setScroll(6001001)
         changeButtonStyle(sender)
     End Sub
-
+#End Region
     Private Sub DGV_smeta_Scroll(sender As Object, e As ScrollEventArgs) _
      Handles DGV_db.Scroll
 
@@ -138,16 +138,14 @@ Public Class smetaMainForm
         DGV_smeta_clickCell(sender, e)
     End Sub
 
-    Private Sub DGV_smeta_Enter(sender As Object, e As EventArgs) Handles DGV_db.Enter
-
-    End Sub
-
     Private Sub DGV_smeta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DGV_db.KeyPress
         If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
             enumRows()
         End If
     End Sub
-
+    '===================================================================================
+    '             === Go to smeta button ===
+    '===================================================================================
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
 
         Dim targetRows = enumRows()
@@ -240,8 +238,6 @@ Public Class smetaMainForm
 
         '   Copy rows from Smeta datagridview to Excel sheet "Smeta"
         '----------------------------------------------------------------------------
-
-
 
         Dim rowsQty As Integer = DGV_smeta.Rows.Count - 1
 
@@ -347,15 +343,17 @@ Public Class smetaMainForm
                 rng.Style.Border.Bottom.Style = Style.ExcelBorderStyle.Thin
                 rng.Style.Border.Bottom.Color.SetColor(colBorder)
 
-                '   Add discount
+                '   Add discount and summary
 
                 If DGV_smeta.Rows(i).Cells(0).Value < DGV_smeta.Rows(i + 1).Cells(0).Value Then         'Check that this is last row in department (i.e. department changed)
-                    startRow = startRow + 3
-                    startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                    startRow = startRow + 1
+                    startRow = writeSummary(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                    'startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
                 Else
                     If DGV_smeta.Rows(i + 1).Cells(0).Value = 0 Then
-                        startRow = startRow + 3
-                        startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                        startRow = startRow + 1
+                        startRow = writeSummary(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                        'startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
                     End If
                     startRow = startRow + 1
                 End If
@@ -427,7 +425,28 @@ Public Class smetaMainForm
         rng.Style.Border.Bottom.Color.SetColor(col_2)
 
     End Sub
+    '===================================================================================
+    '             === Write summary values to Excel ===
+    '===================================================================================
+    Function writeSummary(_rowIndex As Integer, _ws As ExcelWorksheet, _depIndex As Integer)
+        Dim rng As ExcelRange
 
+        _ws.Row(_rowIndex).Height = 30
+        _ws.Cells(_rowIndex, 7).Value = mainForm.weight(_depIndex - 1)
+        _ws.Cells(_rowIndex, 8).Value = mainForm.qty(_depIndex - 1)
+        _ws.Cells(_rowIndex, 9).Value = 0
+
+        rng = _ws.Cells(_rowIndex, 7, _rowIndex, 11)
+        rng.Style.Font.Size = 12
+        rng.Style.Font.Bold = True
+
+        _rowIndex = _rowIndex + 1
+
+        Return (_rowIndex)
+    End Function
+    '===================================================================================
+    '             === Discount function ===
+    '===================================================================================
     Function discount(_rowIndex As Integer, _ws As ExcelWorksheet, _depIndex As Integer)
         If mainForm.discountStatus(_depIndex - 1) Then
             _ws.Cells(_rowIndex, 1).Value = "Discount"

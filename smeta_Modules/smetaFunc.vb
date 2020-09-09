@@ -289,7 +289,9 @@ Module smetaFunc
         Console.WriteLine(catName)
 
     End Sub
-
+    '===================================================================================
+    '             === enumRows Function ===
+    '===================================================================================
     Function enumRows()
 
         Dim targetRows = New List(Of DataGridViewRow)
@@ -402,6 +404,21 @@ Module smetaFunc
             End If
 
         Next row
+
+        mainForm.qty(0) = mainForm.qtyLighting
+        mainForm.qty(1) = mainForm.qtyScreen
+        mainForm.qty(2) = mainForm.qtyComm
+        mainForm.qty(3) = mainForm.qtyTruss
+        mainForm.qty(4) = mainForm.qtyConstr
+        mainForm.qty(5) = mainForm.qtySound
+
+        mainForm.weight(0) = mainForm.weightLighting
+        mainForm.weight(1) = mainForm.weightScreen
+        mainForm.weight(2) = mainForm.weightComm
+        mainForm.weight(3) = mainForm.weightTruss
+        mainForm.weight(4) = mainForm.weightConstr
+        mainForm.weight(5) = mainForm.weightSound
+
 
         Return (targetRows)
 
