@@ -45,6 +45,13 @@
         mainForm.discountValue(4) = mainForm.constr_dscnt_val
         mainForm.discountValue(5) = mainForm.sound_dscnt_val
 
+        mainForm.discountPrice(0) = CInt(txt_summary_light_discount.Text)
+        mainForm.discountPrice(1) = CInt(txt_summary_screen_discount.Text)
+        mainForm.discountPrice(2) = CInt(txt_summary_comm_discount.Text)
+        mainForm.discountPrice(3) = CInt(txt_summary_truss_discount.Text)
+        mainForm.discountPrice(4) = CInt(txt_summary_constr_discount.Text)
+        mainForm.discountPrice(5) = CInt(txt_summary_sound_discount.Text)
+
         Me.Close()
 
     End Sub

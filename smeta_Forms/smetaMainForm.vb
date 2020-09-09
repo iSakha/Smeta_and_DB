@@ -348,12 +348,12 @@ Public Class smetaMainForm
                 If DGV_smeta.Rows(i).Cells(0).Value < DGV_smeta.Rows(i + 1).Cells(0).Value Then         'Check that this is last row in department (i.e. department changed)
                     startRow = startRow + 1
                     startRow = writeSummary(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
-                    'startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                    startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
                 Else
                     If DGV_smeta.Rows(i + 1).Cells(0).Value = 0 Then
                         startRow = startRow + 1
                         startRow = writeSummary(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
-                        'startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                        startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
                     End If
                     startRow = startRow + 1
                 End If
@@ -432,6 +432,12 @@ Public Class smetaMainForm
         Dim rng As ExcelRange
 
         _ws.Row(_rowIndex).Height = 30
+        _ws.Cells(_rowIndex, 3).Value = "ИТОГО:"
+        _ws.Cells(_rowIndex, 3).Style.Font.Size = 14
+        _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
+        _ws.Cells(_rowIndex, 3).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+        _ws.Cells(_rowIndex, 3).Style.VerticalAlignment = Style.ExcelVerticalAlignment.Center
+
         _ws.Cells(_rowIndex, 7).Value = mainForm.weight(_depIndex - 1)
         _ws.Cells(_rowIndex, 8).Value = mainForm.qty(_depIndex - 1)
         _ws.Cells(_rowIndex, 9).Value = 0
@@ -444,19 +450,40 @@ Public Class smetaMainForm
         rng.Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
         rng.Style.VerticalAlignment = Style.ExcelVerticalAlignment.Center
 
-        _rowIndex = _rowIndex + 2
+        _rowIndex = _rowIndex + 3
 
         Return (_rowIndex)
+
     End Function
     '===================================================================================
     '             === Discount function ===
     '===================================================================================
     Function discount(_rowIndex As Integer, _ws As ExcelWorksheet, _depIndex As Integer)
         If mainForm.discountStatus(_depIndex - 1) Then
-            _ws.Cells(_rowIndex, 1).Value = "Discount"
-            _rowIndex = _rowIndex + 3
-        End If
+            _ws.Cells(_rowIndex, 3).Value = "Скидка,%"
+            _ws.Cells(_rowIndex, 3).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 3).Style.Font.Color.SetColor(Color.Red)
+            _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
 
+            _ws.Cells(_rowIndex, 4).Value = mainForm.discountValue(_depIndex - 1)
+            _ws.Cells(_rowIndex, 4).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 4).Style.Font.Color.SetColor(Color.Red)
+            _ws.Cells(_rowIndex, 4).Style.Font.Bold = True
+
+            _rowIndex = _rowIndex + 1
+
+            _ws.Cells(_rowIndex, 3).Value = "Цена со скидкой"
+            _ws.Cells(_rowIndex, 3).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
+            _ws.Cells(_rowIndex, 3).Style.Font.UnderLine = True
+
+            _ws.Cells(_rowIndex, 5).Value = mainForm.discountPrice(_depIndex - 1)
+            _ws.Cells(_rowIndex, 5).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 5).Style.Font.Bold = True
+
+
+        End If
+        _rowIndex = _rowIndex + 3
         Return (_rowIndex)
     End Function
 
