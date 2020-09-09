@@ -435,12 +435,16 @@ Public Class smetaMainForm
         _ws.Cells(_rowIndex, 7).Value = mainForm.weight(_depIndex - 1)
         _ws.Cells(_rowIndex, 8).Value = mainForm.qty(_depIndex - 1)
         _ws.Cells(_rowIndex, 9).Value = 0
+        _ws.Cells(_rowIndex, 11).Value = mainForm.price(_depIndex - 1)
 
         rng = _ws.Cells(_rowIndex, 7, _rowIndex, 11)
         rng.Style.Font.Size = 12
         rng.Style.Font.Bold = True
 
-        _rowIndex = _rowIndex + 1
+        rng.Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+        rng.Style.VerticalAlignment = Style.ExcelVerticalAlignment.Center
+
+        _rowIndex = _rowIndex + 2
 
         Return (_rowIndex)
     End Function

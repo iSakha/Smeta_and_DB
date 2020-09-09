@@ -338,49 +338,50 @@ Module smetaFunc
 
                 If row.Cells(0).Value = 1 Then
                     mainForm.priceLighting = mainForm.priceLighting + (row.Cells(20).Value * row.Cells(12).Value)
-                    Console.WriteLine(mainForm.priceLighting)
-                    mainForm.qtyLighting = mainForm.qtyLighting = row.Cells(20).Value
-                    mainForm.weightLighting = mainForm.weightLighting = (row.Cells(20).Value * row.Cells(10).Value)
+
+                    mainForm.qtyLighting = mainForm.qtyLighting + row.Cells(20).Value
+                    'Console.WriteLine(mainForm.qtyLighting)
+                    mainForm.weightLighting = mainForm.weightLighting + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Screen 
 
                 If row.Cells(0).Value = 2 Then
                     mainForm.priceScreen = mainForm.priceScreen + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyScreen = mainForm.qtyScreen = row.Cells(20).Value
-                    mainForm.weightScreen = mainForm.weightScreen = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyScreen = mainForm.qtyScreen + row.Cells(20).Value
+                    mainForm.weightScreen = mainForm.weightScreen + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Commutation 
 
                 If row.Cells(0).Value = 3 Then
                     mainForm.priceComm = mainForm.priceComm + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyComm = mainForm.qtyComm = row.Cells(20).Value
-                    mainForm.weightComm = mainForm.weightComm = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyComm = mainForm.qtyComm + row.Cells(20).Value
+                    mainForm.weightComm = mainForm.weightComm + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Truss 
 
                 If row.Cells(0).Value = 4 Then
                     mainForm.priceTruss = mainForm.priceTruss + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyTruss = mainForm.qtyTruss = row.Cells(20).Value
-                    mainForm.weightTruss = mainForm.weightTruss = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyTruss = mainForm.qtyTruss + row.Cells(20).Value
+                    mainForm.weightTruss = mainForm.weightTruss + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Construction 
 
                 If row.Cells(0).Value = 5 Then
                     mainForm.priceConstr = mainForm.priceConstr + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyConstr = mainForm.qtyConstr = row.Cells(20).Value
-                    mainForm.weightConstr = mainForm.weightConstr = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyConstr = mainForm.qtyConstr + row.Cells(20).Value
+                    mainForm.weightConstr = mainForm.weightConstr + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Sound 
 
                 If row.Cells(0).Value = 6 Then
                     mainForm.priceSound = mainForm.priceSound + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtySound = mainForm.qtySound = row.Cells(20).Value
-                    mainForm.weightSound = mainForm.weightSound = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtySound = mainForm.qtySound + row.Cells(20).Value
+                    mainForm.weightSound = mainForm.weightSound + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
 
@@ -419,6 +420,12 @@ Module smetaFunc
         mainForm.weight(4) = mainForm.weightConstr
         mainForm.weight(5) = mainForm.weightSound
 
+        mainForm.price(0) = mainForm.priceLighting
+        mainForm.price(1) = mainForm.priceScreen
+        mainForm.price(2) = mainForm.priceComm
+        mainForm.price(3) = mainForm.priceTruss
+        mainForm.price(4) = mainForm.priceConstr
+        mainForm.price(5) = mainForm.priceSound
 
         Return (targetRows)
 

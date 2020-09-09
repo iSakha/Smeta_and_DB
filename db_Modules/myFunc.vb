@@ -639,7 +639,7 @@ Module myFunc
         mainForm.btn_cancel.FlatStyle = FlatStyle.Flat
     End Sub
     '===================================================================================
-    '             === unblock CDUDbuttons ===
+    '             === unblock CRUDbuttons ===
     '===================================================================================
     Sub unBlockButtons()
 
