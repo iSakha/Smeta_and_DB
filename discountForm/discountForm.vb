@@ -56,7 +56,7 @@
 
     End Sub
 
-    Private Sub txt_light_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_light_discount.TextChanged
+    Private Sub txt_light_discount_TextChanged(sender As Object, e As EventArgs)
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
                 If IsNumeric(txt_light_discount.Text) Then
@@ -65,7 +65,7 @@
                         chbx_lighting.Checked = True
                     End If
                 Else
-                        txt_light_discount.Clear()
+                    txt_light_discount.Clear()
                     txt_summary_light_discount.Clear()
                     chbx_lighting.Checked = False
                 End If
@@ -73,7 +73,7 @@
         Next
     End Sub
 
-    Private Sub txt_screen_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_screen_discount.TextChanged
+    Private Sub txt_screen_discount_TextChanged(sender As Object, e As EventArgs)
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
                 If IsNumeric(txt_screen_discount.Text) Then
@@ -90,7 +90,7 @@
         Next
     End Sub
 
-    Private Sub txt_commut_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_commut_discount.TextChanged
+    Private Sub txt_commut_discount_TextChanged(sender As Object, e As EventArgs)
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
                 If IsNumeric(txt_commut_discount.Text) Then
@@ -107,7 +107,7 @@
         Next
     End Sub
 
-    Private Sub txt_truss_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_truss_discount.TextChanged
+    Private Sub txt_truss_discount_TextChanged(sender As Object, e As EventArgs)
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
                 If IsNumeric(txt_truss_discount.Text) Then
@@ -124,7 +124,7 @@
         Next
     End Sub
 
-    Private Sub txt_constr_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_constr_discount.TextChanged
+    Private Sub txt_constr_discount_TextChanged(sender As Object, e As EventArgs)
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
                 If IsNumeric(txt_constr_discount.Text) Then
@@ -141,7 +141,7 @@
         Next
     End Sub
 
-    Private Sub txt_sound_discount_TextChanged(sender As Object, e As EventArgs) Handles txt_sound_discount.TextChanged
+    Private Sub txt_sound_discount_TextChanged(sender As Object, e As EventArgs)
         For Each form In My.Application.OpenForms
             If (form.name = "discountForm") Then
                 If IsNumeric(txt_sound_discount.Text) Then
