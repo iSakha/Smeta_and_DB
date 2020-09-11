@@ -5,6 +5,8 @@ Imports System.IO
 Public Class smetaMainForm
 
     Dim dt_Global As DataTable
+    Dim USD_val, Euro_val, rusRub_val, BYN_val As Collection
+    Dim USD_rate, Euro_rate, rusRub_rate, BYN_rate As Single
 
     '===================================================================================
     '             === Load Smeta Form  ===
@@ -53,6 +55,11 @@ Public Class smetaMainForm
         DGV_db.ClearSelection()
 
         lbl_currency.Text = "USD"
+
+        USD_rate = CSng(currencyForm.lbl_USD_rate.Text)
+        Euro_rate = CSng(currencyForm.lbl_Euro_rate.Text)
+        rusRub_rate = CSng(currencyForm.lbl_rusRub_rate.Text)
+        BYN_rate = CSng(currencyForm.lbl_BYN_rate.Text)
 
     End Sub
 
@@ -150,14 +157,27 @@ Public Class smetaMainForm
     '===================================================================================
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
 
+        USD_val = New Collection
+        Euro_val = New Collection
+        rusRub_val = New Collection
+        BYN_val = New Collection
+
         Dim targetRows = enumRows()
+
         DGV_smeta.Rows.Clear()
+
         For Each drr As DataGridViewRow In enumRows()
             Dim row As DataGridViewRow = CType(drr.Clone(), DataGridViewRow)
-            For i As Int32 = 0 To drr.Cells.Count - 1
+            For i As Integer = 0 To drr.Cells.Count - 1
                 row.Cells(i).Value = drr.Cells(i).Value
                 row.DefaultCellStyle.BackColor = SystemColors.Window
             Next
+
+            USD_val.Add(Math.Round(row.Cells(12).Value * USD_rate))
+            Euro_val.Add(Math.Round(row.Cells(12).Value * Euro_rate))
+            rusRub_val.Add(Math.Round(row.Cells(12).Value * rusRub_rate * 100))
+            BYN_val.Add(Math.Round(row.Cells(12).Value * BYN_rate))
+
             DGV_smeta.Rows.Add(row)
         Next
 
@@ -496,22 +516,34 @@ Public Class smetaMainForm
     '             === Currency select ===
     '===================================================================================
     Private Sub rbtn_usd_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_usd.CheckedChanged
-        lbl_currency.Text = "USD"
-        currencyForm.Show()
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "USD"
+            'currencyForm.Show()
+            changeCurrency(USD_val)
+        End If
     End Sub
 
     Private Sub rbtn_euro_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_euro.CheckedChanged
-        lbl_currency.Text = "Euro"
-        currencyForm.Show()
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "Euro"
+            'currencyForm.Show()
+            changeCurrency(Euro_val)
+        End If
     End Sub
 
     Private Sub rbtn_rub_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_rub.CheckedChanged
-        lbl_currency.Text = "Rub"
-        currencyForm.Show()
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "Rub"
+            'currencyForm.Show()
+            changeCurrency(rusRub_val)
+        End If
     End Sub
 
     Private Sub rbtn_byn_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_byn.CheckedChanged
-        lbl_currency.Text = "BYN"
-        currencyForm.Show()
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "BYN"
+            'currencyForm.Show()
+            changeCurrency(BYN_val)
+        End If
     End Sub
 End Class

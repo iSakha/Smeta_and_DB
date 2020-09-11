@@ -27,14 +27,14 @@ Partial Class currencyForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.lbl_rusRub_rate = New System.Windows.Forms.Label()
+        Me.lbl_Euro_rate = New System.Windows.Forms.Label()
+        Me.lbl_USD_rate = New System.Windows.Forms.Label()
+        Me.lbl_BYN_rate = New System.Windows.Forms.Label()
+        Me.txt_USD_rate = New System.Windows.Forms.TextBox()
+        Me.txt_Euro_rate = New System.Windows.Forms.TextBox()
+        Me.txt_rusRub_rate = New System.Windows.Forms.TextBox()
+        Me.txt_BYN_rate = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -99,18 +99,18 @@ Partial Class currencyForm
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.lbl_rusRub_rate, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.lbl_Euro_rate, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.lbl_USD_rate, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_currency, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label6, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.TextBox2, 2, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.TextBox3, 2, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.TextBox4, 2, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.lbl_BYN_rate, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.txt_USD_rate, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.txt_Euro_rate, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.txt_rusRub_rate, 2, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.txt_BYN_rate, 2, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.Button1, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Button2, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Button3, 3, 2)
@@ -125,81 +125,81 @@ Partial Class currencyForm
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(519, 188)
         Me.TableLayoutPanel1.TabIndex = 21
         '
-        'Label4
+        'lbl_rusRub_rate
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.SystemColors.Info
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label4.Location = New System.Drawing.Point(132, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 24)
-        Me.Label4.TabIndex = 21
-        Me.Label4.Text = "1.00"
+        Me.lbl_rusRub_rate.AutoSize = True
+        Me.lbl_rusRub_rate.BackColor = System.Drawing.SystemColors.Info
+        Me.lbl_rusRub_rate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_rusRub_rate.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_rusRub_rate.Location = New System.Drawing.Point(132, 94)
+        Me.lbl_rusRub_rate.Name = "lbl_rusRub_rate"
+        Me.lbl_rusRub_rate.Size = New System.Drawing.Size(49, 24)
+        Me.lbl_rusRub_rate.TabIndex = 24
+        Me.lbl_rusRub_rate.Text = "7.49"
         '
-        'Label5
+        'lbl_Euro_rate
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.SystemColors.Info
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label5.Location = New System.Drawing.Point(132, 47)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 24)
-        Me.Label5.TabIndex = 22
-        Me.Label5.Text = "0.84"
+        Me.lbl_Euro_rate.AutoSize = True
+        Me.lbl_Euro_rate.BackColor = System.Drawing.SystemColors.Info
+        Me.lbl_Euro_rate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_Euro_rate.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_Euro_rate.Location = New System.Drawing.Point(132, 47)
+        Me.lbl_Euro_rate.Name = "lbl_Euro_rate"
+        Me.lbl_Euro_rate.Size = New System.Drawing.Size(49, 24)
+        Me.lbl_Euro_rate.TabIndex = 22
+        Me.lbl_Euro_rate.Text = "0.84"
         '
-        'Label6
+        'lbl_USD_rate
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.SystemColors.Info
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label6.Location = New System.Drawing.Point(132, 141)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 24)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "2.60"
+        Me.lbl_USD_rate.AutoSize = True
+        Me.lbl_USD_rate.BackColor = System.Drawing.SystemColors.Info
+        Me.lbl_USD_rate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_USD_rate.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_USD_rate.Location = New System.Drawing.Point(132, 0)
+        Me.lbl_USD_rate.Name = "lbl_USD_rate"
+        Me.lbl_USD_rate.Size = New System.Drawing.Size(49, 24)
+        Me.lbl_USD_rate.TabIndex = 21
+        Me.lbl_USD_rate.Text = "1.00"
         '
-        'Label7
+        'lbl_BYN_rate
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.SystemColors.Info
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label7.Location = New System.Drawing.Point(132, 94)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 24)
-        Me.Label7.TabIndex = 24
-        Me.Label7.Text = "7.49"
+        Me.lbl_BYN_rate.AutoSize = True
+        Me.lbl_BYN_rate.BackColor = System.Drawing.SystemColors.Info
+        Me.lbl_BYN_rate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_BYN_rate.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_BYN_rate.Location = New System.Drawing.Point(132, 141)
+        Me.lbl_BYN_rate.Name = "lbl_BYN_rate"
+        Me.lbl_BYN_rate.Size = New System.Drawing.Size(49, 24)
+        Me.lbl_BYN_rate.TabIndex = 23
+        Me.lbl_BYN_rate.Text = "2.60"
         '
-        'TextBox1
+        'txt_USD_rate
         '
-        Me.TextBox1.Location = New System.Drawing.Point(261, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 25
+        Me.txt_USD_rate.Location = New System.Drawing.Point(261, 3)
+        Me.txt_USD_rate.Name = "txt_USD_rate"
+        Me.txt_USD_rate.Size = New System.Drawing.Size(100, 20)
+        Me.txt_USD_rate.TabIndex = 25
         '
-        'TextBox2
+        'txt_Euro_rate
         '
-        Me.TextBox2.Location = New System.Drawing.Point(261, 50)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 26
+        Me.txt_Euro_rate.Location = New System.Drawing.Point(261, 50)
+        Me.txt_Euro_rate.Name = "txt_Euro_rate"
+        Me.txt_Euro_rate.Size = New System.Drawing.Size(100, 20)
+        Me.txt_Euro_rate.TabIndex = 26
         '
-        'TextBox3
+        'txt_rusRub_rate
         '
-        Me.TextBox3.Location = New System.Drawing.Point(261, 97)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 27
+        Me.txt_rusRub_rate.Location = New System.Drawing.Point(261, 97)
+        Me.txt_rusRub_rate.Name = "txt_rusRub_rate"
+        Me.txt_rusRub_rate.Size = New System.Drawing.Size(100, 20)
+        Me.txt_rusRub_rate.TabIndex = 27
         '
-        'TextBox4
+        'txt_BYN_rate
         '
-        Me.TextBox4.Location = New System.Drawing.Point(261, 144)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 28
+        Me.txt_BYN_rate.Location = New System.Drawing.Point(261, 144)
+        Me.txt_BYN_rate.Name = "txt_BYN_rate"
+        Me.txt_BYN_rate.Size = New System.Drawing.Size(100, 20)
+        Me.txt_BYN_rate.TabIndex = 28
         '
         'Button1
         '
@@ -276,14 +276,14 @@ Partial Class currencyForm
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents lbl_rusRub_rate As Label
+    Friend WithEvents lbl_Euro_rate As Label
+    Friend WithEvents lbl_USD_rate As Label
+    Friend WithEvents lbl_BYN_rate As Label
+    Friend WithEvents txt_USD_rate As TextBox
+    Friend WithEvents txt_Euro_rate As TextBox
+    Friend WithEvents txt_rusRub_rate As TextBox
+    Friend WithEvents txt_BYN_rate As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button

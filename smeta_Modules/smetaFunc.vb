@@ -153,7 +153,7 @@ Module smetaFunc
     End Sub
 
     Sub format_DGV_smeta(_DGV)
-
+        Dim NRFormat As String = "### ### ##0"
         _DGV.RowHeadersVisible = False
 
         _DGV.Columns(0).Width = 30
@@ -233,6 +233,9 @@ Module smetaFunc
         _DGV.Columns(12).MinimumWidth = 60
         _DGV.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         _DGV.Columns(12).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' Price
+
+        _DGV.Columns(12).DefaultCellStyle.Format = NRFormat
+
         _DGV.Columns(13).Visible = False                                                                            ' Result
         _DGV.Columns(14).Visible = False                                                                            ' R2
         _DGV.Columns(15).Visible = False                                                                            ' R3
@@ -445,6 +448,17 @@ Module smetaFunc
 
         smetaMainForm.lbl_cat_value.Text = ""
 
+    End Sub
+
+    '===================================================================================
+    '             === changeCurrency function ===
+    '===================================================================================
+    Sub changeCurrency(_colCurrency As Collection)
+        For Each row As DataGridViewRow In smetaMainForm.DGV_smeta.Rows
+            If row.Index < smetaMainForm.DGV_smeta.Rows.Count - 1 Then
+                row.Cells(12).Value = _colCurrency(row.Index + 1)
+            End If
+        Next row
     End Sub
 
 End Module
