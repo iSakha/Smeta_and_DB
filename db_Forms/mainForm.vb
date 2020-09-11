@@ -59,6 +59,9 @@ Public Class mainForm
     Public qty(6) As Integer
     Public weight(6) As Integer
 
+    Public USD_val, Euro_val, rusRub_val, BYN_val As Collection
+    Public USD_rate, Euro_rate, rusRub_rate, BYN_rate As Single
+
     '===================================================================================
     '             === mainForm_Load ===
     '===================================================================================

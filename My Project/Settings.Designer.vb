@@ -121,6 +121,54 @@ Namespace My
                 Me("smetaDBpath") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property USD_rate() As Single
+            Get
+                Return CType(Me("USD_rate"),Single)
+            End Get
+            Set
+                Me("USD_rate") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0.84")>  _
+        Public Property Euro_rate() As Single
+            Get
+                Return CType(Me("Euro_rate"),Single)
+            End Get
+            Set
+                Me("Euro_rate") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("7.49")>  _
+        Public Property rusRub_rate() As Single
+            Get
+                Return CType(Me("rusRub_rate"),Single)
+            End Get
+            Set
+                Me("rusRub_rate") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2.6")>  _
+        Public Property BYN_rate() As Single
+            Get
+                Return CType(Me("BYN_rate"),Single)
+            End Get
+            Set
+                Me("BYN_rate") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

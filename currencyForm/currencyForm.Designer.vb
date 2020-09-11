@@ -35,11 +35,11 @@ Partial Class currencyForm
         Me.txt_Euro_rate = New System.Windows.Forms.TextBox()
         Me.txt_rusRub_rate = New System.Windows.Forms.TextBox()
         Me.txt_BYN_rate = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btn_setUSD = New System.Windows.Forms.Button()
+        Me.btn_setEuro = New System.Windows.Forms.Button()
+        Me.btn_setrusRub = New System.Windows.Forms.Button()
+        Me.btn_setBYN = New System.Windows.Forms.Button()
+        Me.btn_confirm = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -111,10 +111,10 @@ Partial Class currencyForm
         Me.TableLayoutPanel1.Controls.Add(Me.txt_Euro_rate, 2, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.txt_rusRub_rate, 2, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.txt_BYN_rate, 2, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button2, 3, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button3, 3, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button4, 3, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.btn_setUSD, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.btn_setEuro, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.btn_setrusRub, 3, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.btn_setBYN, 3, 3)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(29, 32)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
@@ -201,50 +201,50 @@ Partial Class currencyForm
         Me.txt_BYN_rate.Size = New System.Drawing.Size(100, 20)
         Me.txt_BYN_rate.TabIndex = 28
         '
-        'Button1
+        'btn_setUSD
         '
-        Me.Button1.Location = New System.Drawing.Point(390, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 29
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_setUSD.Location = New System.Drawing.Point(390, 3)
+        Me.btn_setUSD.Name = "btn_setUSD"
+        Me.btn_setUSD.Size = New System.Drawing.Size(75, 23)
+        Me.btn_setUSD.TabIndex = 29
+        Me.btn_setUSD.Text = "set USD"
+        Me.btn_setUSD.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_setEuro
         '
-        Me.Button2.Location = New System.Drawing.Point(390, 50)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 30
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_setEuro.Location = New System.Drawing.Point(390, 50)
+        Me.btn_setEuro.Name = "btn_setEuro"
+        Me.btn_setEuro.Size = New System.Drawing.Size(75, 23)
+        Me.btn_setEuro.TabIndex = 30
+        Me.btn_setEuro.Text = "set Euro"
+        Me.btn_setEuro.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_setrusRub
         '
-        Me.Button3.Location = New System.Drawing.Point(390, 97)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 31
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_setrusRub.Location = New System.Drawing.Point(390, 97)
+        Me.btn_setrusRub.Name = "btn_setrusRub"
+        Me.btn_setrusRub.Size = New System.Drawing.Size(75, 23)
+        Me.btn_setrusRub.TabIndex = 31
+        Me.btn_setrusRub.Text = "set rusRub"
+        Me.btn_setrusRub.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btn_setBYN
         '
-        Me.Button4.Location = New System.Drawing.Point(390, 144)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 32
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btn_setBYN.Location = New System.Drawing.Point(390, 144)
+        Me.btn_setBYN.Name = "btn_setBYN"
+        Me.btn_setBYN.Size = New System.Drawing.Size(75, 23)
+        Me.btn_setBYN.TabIndex = 32
+        Me.btn_setBYN.Text = "set BYN"
+        Me.btn_setBYN.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btn_confirm
         '
-        Me.Button5.Location = New System.Drawing.Point(192, 252)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 22
-        Me.Button5.Text = "Confirm"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btn_confirm.Location = New System.Drawing.Point(192, 252)
+        Me.btn_confirm.Name = "btn_confirm"
+        Me.btn_confirm.Size = New System.Drawing.Size(75, 23)
+        Me.btn_confirm.TabIndex = 22
+        Me.btn_confirm.Text = "Confirm"
+        Me.btn_confirm.UseVisualStyleBackColor = True
         '
         'Button6
         '
@@ -261,7 +261,7 @@ Partial Class currencyForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(575, 314)
         Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.btn_confirm)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "currencyForm"
         Me.Text = "currencyForm"
@@ -284,10 +284,10 @@ Partial Class currencyForm
     Friend WithEvents txt_Euro_rate As TextBox
     Friend WithEvents txt_rusRub_rate As TextBox
     Friend WithEvents txt_BYN_rate As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btn_setUSD As Button
+    Friend WithEvents btn_setEuro As Button
+    Friend WithEvents btn_setrusRub As Button
+    Friend WithEvents btn_setBYN As Button
+    Friend WithEvents btn_confirm As Button
     Friend WithEvents Button6 As Button
 End Class
