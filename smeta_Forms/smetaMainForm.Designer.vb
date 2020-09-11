@@ -37,6 +37,7 @@ Partial Class smetaMainForm
         Me.btn_screen_smeta = New System.Windows.Forms.Button()
         Me.btn_lighting_smeta = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btn_show_curRates = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.rbtn_byn = New System.Windows.Forms.RadioButton()
@@ -89,7 +90,6 @@ Partial Class smetaMainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btn_show_curRates = New System.Windows.Forms.Button()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -280,6 +280,8 @@ Partial Class smetaMainForm
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.btn_show_curRates)
+        Me.TabPage2.Controls.Add(Me.txt_price)
+        Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.btn_discount)
         Me.TabPage2.Controls.Add(Me.btn_writeToExcel)
@@ -302,6 +304,15 @@ Partial Class smetaMainForm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Smeta"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btn_show_curRates
+        '
+        Me.btn_show_curRates.Location = New System.Drawing.Point(7, 385)
+        Me.btn_show_curRates.Name = "btn_show_curRates"
+        Me.btn_show_curRates.Size = New System.Drawing.Size(156, 30)
+        Me.btn_show_curRates.TabIndex = 21
+        Me.btn_show_curRates.Text = "Set currency rate"
+        Me.btn_show_curRates.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -660,7 +671,7 @@ Partial Class smetaMainForm
         Me.txt_price.BackColor = System.Drawing.SystemColors.Info
         Me.txt_price.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txt_price.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txt_price.Location = New System.Drawing.Point(533, 667)
+        Me.txt_price.Location = New System.Drawing.Point(13, 446)
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(100, 29)
         Me.txt_price.TabIndex = 7
@@ -671,7 +682,7 @@ Partial Class smetaMainForm
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label3.Location = New System.Drawing.Point(529, 644)
+        Me.Label3.Location = New System.Drawing.Point(9, 423)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 20)
         Me.Label3.TabIndex = 6
@@ -739,23 +750,12 @@ Partial Class smetaMainForm
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Мероприятие"
         '
-        'btn_show_curRates
-        '
-        Me.btn_show_curRates.Location = New System.Drawing.Point(7, 385)
-        Me.btn_show_curRates.Name = "btn_show_curRates"
-        Me.btn_show_curRates.Size = New System.Drawing.Size(156, 30)
-        Me.btn_show_curRates.TabIndex = 21
-        Me.btn_show_curRates.Text = "Set currency rate"
-        Me.btn_show_curRates.UseVisualStyleBackColor = True
-        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1068, 736)
         Me.Controls.Add(Me.txt_event)
-        Me.Controls.Add(Me.txt_price)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.tbCtrl_smeta)
         Me.Controls.Add(Me.txt_weight)

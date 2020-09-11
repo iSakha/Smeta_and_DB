@@ -42,8 +42,21 @@
         My.Settings.rusRub_rate = mainForm.rusRub_rate
         My.Settings.BYN_rate = mainForm.BYN_rate
 
-        smetaMainForm.btn_filter.PerformClick()
+        mainForm.USD_val = New Collection
+        mainForm.Euro_val = New Collection
+        mainForm.rusRub_val = New Collection
+        mainForm.BYN_val = New Collection
 
+        For Each row As DataGridViewRow In targetRows
+
+            mainForm.USD_val.Add(row.Cells(12).Value * mainForm.USD_rate)
+            mainForm.Euro_val.Add(row.Cells(12).Value * mainForm.Euro_rate)
+            mainForm.rusRub_val.Add(row.Cells(12).Value * mainForm.rusRub_rate * 100)
+            mainForm.BYN_val.Add(row.Cells(12).Value * mainForm.BYN_rate)
+
+        Next row
+
+        smetaMainForm.rbtn_usd.Checked = True
         changeCurrency(mainForm.USD_val)
 
         Me.Close()

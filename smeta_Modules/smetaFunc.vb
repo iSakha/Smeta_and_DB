@@ -2,6 +2,8 @@
 Imports OfficeOpenXml.Table
 Imports System.IO
 Module smetaFunc
+
+    Public targetRows As List(Of DataGridViewRow)
     Function createGlobal_dt()
 
         Dim dt As DataTable
@@ -87,8 +89,6 @@ Module smetaFunc
         dt.Columns(18).DataType = System.Type.GetType("System.Int32")               ' R6
         dt.Columns(19).DataType = System.Type.GetType("System.Int32")               ' R7
         dt.Columns(20).DataType = System.Type.GetType("System.Int32")               ' R8
-
-
 
 
         dt.Columns(0).ColumnName = "Dep"
@@ -297,7 +297,7 @@ Module smetaFunc
     '===================================================================================
     Function enumRows()
 
-        Dim targetRows = New List(Of DataGridViewRow)
+        targetRows = New List(Of DataGridViewRow)
 
         Dim row As DataGridViewRow
         Dim totalPwr As Integer = 0
@@ -331,8 +331,6 @@ Module smetaFunc
 
                 row.DefaultCellStyle.BackColor = Color.Yellow
                 targetRows.Add(row)
-
-
 
                 ' Calculate department price,quantity and weight
                 '---------------------------------------------------------------
@@ -454,11 +452,14 @@ Module smetaFunc
     '             === changeCurrency function ===
     '===================================================================================
     Sub changeCurrency(_colCurrency As Collection)
+        Dim totalPrice As Integer = 0
         For Each row As DataGridViewRow In smetaMainForm.DGV_smeta.Rows
             If row.Index < smetaMainForm.DGV_smeta.Rows.Count - 1 Then
                 row.Cells(12).Value = _colCurrency(row.Index + 1)
+                totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
             End If
         Next row
+        smetaMainForm.txt_price.Text = totalPrice
     End Sub
 
 End Module

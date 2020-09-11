@@ -182,6 +182,7 @@ Public Class smetaMainForm
 
         tbCtrl_smeta.SelectedIndex = 1
         DGV_smeta.ClearSelection()
+        rbtn_usd.Checked = True
 
     End Sub
 
