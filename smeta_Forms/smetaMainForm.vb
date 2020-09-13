@@ -136,7 +136,7 @@ Public Class smetaMainForm
     Private Sub DGV_smeta_Scroll(sender As Object, e As ScrollEventArgs) _
      Handles DGV_db.Scroll
 
-        Console.WriteLine(DGV_db.FirstDisplayedScrollingRowIndex)
+        'Console.WriteLine(DGV_db.FirstDisplayedScrollingRowIndex)
 
     End Sub
     '===================================================================================
@@ -520,6 +520,7 @@ Public Class smetaMainForm
     Private Sub rbtn_usd_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_usd.CheckedChanged
         If DGV_smeta.Rows.Count > 1 Then
             lbl_currency.Text = "USD"
+            mainForm.selectedCurrency = "USD"
             changeCurrency(mainForm.USD_val)
         End If
     End Sub
@@ -527,6 +528,7 @@ Public Class smetaMainForm
     Private Sub rbtn_euro_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_euro.CheckedChanged
         If DGV_smeta.Rows.Count > 1 Then
             lbl_currency.Text = "Euro"
+            mainForm.selectedCurrency = "Euro"
             changeCurrency(mainForm.Euro_val)
         End If
     End Sub
@@ -534,6 +536,7 @@ Public Class smetaMainForm
     Private Sub rbtn_rub_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_rub.CheckedChanged
         If DGV_smeta.Rows.Count > 1 Then
             lbl_currency.Text = "Rub"
+            mainForm.selectedCurrency = "rusRub"
             changeCurrency(mainForm.rusRub_val)
         End If
     End Sub
@@ -541,6 +544,7 @@ Public Class smetaMainForm
     Private Sub rbtn_byn_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_byn.CheckedChanged
         If DGV_smeta.Rows.Count > 1 Then
             lbl_currency.Text = "BYN"
+            mainForm.selectedCurrency = "BYN"
             changeCurrency(mainForm.BYN_val)
         End If
     End Sub

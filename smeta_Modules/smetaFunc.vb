@@ -398,14 +398,21 @@ Module smetaFunc
 
                 totalWeight = totalWeight + (row.Cells(10).Value) * (row.Cells(20).Value)
 
-                smetaMainForm.txt_pwr.Text = totalPwr
-                smetaMainForm.txt_price.Text = totalPrice
-                smetaMainForm.txt_weight.Text = totalWeight
+
             Else
                 row.DefaultCellStyle.BackColor = SystemColors.Window
             End If
 
         Next row
+
+        smetaMainForm.txt_pwr.Text = totalPwr
+        smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
+            mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+        smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
+            mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+        smetaMainForm.txt_weight.Text = totalWeight
 
         mainForm.qty(0) = mainForm.qtyLighting
         mainForm.qty(1) = mainForm.qtyScreen
@@ -452,14 +459,79 @@ Module smetaFunc
     '             === changeCurrency function ===
     '===================================================================================
     Sub changeCurrency(_colCurrency As Collection)
+        mainForm.priceLighting = 0
+        mainForm.priceScreen = 0
+        mainForm.priceComm = 0
+        mainForm.priceTruss = 0
+        mainForm.priceConstr = 0
+        mainForm.priceSound = 0
+
         Dim totalPrice As Integer = 0
+
         For Each row As DataGridViewRow In smetaMainForm.DGV_smeta.Rows
             If row.Index < smetaMainForm.DGV_smeta.Rows.Count - 1 Then
+
                 row.Cells(12).Value = _colCurrency(row.Index + 1)
+
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceLighting = mainForm.priceLighting + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 2 Then
+                    mainForm.priceScreen = mainForm.priceScreen + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 3 Then
+                    mainForm.priceComm = mainForm.priceComm + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 4 Then
+                    mainForm.priceTruss = mainForm.priceTruss + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 5 Then
+                    mainForm.priceConstr = mainForm.priceConstr + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 6 Then
+                    mainForm.priceSound = mainForm.priceSound + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+
                 totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
             End If
         Next row
         smetaMainForm.txt_price.Text = totalPrice
+
+        For Each form In My.Application.OpenForms
+            If (form.name = "discountForm") Then
+
+                discountForm.txt_summary_light.Text = mainForm.priceLighting
+                discountForm.txt_summary_screen.Text = mainForm.priceScreen
+                discountForm.txt_summary_comm.Text = mainForm.priceComm
+                discountForm.txt_summary_truss.Text = mainForm.priceTruss
+                discountForm.txt_summary_constr.Text = mainForm.priceConstr
+                discountForm.txt_summary_sound.Text = mainForm.priceSound
+
+                discountForm.txt_summary_light_discount.Text = Math.Round(mainForm.priceLighting - mainForm.priceLighting * CInt(discountForm.txt_light_discount.Text) / 100)
+                discountForm.txt_summary_screen_discount.Text = Math.Round(mainForm.priceScreen - mainForm.priceScreen * CInt(discountForm.txt_screen_discount.Text) / 100)
+                discountForm.txt_summary_comm_discount.Text = Math.Round(mainForm.priceComm - mainForm.priceComm * CInt(discountForm.txt_commut_discount.Text) / 100)
+                discountForm.txt_summary_truss_discount.Text = Math.Round(mainForm.priceTruss - mainForm.priceTruss * CInt(discountForm.txt_truss_discount.Text) / 100)
+                discountForm.txt_summary_constr_discount.Text = Math.Round(mainForm.priceConstr - mainForm.priceConstr * CInt(discountForm.txt_constr_discount.Text) / 100)
+                discountForm.txt_summary_sound_discount.Text = Math.Round(mainForm.priceSound - mainForm.priceSound * CInt(discountForm.txt_sound_discount.Text) / 100)
+
+                discountForm.lbl_totalPrice.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
+                mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+                discountForm.lbl_totalPrice_discount.Text = CInt(discountForm.txt_summary_light_discount.Text) + CInt(discountForm.txt_summary_screen_discount.Text) +
+                    CInt(discountForm.txt_summary_comm_discount.Text) + CInt(discountForm.txt_summary_truss_discount.Text) +
+                    CInt(discountForm.txt_summary_constr_discount.Text) + CInt(discountForm.txt_summary_sound_discount.Text)
+
+                discountForm.lbl_currency.Text = mainForm.selectedCurrency
+
+            End If
+        Next
+
     End Sub
 
 End Module

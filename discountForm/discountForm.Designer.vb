@@ -27,46 +27,52 @@ Partial Class discountForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txt_summary_light_discount = New System.Windows.Forms.TextBox()
         Me.txt_summary_light = New System.Windows.Forms.TextBox()
         Me.txt_light_discount = New System.Windows.Forms.TextBox()
         Me.chbx_lighting = New System.Windows.Forms.CheckBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txt_summary_screen_discount = New System.Windows.Forms.TextBox()
         Me.txt_summary_screen = New System.Windows.Forms.TextBox()
         Me.txt_screen_discount = New System.Windows.Forms.TextBox()
         Me.chbx_screen = New System.Windows.Forms.CheckBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txt_summary_comm_discount = New System.Windows.Forms.TextBox()
         Me.txt_summary_comm = New System.Windows.Forms.TextBox()
         Me.txt_commut_discount = New System.Windows.Forms.TextBox()
         Me.chbx_commutation = New System.Windows.Forms.CheckBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txt_summary_truss_discount = New System.Windows.Forms.TextBox()
         Me.txt_summary_truss = New System.Windows.Forms.TextBox()
         Me.txt_truss_discount = New System.Windows.Forms.TextBox()
         Me.chbx_truss = New System.Windows.Forms.CheckBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.txt_summary_constr_discount = New System.Windows.Forms.TextBox()
         Me.txt_summary_constr = New System.Windows.Forms.TextBox()
         Me.txt_constr_discount = New System.Windows.Forms.TextBox()
         Me.chbx_constr = New System.Windows.Forms.CheckBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.txt_summary_sound_discount = New System.Windows.Forms.TextBox()
         Me.txt_summary_sound = New System.Windows.Forms.TextBox()
         Me.txt_sound_discount = New System.Windows.Forms.TextBox()
         Me.chbx_sound = New System.Windows.Forms.CheckBox()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.lbl_totalPrice_discount = New System.Windows.Forms.Label()
+        Me.lbl_totalPrice = New System.Windows.Forms.Label()
+        Me.lbl_cat_value = New System.Windows.Forms.Label()
+        Me.lbl_currency = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_cancel_discount
         '
-        Me.btn_cancel_discount.Location = New System.Drawing.Point(240, 349)
+        Me.btn_cancel_discount.Location = New System.Drawing.Point(278, 446)
         Me.btn_cancel_discount.Name = "btn_cancel_discount"
         Me.btn_cancel_discount.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancel_discount.TabIndex = 21
@@ -75,7 +81,7 @@ Partial Class discountForm
         '
         'btn_discount_OK
         '
-        Me.btn_discount_OK.Location = New System.Drawing.Point(142, 350)
+        Me.btn_discount_OK.Location = New System.Drawing.Point(180, 447)
         Me.btn_discount_OK.Name = "btn_discount_OK"
         Me.btn_discount_OK.Size = New System.Drawing.Size(75, 23)
         Me.btn_discount_OK.TabIndex = 20
@@ -86,7 +92,7 @@ Partial Class discountForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.Location = New System.Drawing.Point(321, 37)
+        Me.Label1.Location = New System.Drawing.Point(314, 372)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 23
@@ -96,7 +102,8 @@ Partial Class discountForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.Location = New System.Drawing.Point(404, 37)
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(404, 372)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 13)
         Me.Label2.TabIndex = 23
@@ -113,30 +120,6 @@ Partial Class discountForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(502, 38)
         Me.Panel1.TabIndex = 24
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.Panel2.Controls.Add(Me.txt_summary_screen_discount)
-        Me.Panel2.Controls.Add(Me.txt_summary_screen)
-        Me.Panel2.Controls.Add(Me.txt_screen_discount)
-        Me.Panel2.Controls.Add(Me.chbx_screen)
-        Me.Panel2.Location = New System.Drawing.Point(12, 97)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(502, 38)
-        Me.Panel2.TabIndex = 25
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.MistyRose
-        Me.Panel3.Controls.Add(Me.txt_summary_comm_discount)
-        Me.Panel3.Controls.Add(Me.txt_summary_comm)
-        Me.Panel3.Controls.Add(Me.txt_commut_discount)
-        Me.Panel3.Controls.Add(Me.chbx_commutation)
-        Me.Panel3.Location = New System.Drawing.Point(12, 141)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(502, 38)
-        Me.Panel3.TabIndex = 26
         '
         'txt_summary_light_discount
         '
@@ -175,6 +158,18 @@ Partial Class discountForm
         Me.chbx_lighting.Text = "Lighting discount,%"
         Me.chbx_lighting.UseVisualStyleBackColor = True
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Panel2.Controls.Add(Me.txt_summary_screen_discount)
+        Me.Panel2.Controls.Add(Me.txt_summary_screen)
+        Me.Panel2.Controls.Add(Me.txt_screen_discount)
+        Me.Panel2.Controls.Add(Me.chbx_screen)
+        Me.Panel2.Location = New System.Drawing.Point(12, 97)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(502, 38)
+        Me.Panel2.TabIndex = 25
+        '
         'txt_summary_screen_discount
         '
         Me.txt_summary_screen_discount.Location = New System.Drawing.Point(402, 9)
@@ -212,17 +207,17 @@ Partial Class discountForm
         Me.chbx_screen.Text = "Screen discount,%"
         Me.chbx_screen.UseVisualStyleBackColor = True
         '
-        'Panel4
+        'Panel3
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Honeydew
-        Me.Panel4.Controls.Add(Me.txt_summary_truss_discount)
-        Me.Panel4.Controls.Add(Me.txt_summary_truss)
-        Me.Panel4.Controls.Add(Me.txt_truss_discount)
-        Me.Panel4.Controls.Add(Me.chbx_truss)
-        Me.Panel4.Location = New System.Drawing.Point(12, 188)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(502, 38)
-        Me.Panel4.TabIndex = 27
+        Me.Panel3.BackColor = System.Drawing.Color.MistyRose
+        Me.Panel3.Controls.Add(Me.txt_summary_comm_discount)
+        Me.Panel3.Controls.Add(Me.txt_summary_comm)
+        Me.Panel3.Controls.Add(Me.txt_commut_discount)
+        Me.Panel3.Controls.Add(Me.chbx_commutation)
+        Me.Panel3.Location = New System.Drawing.Point(12, 141)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(502, 38)
+        Me.Panel3.TabIndex = 26
         '
         'txt_summary_comm_discount
         '
@@ -261,17 +256,17 @@ Partial Class discountForm
         Me.chbx_commutation.Text = "Commutation discount,%"
         Me.chbx_commutation.UseVisualStyleBackColor = True
         '
-        'Panel5
+        'Panel4
         '
-        Me.Panel5.BackColor = System.Drawing.Color.LightCyan
-        Me.Panel5.Controls.Add(Me.txt_summary_constr_discount)
-        Me.Panel5.Controls.Add(Me.txt_summary_constr)
-        Me.Panel5.Controls.Add(Me.txt_constr_discount)
-        Me.Panel5.Controls.Add(Me.chbx_constr)
-        Me.Panel5.Location = New System.Drawing.Point(12, 232)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(502, 38)
-        Me.Panel5.TabIndex = 28
+        Me.Panel4.BackColor = System.Drawing.Color.Honeydew
+        Me.Panel4.Controls.Add(Me.txt_summary_truss_discount)
+        Me.Panel4.Controls.Add(Me.txt_summary_truss)
+        Me.Panel4.Controls.Add(Me.txt_truss_discount)
+        Me.Panel4.Controls.Add(Me.chbx_truss)
+        Me.Panel4.Location = New System.Drawing.Point(12, 188)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(502, 38)
+        Me.Panel4.TabIndex = 27
         '
         'txt_summary_truss_discount
         '
@@ -310,17 +305,17 @@ Partial Class discountForm
         Me.chbx_truss.Text = "Truss and motors discount,%"
         Me.chbx_truss.UseVisualStyleBackColor = True
         '
-        'Panel6
+        'Panel5
         '
-        Me.Panel6.BackColor = System.Drawing.Color.Thistle
-        Me.Panel6.Controls.Add(Me.txt_summary_sound_discount)
-        Me.Panel6.Controls.Add(Me.txt_summary_sound)
-        Me.Panel6.Controls.Add(Me.txt_sound_discount)
-        Me.Panel6.Controls.Add(Me.chbx_sound)
-        Me.Panel6.Location = New System.Drawing.Point(12, 276)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(502, 38)
-        Me.Panel6.TabIndex = 29
+        Me.Panel5.BackColor = System.Drawing.Color.LightCyan
+        Me.Panel5.Controls.Add(Me.txt_summary_constr_discount)
+        Me.Panel5.Controls.Add(Me.txt_summary_constr)
+        Me.Panel5.Controls.Add(Me.txt_constr_discount)
+        Me.Panel5.Controls.Add(Me.chbx_constr)
+        Me.Panel5.Location = New System.Drawing.Point(12, 232)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(502, 38)
+        Me.Panel5.TabIndex = 28
         '
         'txt_summary_constr_discount
         '
@@ -359,6 +354,18 @@ Partial Class discountForm
         Me.chbx_constr.Text = "Construction discount,%"
         Me.chbx_constr.UseVisualStyleBackColor = True
         '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Thistle
+        Me.Panel6.Controls.Add(Me.txt_summary_sound_discount)
+        Me.Panel6.Controls.Add(Me.txt_summary_sound)
+        Me.Panel6.Controls.Add(Me.txt_sound_discount)
+        Me.Panel6.Controls.Add(Me.chbx_sound)
+        Me.Panel6.Location = New System.Drawing.Point(12, 276)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(502, 38)
+        Me.Panel6.TabIndex = 29
+        '
         'txt_summary_sound_discount
         '
         Me.txt_summary_sound_discount.Location = New System.Drawing.Point(402, 8)
@@ -396,11 +403,71 @@ Partial Class discountForm
         Me.chbx_sound.Text = "Sound"
         Me.chbx_sound.UseVisualStyleBackColor = True
         '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.lbl_totalPrice_discount)
+        Me.Panel7.Controls.Add(Me.lbl_totalPrice)
+        Me.Panel7.Controls.Add(Me.lbl_cat_value)
+        Me.Panel7.Location = New System.Drawing.Point(12, 321)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(502, 38)
+        Me.Panel7.TabIndex = 30
+        '
+        'lbl_totalPrice_discount
+        '
+        Me.lbl_totalPrice_discount.AutoSize = True
+        Me.lbl_totalPrice_discount.BackColor = System.Drawing.Color.OldLace
+        Me.lbl_totalPrice_discount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_totalPrice_discount.ForeColor = System.Drawing.Color.Red
+        Me.lbl_totalPrice_discount.Location = New System.Drawing.Point(412, 9)
+        Me.lbl_totalPrice_discount.Name = "lbl_totalPrice_discount"
+        Me.lbl_totalPrice_discount.Size = New System.Drawing.Size(18, 20)
+        Me.lbl_totalPrice_discount.TabIndex = 12
+        Me.lbl_totalPrice_discount.Text = "0"
+        '
+        'lbl_totalPrice
+        '
+        Me.lbl_totalPrice.AutoSize = True
+        Me.lbl_totalPrice.BackColor = System.Drawing.Color.OldLace
+        Me.lbl_totalPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_totalPrice.ForeColor = System.Drawing.Color.Black
+        Me.lbl_totalPrice.Location = New System.Drawing.Point(297, 9)
+        Me.lbl_totalPrice.Name = "lbl_totalPrice"
+        Me.lbl_totalPrice.Size = New System.Drawing.Size(18, 20)
+        Me.lbl_totalPrice.TabIndex = 11
+        Me.lbl_totalPrice.Text = "0"
+        '
+        'lbl_cat_value
+        '
+        Me.lbl_cat_value.AutoSize = True
+        Me.lbl_cat_value.BackColor = System.Drawing.Color.OldLace
+        Me.lbl_cat_value.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_cat_value.ForeColor = System.Drawing.Color.Black
+        Me.lbl_cat_value.Location = New System.Drawing.Point(8, 9)
+        Me.lbl_cat_value.Name = "lbl_cat_value"
+        Me.lbl_cat_value.Size = New System.Drawing.Size(44, 20)
+        Me.lbl_cat_value.TabIndex = 10
+        Me.lbl_cat_value.Text = "Total"
+        '
+        'lbl_currency
+        '
+        Me.lbl_currency.AutoSize = True
+        Me.lbl_currency.BackColor = System.Drawing.Color.OldLace
+        Me.lbl_currency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_currency.ForeColor = System.Drawing.Color.Black
+        Me.lbl_currency.Location = New System.Drawing.Point(20, 367)
+        Me.lbl_currency.Name = "lbl_currency"
+        Me.lbl_currency.Size = New System.Drawing.Size(44, 20)
+        Me.lbl_currency.TabIndex = 31
+        Me.lbl_currency.Text = "USD"
+        '
         'discountForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(533, 401)
+        Me.ClientSize = New System.Drawing.Size(533, 490)
+        Me.Controls.Add(Me.lbl_currency)
+        Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -425,6 +492,8 @@ Partial Class discountForm
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -464,4 +533,9 @@ Partial Class discountForm
     Friend WithEvents txt_summary_sound As TextBox
     Friend WithEvents txt_sound_discount As TextBox
     Friend WithEvents chbx_sound As CheckBox
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents lbl_totalPrice_discount As Label
+    Friend WithEvents lbl_totalPrice As Label
+    Friend WithEvents lbl_cat_value As Label
+    Friend WithEvents lbl_currency As Label
 End Class

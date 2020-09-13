@@ -47,12 +47,14 @@ Public Class mainForm
     Public discountValue(6) As Integer
 
     Public priceLighting, priceScreen, priceComm, priceTruss, priceConstr, priceSound As Integer
+
+    'Public priceLighting_USD, priceScreen_USD, priceComm_USD, priceTruss_USD, priceConstr_USD, priceSound_USD As Integer
+    'Public priceLighting_Euro, priceScreen_Euro, priceComm_Euro, priceTruss_Euro, priceConstr_Euro, priceSound_Euro As Integer
+    'Public priceLighting_rusRub, priceScreen_rusRub, priceComm_rusRub, priceTruss_rusRub, priceConstr_rusRub, priceSound_rusRub As Integer
+    'Public priceLighting_BYN, priceScreen_BYN, priceComm_BYN, priceTruss_BYN, priceConstr_BYN, priceSound_BYN As Integer
+
     Public qtyLighting, qtyScreen, qtyComm, qtyTruss, qtyConstr, qtySound As Integer
     Public weightLighting, weightScreen, weightComm, weightTruss, weightConstr, weightSound As Integer
-
-    Public discountPriceLighting, discountPriceScreen, discountPriceComm, discountPriceTruss _
-        , discountPriceConstr, discountPriceSound As Integer
-
 
     Public price(6) As Integer
     Public discountPrice(6) As Integer
@@ -61,6 +63,8 @@ Public Class mainForm
 
     Public USD_val, Euro_val, rusRub_val, BYN_val As Collection
     Public USD_rate, Euro_rate, rusRub_rate, BYN_rate As Single
+
+    Public selectedCurrency As String = "USD"
 
     '===================================================================================
     '             === mainForm_Load ===
