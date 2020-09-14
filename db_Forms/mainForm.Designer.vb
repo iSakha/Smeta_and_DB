@@ -189,7 +189,6 @@ Partial Class mainForm
         Me.btn_test.TabIndex = 3
         Me.btn_test.Text = "Test"
         Me.btn_test.UseVisualStyleBackColor = True
-        Me.btn_test.Visible = False
         '
         'GroupBox3
         '
@@ -693,7 +692,7 @@ Partial Class mainForm
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomizeToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.CreateSmetaToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ToolsToolStripMenuItem.Text = "&Tools"
         '
         'CustomizeToolStripMenuItem
@@ -761,7 +760,7 @@ Partial Class mainForm
         '
         Me.item_lighting.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_movHeads, Me.item_strobes, Me.item_blinders, Me.item_arch, Me.item_LED, Me.item_smoke, Me.item_consoles, Me.item_intercom})
         Me.item_lighting.Name = "item_lighting"
-        Me.item_lighting.Size = New System.Drawing.Size(175, 22)
+        Me.item_lighting.Size = New System.Drawing.Size(176, 22)
         Me.item_lighting.Text = "Lighting"
         '
         'item_movHeads
@@ -816,7 +815,7 @@ Partial Class mainForm
         '
         Me.item_screen.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_modules, Me.item_servers, Me.item_controllers1, Me.item_controllers2, Me.item_projectors, Me.item_scr_construction, Me.item_lightDesks, Me.item_cameras})
         Me.item_screen.Name = "item_screen"
-        Me.item_screen.Size = New System.Drawing.Size(175, 22)
+        Me.item_screen.Size = New System.Drawing.Size(176, 22)
         Me.item_screen.Text = "Screen"
         '
         'item_modules
@@ -871,7 +870,7 @@ Partial Class mainForm
         '
         Me.item_commutation.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_pwrdistr, Me.item_comm, Me.item_pwrcomm, Me.item_rest})
         Me.item_commutation.Name = "item_commutation"
-        Me.item_commutation.Size = New System.Drawing.Size(175, 22)
+        Me.item_commutation.Size = New System.Drawing.Size(176, 22)
         Me.item_commutation.Text = "Commutation"
         '
         'item_pwrdistr
@@ -902,7 +901,7 @@ Partial Class mainForm
         '
         Me.item_truss_and_motors.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_truss30x30, Me.item_truss40x40, Me.item_truss50x60, Me.item_motors, Me.item_rigging, Me.item_diff, Me.item_completeConstr, Me.item_stagelifts})
         Me.item_truss_and_motors.Name = "item_truss_and_motors"
-        Me.item_truss_and_motors.Size = New System.Drawing.Size(175, 22)
+        Me.item_truss_and_motors.Size = New System.Drawing.Size(176, 22)
         Me.item_truss_and_motors.Text = "Trusses and motors"
         '
         'item_truss30x30
@@ -957,7 +956,7 @@ Partial Class mainForm
         '
         Me.item_construction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_stageModules, Me.item_scaffold_J001, Me.item_scaffold_J004, Me.item_scaffold_steps, Me.item_barricades, Me.item_details})
         Me.item_construction.Name = "item_construction"
-        Me.item_construction.Size = New System.Drawing.Size(175, 22)
+        Me.item_construction.Size = New System.Drawing.Size(176, 22)
         Me.item_construction.Text = "Construction"
         '
         'item_stageModules
@@ -1000,7 +999,7 @@ Partial Class mainForm
         '
         Me.item_sound.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_speakers, Me.item_ampracks, Me.item_monitors, Me.item_mixdesks, Me.item_dj_stage})
         Me.item_sound.Name = "item_sound"
-        Me.item_sound.Size = New System.Drawing.Size(175, 22)
+        Me.item_sound.Size = New System.Drawing.Size(176, 22)
         Me.item_sound.Text = "Sound"
         '
         'item_speakers

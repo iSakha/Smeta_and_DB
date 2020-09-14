@@ -38,6 +38,8 @@ Partial Class smetaMainForm
         Me.btn_lighting_smeta = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.btn_show_curRates = New System.Windows.Forms.Button()
+        Me.txt_price = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.rbtn_byn = New System.Windows.Forms.RadioButton()
@@ -82,14 +84,44 @@ Partial Class smetaMainForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmb_eventLocation = New System.Windows.Forms.ComboBox()
-        Me.txt_price = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_weight = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_pwr = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_pers = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btn_advSmeta = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_belimlight = New System.Windows.Forms.Button()
+        Me.btn_prlighting = New System.Windows.Forms.Button()
+        Me.btn_blackout = New System.Windows.Forms.Button()
+        Me.btn_vision = New System.Windows.Forms.Button()
+        Me.btn_stage = New System.Windows.Forms.Button()
+        Me.btn_clr = New System.Windows.Forms.Button()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -97,6 +129,8 @@ Partial Class smetaMainForm
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGV_smeta, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DGV_db
@@ -116,6 +150,8 @@ Partial Class smetaMainForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbCtrl_smeta.Controls.Add(Me.TabPage1)
         Me.tbCtrl_smeta.Controls.Add(Me.TabPage2)
+        Me.tbCtrl_smeta.Controls.Add(Me.TabPage3)
+        Me.tbCtrl_smeta.Controls.Add(Me.TabPage4)
         Me.tbCtrl_smeta.Location = New System.Drawing.Point(0, 0)
         Me.tbCtrl_smeta.Name = "tbCtrl_smeta"
         Me.tbCtrl_smeta.SelectedIndex = 0
@@ -283,6 +319,7 @@ Partial Class smetaMainForm
         Me.TabPage2.Controls.Add(Me.txt_price)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
+        Me.TabPage2.Controls.Add(Me.btn_pers)
         Me.TabPage2.Controls.Add(Me.btn_discount)
         Me.TabPage2.Controls.Add(Me.btn_writeToExcel)
         Me.TabPage2.Controls.Add(Me.Label9)
@@ -313,6 +350,28 @@ Partial Class smetaMainForm
         Me.btn_show_curRates.TabIndex = 21
         Me.btn_show_curRates.Text = "Set currency rate"
         Me.btn_show_curRates.UseVisualStyleBackColor = True
+        '
+        'txt_price
+        '
+        Me.txt_price.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_price.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txt_price.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txt_price.Location = New System.Drawing.Point(13, 446)
+        Me.txt_price.Name = "txt_price"
+        Me.txt_price.Size = New System.Drawing.Size(100, 29)
+        Me.txt_price.TabIndex = 7
+        Me.txt_price.Text = "123"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label3.Location = New System.Drawing.Point(9, 423)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 20)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Total price"
         '
         'GroupBox1
         '
@@ -417,7 +476,7 @@ Partial Class smetaMainForm
         '
         'btn_discount
         '
-        Me.btn_discount.Location = New System.Drawing.Point(8, 519)
+        Me.btn_discount.Location = New System.Drawing.Point(8, 518)
         Me.btn_discount.Name = "btn_discount"
         Me.btn_discount.Size = New System.Drawing.Size(156, 30)
         Me.btn_discount.TabIndex = 16
@@ -426,7 +485,7 @@ Partial Class smetaMainForm
         '
         'btn_writeToExcel
         '
-        Me.btn_writeToExcel.Location = New System.Drawing.Point(8, 549)
+        Me.btn_writeToExcel.Location = New System.Drawing.Point(8, 548)
         Me.btn_writeToExcel.Name = "btn_writeToExcel"
         Me.btn_writeToExcel.Size = New System.Drawing.Size(156, 30)
         Me.btn_writeToExcel.TabIndex = 16
@@ -489,7 +548,7 @@ Partial Class smetaMainForm
         '
         'btn_clr_filter
         '
-        Me.btn_clr_filter.Location = New System.Drawing.Point(8, 579)
+        Me.btn_clr_filter.Location = New System.Drawing.Point(8, 578)
         Me.btn_clr_filter.Name = "btn_clr_filter"
         Me.btn_clr_filter.Size = New System.Drawing.Size(156, 30)
         Me.btn_clr_filter.TabIndex = 9
@@ -666,28 +725,6 @@ Partial Class smetaMainForm
         Me.cmb_eventLocation.Size = New System.Drawing.Size(165, 21)
         Me.cmb_eventLocation.TabIndex = 8
         '
-        'txt_price
-        '
-        Me.txt_price.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_price.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_price.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txt_price.Location = New System.Drawing.Point(13, 446)
-        Me.txt_price.Name = "txt_price"
-        Me.txt_price.Size = New System.Drawing.Size(100, 29)
-        Me.txt_price.TabIndex = 7
-        Me.txt_price.Text = "123"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label3.Location = New System.Drawing.Point(9, 423)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 20)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Total price"
-        '
         'txt_weight
         '
         Me.txt_weight.BackColor = System.Drawing.SystemColors.Info
@@ -750,11 +787,253 @@ Partial Class smetaMainForm
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Мероприятие"
         '
+        'btn_pers
+        '
+        Me.btn_pers.Location = New System.Drawing.Point(8, 488)
+        Me.btn_pers.Name = "btn_pers"
+        Me.btn_pers.Size = New System.Drawing.Size(156, 30)
+        Me.btn_pers.TabIndex = 16
+        Me.btn_pers.Text = "Personnel"
+        Me.btn_pers.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Pers"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.btn_clr)
+        Me.TabPage4.Controls.Add(Me.btn_stage)
+        Me.TabPage4.Controls.Add(Me.btn_vision)
+        Me.TabPage4.Controls.Add(Me.btn_blackout)
+        Me.TabPage4.Controls.Add(Me.btn_prlighting)
+        Me.TabPage4.Controls.Add(Me.btn_belimlight)
+        Me.TabPage4.Controls.Add(Me.DataGridView1)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Advanced"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'btn_advSmeta
+        '
+        Me.btn_advSmeta.Location = New System.Drawing.Point(981, 649)
+        Me.btn_advSmeta.Name = "btn_advSmeta"
+        Me.btn_advSmeta.Size = New System.Drawing.Size(75, 75)
+        Me.btn_advSmeta.TabIndex = 7
+        Me.btn_advSmeta.Text = "Advanced"
+        Me.btn_advSmeta.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21})
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
+        Me.DataGridView1.Location = New System.Drawing.Point(170, 6)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(888, 603)
+        Me.DataGridView1.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Dep"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Cat"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Fixture"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Qty"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "BelImlight"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "PRLightigTouring"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "BlackOut"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Visible = False
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Vision"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Visible = False
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Stage"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Visible = False
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Weight"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Power/Length"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Price"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Result"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Visible = False
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.HeaderText = "R2"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.Visible = False
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.HeaderText = "R3"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.Visible = False
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.HeaderText = "R4"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.Visible = False
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.HeaderText = "R5"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.Visible = False
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.HeaderText = "R6"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.Visible = False
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.HeaderText = "R7"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.Visible = False
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.HeaderText = "OrderQty"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        '
+        'btn_belimlight
+        '
+        Me.btn_belimlight.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btn_belimlight.Location = New System.Drawing.Point(19, 6)
+        Me.btn_belimlight.Name = "btn_belimlight"
+        Me.btn_belimlight.Size = New System.Drawing.Size(145, 23)
+        Me.btn_belimlight.TabIndex = 3
+        Me.btn_belimlight.Tag = "adv"
+        Me.btn_belimlight.Text = "Belimlight"
+        Me.btn_belimlight.UseVisualStyleBackColor = False
+        '
+        'btn_prlighting
+        '
+        Me.btn_prlighting.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.btn_prlighting.Location = New System.Drawing.Point(19, 35)
+        Me.btn_prlighting.Name = "btn_prlighting"
+        Me.btn_prlighting.Size = New System.Drawing.Size(145, 23)
+        Me.btn_prlighting.TabIndex = 3
+        Me.btn_prlighting.Tag = "adv"
+        Me.btn_prlighting.Text = "PR LIghting"
+        Me.btn_prlighting.UseVisualStyleBackColor = False
+        '
+        'btn_blackout
+        '
+        Me.btn_blackout.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btn_blackout.Location = New System.Drawing.Point(19, 64)
+        Me.btn_blackout.Name = "btn_blackout"
+        Me.btn_blackout.Size = New System.Drawing.Size(145, 23)
+        Me.btn_blackout.TabIndex = 3
+        Me.btn_blackout.Tag = "adv"
+        Me.btn_blackout.Text = "Blackout"
+        Me.btn_blackout.UseVisualStyleBackColor = False
+        '
+        'btn_vision
+        '
+        Me.btn_vision.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(218, Byte), Integer))
+        Me.btn_vision.Location = New System.Drawing.Point(19, 93)
+        Me.btn_vision.Name = "btn_vision"
+        Me.btn_vision.Size = New System.Drawing.Size(145, 23)
+        Me.btn_vision.TabIndex = 3
+        Me.btn_vision.Tag = "adv"
+        Me.btn_vision.Text = "Vision"
+        Me.btn_vision.UseVisualStyleBackColor = False
+        '
+        'btn_stage
+        '
+        Me.btn_stage.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.btn_stage.Location = New System.Drawing.Point(19, 122)
+        Me.btn_stage.Name = "btn_stage"
+        Me.btn_stage.Size = New System.Drawing.Size(145, 23)
+        Me.btn_stage.TabIndex = 3
+        Me.btn_stage.Tag = "adv"
+        Me.btn_stage.Text = "Stage"
+        Me.btn_stage.UseVisualStyleBackColor = False
+        '
+        'btn_clr
+        '
+        Me.btn_clr.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_clr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btn_clr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_clr.Location = New System.Drawing.Point(19, 159)
+        Me.btn_clr.Name = "btn_clr"
+        Me.btn_clr.Size = New System.Drawing.Size(145, 23)
+        Me.btn_clr.TabIndex = 4
+        Me.btn_clr.Text = "Reset"
+        Me.btn_clr.UseVisualStyleBackColor = False
+        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1068, 736)
+        Me.Controls.Add(Me.btn_advSmeta)
         Me.Controls.Add(Me.txt_event)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.tbCtrl_smeta)
@@ -775,6 +1054,8 @@ Partial Class smetaMainForm
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.DGV_smeta, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -848,4 +1129,36 @@ Partial Class smetaMainForm
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btn_show_curRates As Button
+    Friend WithEvents btn_pers As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents btn_advSmeta As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
+    Friend WithEvents btn_stage As Button
+    Friend WithEvents btn_vision As Button
+    Friend WithEvents btn_blackout As Button
+    Friend WithEvents btn_prlighting As Button
+    Friend WithEvents btn_belimlight As Button
+    Friend WithEvents btn_clr As Button
 End Class

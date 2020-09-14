@@ -55,10 +55,23 @@ Public Class smetaMainForm
 
         lbl_currency.Text = "USD"
 
+        '   Save currency rate to settings
+        '----------------------------------------
         mainForm.USD_rate = My.Settings.USD_rate
         mainForm.Euro_rate = My.Settings.Euro_rate
         mainForm.rusRub_rate = My.Settings.rusRub_rate
         mainForm.BYN_rate = My.Settings.BYN_rate
+
+        '   Create List of companies' buttons
+        '----------------------------------------
+        mainForm.btnsAdvSmeta = New List(Of Control)
+
+        For Each ctrl As Control In Me.tbCtrl_smeta.TabPages(3).Controls
+
+            If ctrl.Tag = "adv" Then
+                mainForm.btnsAdvSmeta.Add(ctrl)
+            End If
+        Next ctrl
 
     End Sub
 
@@ -554,5 +567,78 @@ Public Class smetaMainForm
     Private Sub btn_show_curRates_Click(sender As Object, e As EventArgs) Handles btn_show_curRates.Click
         currencyForm.Show()
     End Sub
+    '===================================================================================
+    '             === Personnel ===
+    '===================================================================================
+    Private Sub btn_pers_Click(sender As Object, e As EventArgs) Handles btn_pers.Click
+        tbCtrl_smeta.SelectedIndex = 2
+    End Sub
+
+    '===================================================================================
+    '             === Advanced smeta ===
+    '===================================================================================
+    Private Sub btn_advSmeta_Click(sender As Object, e As EventArgs) Handles btn_advSmeta.Click
+
+    End Sub
+
+    '===================================================================================
+    '             === Belimlight button ===
+    '===================================================================================
+
+    Private Sub btn_belimlight_Click(sender As Object, e As EventArgs) Handles btn_belimlight.Click
+        disableSelected(sender)
+    End Sub
+    '===================================================================================
+    '             === PRLighting button ===
+    '===================================================================================
+
+    Private Sub btn_prlighting_Click(sender As Object, e As EventArgs) Handles btn_prlighting.Click
+        disableSelected(sender)
+    End Sub
+    '===================================================================================
+    '             === Blackout button ===
+    '===================================================================================
+
+    Private Sub btn_blackout_Click(sender As Object, e As EventArgs) Handles btn_blackout.Click
+        disableSelected(sender)
+    End Sub
+    '===================================================================================
+    '             === Multivision button ===
+    '===================================================================================
+
+    Private Sub btn_vision_Click(sender As Object, e As EventArgs) Handles btn_vision.Click
+        disableSelected(sender)
+    End Sub
+    '===================================================================================
+    '             === Stage Engineering button ===
+    '===================================================================================
+
+    Private Sub btn_stage_Click(sender As Object, e As EventArgs) Handles btn_stage.Click
+        disableSelected(sender)
+    End Sub
+    '===================================================================================
+    '             === Reset button ===
+    '===================================================================================
+    Private Sub btn_clr_Click(sender As Object, e As EventArgs) Handles btn_clr.Click
+
+        For Each btn In mainForm.btnsAdvSmeta
+            Console.WriteLine(btn.Name)
+            btn.Enabled = True
+            Select Case btn.Name
+                Case "btn_belimlight"
+                    btn.BackColor = Color.FromArgb(252, 228, 214)
+                Case "btn_prlighting"
+                    btn.BackColor = Color.FromArgb(221, 235, 247)
+                Case "btn_blackout"
+                    btn.BackColor = Color.FromArgb(237, 237, 237)
+                Case "btn_vision"
+                    btn.BackColor = Color.FromArgb(226, 239, 218)
+                Case "btn_stage"
+                    btn.BackColor = Color.FromArgb(237, 226, 246)
+            End Select
+        Next btn
+    End Sub
+
+
 
 End Class
