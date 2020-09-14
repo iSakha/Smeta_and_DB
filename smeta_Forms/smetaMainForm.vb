@@ -73,6 +73,12 @@ Public Class smetaMainForm
             End If
         Next ctrl
 
+        mainForm.color_belimlight = Color.FromArgb(252, 228, 214)
+        mainForm.color_PRLighting = Color.FromArgb(221, 235, 247)
+        mainForm.color_blackout = Color.FromArgb(237, 237, 237)
+        mainForm.color_vision = Color.FromArgb(226, 239, 218)
+        mainForm.color_stage = Color.FromArgb(237, 226, 246)
+
     End Sub
 
     '           Fill up locations combobox
@@ -580,8 +586,6 @@ Public Class smetaMainForm
     Private Sub btn_advSmeta_Click(sender As Object, e As EventArgs) Handles btn_advSmeta.Click
         tbCtrl_smeta.SelectedIndex = 3
 
-        Dim targetRows = enumRows()
-
         dgv_advSmeta.Rows.Clear()
 
         For Each drr As DataGridViewRow In DGV_smeta.Rows
@@ -592,7 +596,14 @@ Public Class smetaMainForm
             Next
             dgv_advSmeta.Rows.Add(row)
         Next
+        dgv_advSmeta.Columns.Add("Column 21", "Rest")
+        dgv_advSmeta.Columns.Add("Column 22", "Blml")
+        dgv_advSmeta.Columns.Add("Column 23", "Prltng")
+        dgv_advSmeta.Columns.Add("Column 24", "Blct")
+        dgv_advSmeta.Columns.Add("Column 25", "Vsn")
+        dgv_advSmeta.Columns.Add("Column 26", "Stg")
 
+        format_advanced_smeta()
     End Sub
 
     '===================================================================================

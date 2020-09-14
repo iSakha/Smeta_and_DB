@@ -151,7 +151,9 @@ Module smetaFunc
             End If
         Next r
     End Sub
-
+    '===================================================================================
+    '             === Format DGV_smeta and advanced_smeta ===
+    '===================================================================================
     Sub format_DGV_smeta(_DGV)
         Dim NRFormat As String = "### ### ##0"
         _DGV.RowHeadersVisible = False
@@ -236,7 +238,7 @@ Module smetaFunc
 
         _DGV.Columns(12).DefaultCellStyle.Format = NRFormat
 
-        _DGV.Columns(13).Visible = False                                                                            ' Result
+        _DGV.Columns(13).Visible = False                                                                            ' OrderQty
         _DGV.Columns(14).Visible = False                                                                            ' R2
         _DGV.Columns(15).Visible = False                                                                            ' R3
         _DGV.Columns(16).Visible = False                                                                            ' R4          
@@ -247,6 +249,169 @@ Module smetaFunc
         _DGV.Columns(20).MinimumWidth = 60
         _DGV.Columns(20).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         _DGV.Columns(20).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' R8
+
+
+    End Sub
+
+    Sub format_advanced_smeta()
+        Dim NRFormat As String = "### ### ##0"
+        smetaMainForm.dgv_advSmeta.RowHeadersVisible = False
+
+        smetaMainForm.dgv_advSmeta.Columns(0).Width = 30
+        smetaMainForm.dgv_advSmeta.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Dep
+
+        For Each r As DataGridViewRow In smetaMainForm.dgv_advSmeta.Rows
+            Select Case r.Cells(0).Value
+                Case 1
+                    r.Cells(0).Style.BackColor = Color.LemonChiffon
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.LemonChiffon
+                        r.Cells(2).Style.BackColor = Color.LemonChiffon
+                    End If
+                Case 2
+                    r.Cells(0).Style.BackColor = Color.LightSteelBlue
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.LightSteelBlue
+                        r.Cells(2).Style.BackColor = Color.LightSteelBlue
+                    End If
+                Case 3
+                    r.Cells(0).Style.BackColor = Color.MistyRose
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.MistyRose
+                        r.Cells(2).Style.BackColor = Color.MistyRose
+                    End If
+                Case 4
+                    r.Cells(0).Style.BackColor = Color.Honeydew
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.Honeydew
+                        r.Cells(2).Style.BackColor = Color.Honeydew
+                    End If
+                Case 5
+                    r.Cells(0).Style.BackColor = Color.LightCyan
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.LightCyan
+                        r.Cells(2).Style.BackColor = Color.LightCyan
+                    End If
+                Case 6
+                    r.Cells(0).Style.BackColor = Color.Thistle
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.Thistle
+                        r.Cells(2).Style.BackColor = Color.Thistle
+                    End If
+            End Select
+            r.Cells(5).Style.BackColor = mainForm.color_belimlight
+            r.Cells(6).Style.BackColor = mainForm.color_PRLighting
+            r.Cells(7).Style.BackColor = mainForm.color_blackout
+            r.Cells(8).Style.BackColor = mainForm.color_vision
+            r.Cells(9).Style.BackColor = mainForm.color_stage
+
+            r.Cells(21).Value = r.Cells(20).Value
+
+            r.Cells(22).Style.BackColor = mainForm.color_belimlight
+            r.Cells(22).Value = 0
+            r.Cells(23).Style.BackColor = mainForm.color_PRLighting
+            r.Cells(23).Value = 0
+            r.Cells(24).Style.BackColor = mainForm.color_blackout
+            r.Cells(24).Value = 0
+            r.Cells(25).Style.BackColor = mainForm.color_vision
+            r.Cells(25).Value = 0
+            r.Cells(26).Style.BackColor = mainForm.color_stage
+            r.Cells(26).Value = 0
+
+
+        Next r
+
+
+
+        smetaMainForm.dgv_advSmeta.Columns(1).Width = 30
+        smetaMainForm.dgv_advSmeta.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Cat
+        smetaMainForm.dgv_advSmeta.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(2).MinimumWidth = 80
+        smetaMainForm.dgv_advSmeta.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(2).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' ID
+        smetaMainForm.dgv_advSmeta.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(3).MinimumWidth = 430
+        smetaMainForm.dgv_advSmeta.Columns(3).DefaultCellStyle.BackColor = Color.FromArgb(242, 245, 245)
+        smetaMainForm.dgv_advSmeta.Columns(3).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' Fixture
+        smetaMainForm.dgv_advSmeta.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(4).MinimumWidth = 50
+        smetaMainForm.dgv_advSmeta.Columns(4).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' Q-ty
+        smetaMainForm.dgv_advSmeta.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(5).Visible = True                                                                             ' BelImlight
+        smetaMainForm.dgv_advSmeta.Columns(5).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(5).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(6).Visible = True                                                                             ' PRLightigTouring
+        smetaMainForm.dgv_advSmeta.Columns(6).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(6).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(7).Visible = True                                                                             ' BlackOut
+        smetaMainForm.dgv_advSmeta.Columns(7).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(7).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(8).Visible = True                                                                             ' Vision
+        smetaMainForm.dgv_advSmeta.Columns(8).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(8).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(9).Visible = True                                                                             ' Stage
+        smetaMainForm.dgv_advSmeta.Columns(9).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(9).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(10).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(10).MinimumWidth = 60
+        smetaMainForm.dgv_advSmeta.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(10).Visible = False          ' Weight
+        smetaMainForm.dgv_advSmeta.Columns(11).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(11).MinimumWidth = 68
+        smetaMainForm.dgv_advSmeta.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(11).Visible = False          ' Power
+        smetaMainForm.dgv_advSmeta.Columns(12).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(12).MinimumWidth = 60
+        smetaMainForm.dgv_advSmeta.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(12).Visible = False          ' Price
+
+        smetaMainForm.dgv_advSmeta.Columns(12).DefaultCellStyle.Format = NRFormat
+
+        smetaMainForm.dgv_advSmeta.Columns(13).Visible = False                                                                            ' OrderQty
+        smetaMainForm.dgv_advSmeta.Columns(14).Visible = False                                                                            ' R2
+        smetaMainForm.dgv_advSmeta.Columns(15).Visible = False                                                                            ' R3
+        smetaMainForm.dgv_advSmeta.Columns(16).Visible = False                                                                            ' R4          
+        smetaMainForm.dgv_advSmeta.Columns(17).Visible = False                                                                            ' R5
+        smetaMainForm.dgv_advSmeta.Columns(18).Visible = False                                                                            ' R6
+        smetaMainForm.dgv_advSmeta.Columns(19).Visible = False                                                                            ' R7
+        smetaMainForm.dgv_advSmeta.Columns(20).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        smetaMainForm.dgv_advSmeta.Columns(20).MinimumWidth = 60
+        smetaMainForm.dgv_advSmeta.Columns(20).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(20).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' R8
+
+        smetaMainForm.dgv_advSmeta.Columns(21).Visible = True                                                                             ' BelImlight
+        smetaMainForm.dgv_advSmeta.Columns(21).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(21).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(21).DefaultCellStyle.ForeColor = Color.Red
+        smetaMainForm.dgv_advSmeta.Columns(21).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(22).Visible = True                                                                             ' BelImlight
+        smetaMainForm.dgv_advSmeta.Columns(22).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(22).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(22).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(23).Visible = True                                                                             ' PRLightigTouring
+        smetaMainForm.dgv_advSmeta.Columns(23).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(23).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(23).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(24).Visible = True                                                                             ' BlackOut
+        smetaMainForm.dgv_advSmeta.Columns(24).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(24).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(24).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(25).Visible = True                                                                             ' Vision
+        smetaMainForm.dgv_advSmeta.Columns(25).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(25).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(25).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        smetaMainForm.dgv_advSmeta.Columns(26).Visible = True                                                                             ' Stage
+        smetaMainForm.dgv_advSmeta.Columns(26).Width = 50
+        smetaMainForm.dgv_advSmeta.Columns(26).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        smetaMainForm.dgv_advSmeta.Columns(26).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        smetaMainForm.dgv_advSmeta.Rows(smetaMainForm.dgv_advSmeta.Rows.Count - 1).Visible = False
+        smetaMainForm.dgv_advSmeta.ClearSelection()
 
 
     End Sub

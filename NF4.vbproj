@@ -109,7 +109,7 @@
     <Compile Include="db_Forms\exportExcel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="db_Modules\advSmeta.vb" />
+    <Compile Include="smeta_Modules\advSmeta.vb" />
     <Compile Include="db_Modules\load_and_close.vb" />
     <Compile Include="db_Forms\mainForm.vb">
       <SubType>Form</SubType>

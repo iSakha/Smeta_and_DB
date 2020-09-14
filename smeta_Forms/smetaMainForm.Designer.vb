@@ -49,6 +49,7 @@ Partial Class smetaMainForm
         Me.lbl_currency = New System.Windows.Forms.Label()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.btn_pers = New System.Windows.Forms.Button()
         Me.btn_discount = New System.Windows.Forms.Button()
         Me.btn_writeToExcel = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -84,16 +85,14 @@ Partial Class smetaMainForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmb_eventLocation = New System.Windows.Forms.ComboBox()
-        Me.txt_weight = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_pwr = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_event = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btn_pers = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.btn_advSmeta = New System.Windows.Forms.Button()
+        Me.btn_clr = New System.Windows.Forms.Button()
+        Me.btn_stage = New System.Windows.Forms.Button()
+        Me.btn_vision = New System.Windows.Forms.Button()
+        Me.btn_blackout = New System.Windows.Forms.Button()
+        Me.btn_prlighting = New System.Windows.Forms.Button()
+        Me.btn_belimlight = New System.Windows.Forms.Button()
         Me.dgv_advSmeta = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -116,12 +115,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_belimlight = New System.Windows.Forms.Button()
-        Me.btn_prlighting = New System.Windows.Forms.Button()
-        Me.btn_blackout = New System.Windows.Forms.Button()
-        Me.btn_vision = New System.Windows.Forms.Button()
-        Me.btn_stage = New System.Windows.Forms.Button()
-        Me.btn_clr = New System.Windows.Forms.Button()
+        Me.txt_weight = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_pwr = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_event = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_advSmeta = New System.Windows.Forms.Button()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -474,6 +474,15 @@ Partial Class smetaMainForm
         Me.RadioButton2.Text = "Безнал"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
+        'btn_pers
+        '
+        Me.btn_pers.Location = New System.Drawing.Point(8, 488)
+        Me.btn_pers.Name = "btn_pers"
+        Me.btn_pers.Size = New System.Drawing.Size(156, 30)
+        Me.btn_pers.TabIndex = 16
+        Me.btn_pers.Text = "Personnel"
+        Me.btn_pers.UseVisualStyleBackColor = True
+        '
         'btn_discount
         '
         Me.btn_discount.Location = New System.Drawing.Point(8, 518)
@@ -725,77 +734,6 @@ Partial Class smetaMainForm
         Me.cmb_eventLocation.Size = New System.Drawing.Size(165, 21)
         Me.cmb_eventLocation.TabIndex = 8
         '
-        'txt_weight
-        '
-        Me.txt_weight.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_weight.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_weight.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txt_weight.Location = New System.Drawing.Point(415, 667)
-        Me.txt_weight.Name = "txt_weight"
-        Me.txt_weight.Size = New System.Drawing.Size(100, 29)
-        Me.txt_weight.TabIndex = 5
-        Me.txt_weight.Text = "123"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label2.Location = New System.Drawing.Point(411, 644)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 20)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Total weight"
-        '
-        'txt_pwr
-        '
-        Me.txt_pwr.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_pwr.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_pwr.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txt_pwr.Location = New System.Drawing.Point(297, 667)
-        Me.txt_pwr.Name = "txt_pwr"
-        Me.txt_pwr.Size = New System.Drawing.Size(100, 29)
-        Me.txt_pwr.TabIndex = 3
-        Me.txt_pwr.Text = "123"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label1.Location = New System.Drawing.Point(293, 644)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Total power"
-        '
-        'txt_event
-        '
-        Me.txt_event.Location = New System.Drawing.Point(16, 667)
-        Me.txt_event.Name = "txt_event"
-        Me.txt_event.Size = New System.Drawing.Size(265, 20)
-        Me.txt_event.TabIndex = 6
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label5.Location = New System.Drawing.Point(12, 644)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 20)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Мероприятие"
-        '
-        'btn_pers
-        '
-        Me.btn_pers.Location = New System.Drawing.Point(8, 488)
-        Me.btn_pers.Name = "btn_pers"
-        Me.btn_pers.Size = New System.Drawing.Size(156, 30)
-        Me.btn_pers.TabIndex = 16
-        Me.btn_pers.Text = "Personnel"
-        Me.btn_pers.UseVisualStyleBackColor = True
-        '
         'TabPage3
         '
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
@@ -823,17 +761,76 @@ Partial Class smetaMainForm
         Me.TabPage4.Text = "Advanced"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'btn_advSmeta
+        'btn_clr
         '
-        Me.btn_advSmeta.Location = New System.Drawing.Point(981, 649)
-        Me.btn_advSmeta.Name = "btn_advSmeta"
-        Me.btn_advSmeta.Size = New System.Drawing.Size(75, 75)
-        Me.btn_advSmeta.TabIndex = 7
-        Me.btn_advSmeta.Text = "Advanced"
-        Me.btn_advSmeta.UseVisualStyleBackColor = True
+        Me.btn_clr.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_clr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btn_clr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_clr.Location = New System.Drawing.Point(19, 159)
+        Me.btn_clr.Name = "btn_clr"
+        Me.btn_clr.Size = New System.Drawing.Size(145, 23)
+        Me.btn_clr.TabIndex = 4
+        Me.btn_clr.Text = "Reset"
+        Me.btn_clr.UseVisualStyleBackColor = False
+        '
+        'btn_stage
+        '
+        Me.btn_stage.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.btn_stage.Location = New System.Drawing.Point(19, 122)
+        Me.btn_stage.Name = "btn_stage"
+        Me.btn_stage.Size = New System.Drawing.Size(145, 23)
+        Me.btn_stage.TabIndex = 3
+        Me.btn_stage.Tag = "adv"
+        Me.btn_stage.Text = "Stage"
+        Me.btn_stage.UseVisualStyleBackColor = False
+        '
+        'btn_vision
+        '
+        Me.btn_vision.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(218, Byte), Integer))
+        Me.btn_vision.Location = New System.Drawing.Point(19, 93)
+        Me.btn_vision.Name = "btn_vision"
+        Me.btn_vision.Size = New System.Drawing.Size(145, 23)
+        Me.btn_vision.TabIndex = 3
+        Me.btn_vision.Tag = "adv"
+        Me.btn_vision.Text = "Vision"
+        Me.btn_vision.UseVisualStyleBackColor = False
+        '
+        'btn_blackout
+        '
+        Me.btn_blackout.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btn_blackout.Location = New System.Drawing.Point(19, 64)
+        Me.btn_blackout.Name = "btn_blackout"
+        Me.btn_blackout.Size = New System.Drawing.Size(145, 23)
+        Me.btn_blackout.TabIndex = 3
+        Me.btn_blackout.Tag = "adv"
+        Me.btn_blackout.Text = "Blackout"
+        Me.btn_blackout.UseVisualStyleBackColor = False
+        '
+        'btn_prlighting
+        '
+        Me.btn_prlighting.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.btn_prlighting.Location = New System.Drawing.Point(19, 35)
+        Me.btn_prlighting.Name = "btn_prlighting"
+        Me.btn_prlighting.Size = New System.Drawing.Size(145, 23)
+        Me.btn_prlighting.TabIndex = 3
+        Me.btn_prlighting.Tag = "adv"
+        Me.btn_prlighting.Text = "PR LIghting"
+        Me.btn_prlighting.UseVisualStyleBackColor = False
+        '
+        'btn_belimlight
+        '
+        Me.btn_belimlight.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.btn_belimlight.Location = New System.Drawing.Point(19, 6)
+        Me.btn_belimlight.Name = "btn_belimlight"
+        Me.btn_belimlight.Size = New System.Drawing.Size(145, 23)
+        Me.btn_belimlight.TabIndex = 3
+        Me.btn_belimlight.Tag = "adv"
+        Me.btn_belimlight.Text = "Belimlight"
+        Me.btn_belimlight.UseVisualStyleBackColor = False
         '
         'dgv_advSmeta
         '
+        Me.dgv_advSmeta.AllowUserToAddRows = False
         Me.dgv_advSmeta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_advSmeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_advSmeta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21})
@@ -961,72 +958,76 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn21.HeaderText = "OrderQty"
         Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
         '
-        'btn_belimlight
+        'txt_weight
         '
-        Me.btn_belimlight.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.btn_belimlight.Location = New System.Drawing.Point(19, 6)
-        Me.btn_belimlight.Name = "btn_belimlight"
-        Me.btn_belimlight.Size = New System.Drawing.Size(145, 23)
-        Me.btn_belimlight.TabIndex = 3
-        Me.btn_belimlight.Tag = "adv"
-        Me.btn_belimlight.Text = "Belimlight"
-        Me.btn_belimlight.UseVisualStyleBackColor = False
+        Me.txt_weight.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_weight.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txt_weight.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txt_weight.Location = New System.Drawing.Point(415, 667)
+        Me.txt_weight.Name = "txt_weight"
+        Me.txt_weight.Size = New System.Drawing.Size(100, 29)
+        Me.txt_weight.TabIndex = 5
+        Me.txt_weight.Text = "123"
         '
-        'btn_prlighting
+        'Label2
         '
-        Me.btn_prlighting.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.btn_prlighting.Location = New System.Drawing.Point(19, 35)
-        Me.btn_prlighting.Name = "btn_prlighting"
-        Me.btn_prlighting.Size = New System.Drawing.Size(145, 23)
-        Me.btn_prlighting.TabIndex = 3
-        Me.btn_prlighting.Tag = "adv"
-        Me.btn_prlighting.Text = "PR LIghting"
-        Me.btn_prlighting.UseVisualStyleBackColor = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label2.Location = New System.Drawing.Point(411, 644)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(106, 20)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Total weight"
         '
-        'btn_blackout
+        'txt_pwr
         '
-        Me.btn_blackout.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
-        Me.btn_blackout.Location = New System.Drawing.Point(19, 64)
-        Me.btn_blackout.Name = "btn_blackout"
-        Me.btn_blackout.Size = New System.Drawing.Size(145, 23)
-        Me.btn_blackout.TabIndex = 3
-        Me.btn_blackout.Tag = "adv"
-        Me.btn_blackout.Text = "Blackout"
-        Me.btn_blackout.UseVisualStyleBackColor = False
+        Me.txt_pwr.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_pwr.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txt_pwr.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txt_pwr.Location = New System.Drawing.Point(297, 667)
+        Me.txt_pwr.Name = "txt_pwr"
+        Me.txt_pwr.Size = New System.Drawing.Size(100, 29)
+        Me.txt_pwr.TabIndex = 3
+        Me.txt_pwr.Text = "123"
         '
-        'btn_vision
+        'Label1
         '
-        Me.btn_vision.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(218, Byte), Integer))
-        Me.btn_vision.Location = New System.Drawing.Point(19, 93)
-        Me.btn_vision.Name = "btn_vision"
-        Me.btn_vision.Size = New System.Drawing.Size(145, 23)
-        Me.btn_vision.TabIndex = 3
-        Me.btn_vision.Tag = "adv"
-        Me.btn_vision.Text = "Vision"
-        Me.btn_vision.UseVisualStyleBackColor = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label1.Location = New System.Drawing.Point(293, 644)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Total power"
         '
-        'btn_stage
+        'txt_event
         '
-        Me.btn_stage.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.btn_stage.Location = New System.Drawing.Point(19, 122)
-        Me.btn_stage.Name = "btn_stage"
-        Me.btn_stage.Size = New System.Drawing.Size(145, 23)
-        Me.btn_stage.TabIndex = 3
-        Me.btn_stage.Tag = "adv"
-        Me.btn_stage.Text = "Stage"
-        Me.btn_stage.UseVisualStyleBackColor = False
+        Me.txt_event.Location = New System.Drawing.Point(16, 667)
+        Me.txt_event.Name = "txt_event"
+        Me.txt_event.Size = New System.Drawing.Size(265, 20)
+        Me.txt_event.TabIndex = 6
         '
-        'btn_clr
+        'Label5
         '
-        Me.btn_clr.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btn_clr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btn_clr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_clr.Location = New System.Drawing.Point(19, 159)
-        Me.btn_clr.Name = "btn_clr"
-        Me.btn_clr.Size = New System.Drawing.Size(145, 23)
-        Me.btn_clr.TabIndex = 4
-        Me.btn_clr.Text = "Reset"
-        Me.btn_clr.UseVisualStyleBackColor = False
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label5.Location = New System.Drawing.Point(12, 644)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(123, 20)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Мероприятие"
+        '
+        'btn_advSmeta
+        '
+        Me.btn_advSmeta.Location = New System.Drawing.Point(981, 649)
+        Me.btn_advSmeta.Name = "btn_advSmeta"
+        Me.btn_advSmeta.Size = New System.Drawing.Size(75, 75)
+        Me.btn_advSmeta.TabIndex = 7
+        Me.btn_advSmeta.Text = "Advanced"
+        Me.btn_advSmeta.UseVisualStyleBackColor = True
         '
         'smetaMainForm
         '

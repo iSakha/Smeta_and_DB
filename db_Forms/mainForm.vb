@@ -31,6 +31,8 @@ Public Class mainForm
 
     Public sCompany() As String = {"belimlight", "PRLighting", "blackout", "vision", "stage"}
 
+    Public color_belimlight, color_PRLighting, color_blackout, color_vision, color_stage As Color
+
     Public delta As Integer     ' to increase or decrease table when push Add or Delete 
 
     Public exportDir As String
@@ -47,11 +49,6 @@ Public Class mainForm
     Public discountValue(6) As Integer
 
     Public priceLighting, priceScreen, priceComm, priceTruss, priceConstr, priceSound As Integer
-
-    'Public priceLighting_USD, priceScreen_USD, priceComm_USD, priceTruss_USD, priceConstr_USD, priceSound_USD As Integer
-    'Public priceLighting_Euro, priceScreen_Euro, priceComm_Euro, priceTruss_Euro, priceConstr_Euro, priceSound_Euro As Integer
-    'Public priceLighting_rusRub, priceScreen_rusRub, priceComm_rusRub, priceTruss_rusRub, priceConstr_rusRub, priceSound_rusRub As Integer
-    'Public priceLighting_BYN, priceScreen_BYN, priceComm_BYN, priceTruss_BYN, priceConstr_BYN, priceSound_BYN As Integer
 
     Public qtyLighting, qtyScreen, qtyComm, qtyTruss, qtyConstr, qtySound As Integer
     Public weightLighting, weightScreen, weightComm, weightTruss, weightConstr, weightSound As Integer
