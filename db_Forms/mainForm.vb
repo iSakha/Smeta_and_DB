@@ -65,6 +65,7 @@ Public Class mainForm
 
     Public btnsAdvSmeta As List(Of Control)
     Public tabsSmeta As List(Of TabPage)
+    Public companyDGV As List(Of DataGridView)
 
     '===================================================================================
     '             === mainForm_Load ===

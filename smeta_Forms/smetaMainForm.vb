@@ -66,6 +66,13 @@ Public Class smetaMainForm
         '----------------------------------------
         mainForm.btnsAdvSmeta = New List(Of Control)
         mainForm.tabsSmeta = New List(Of TabPage)
+        mainForm.companyDGV = New List(Of DataGridView)
+
+        mainForm.companyDGV.Add(dgv_belimlight)
+        mainForm.companyDGV.Add(dgv_prlighting)
+        mainForm.companyDGV.Add(dgv_blackout)
+        mainForm.companyDGV.Add(dgv_vision)
+        mainForm.companyDGV.Add(dgv_stage)
 
         mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(4))
         mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(5))
@@ -610,7 +617,7 @@ Public Class smetaMainForm
             dgv_advSmeta.Rows.Add(row)
         Next
 
-        format_advanced_smeta()
+        format_advanced_smeta(dgv_advSmeta)
 
     End Sub
 
@@ -621,6 +628,9 @@ Public Class smetaMainForm
     Private Sub btn_belimlight_Click(sender As Object, e As EventArgs) Handles btn_belimlight.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
+        If dgv_belimlight.Rows.Count > 0 Then
+            format_advanced_smeta(dgv_belimlight)
+        End If
     End Sub
     '===================================================================================
     '             === PRLighting button ===
@@ -629,6 +639,9 @@ Public Class smetaMainForm
     Private Sub btn_prlighting_Click(sender As Object, e As EventArgs) Handles btn_prlighting.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
+        If dgv_prlighting.Rows.Count > 0 Then
+            format_advanced_smeta(dgv_prlighting)
+        End If
     End Sub
     '===================================================================================
     '             === Blackout button ===
@@ -637,6 +650,9 @@ Public Class smetaMainForm
     Private Sub btn_blackout_Click(sender As Object, e As EventArgs) Handles btn_blackout.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
+        If dgv_blackout.Rows.Count > 0 Then
+            format_advanced_smeta(dgv_blackout)
+        End If
     End Sub
     '===================================================================================
     '             === Multivision button ===
@@ -645,6 +661,9 @@ Public Class smetaMainForm
     Private Sub btn_vision_Click(sender As Object, e As EventArgs) Handles btn_vision.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
+        If dgv_vision.Rows.Count > 0 Then
+            format_advanced_smeta(dgv_vision)
+        End If
     End Sub
     '===================================================================================
     '             === Stage Engineering button ===
@@ -653,6 +672,9 @@ Public Class smetaMainForm
     Private Sub btn_stage_Click(sender As Object, e As EventArgs) Handles btn_stage.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
+        If dgv_stage.Rows.Count > 0 Then
+            format_advanced_smeta(dgv_stage)
+        End If
     End Sub
     '===================================================================================
     '             === Reset button ===
@@ -683,7 +705,6 @@ Public Class smetaMainForm
         tbCtrl_smeta.TabPages.Remove(TabPage5)
 
     End Sub
-
 
 
 End Class

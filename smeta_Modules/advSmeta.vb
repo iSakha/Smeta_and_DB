@@ -15,6 +15,7 @@
 
     Sub calculateFixturesByCompanies(_sender As Button)
 
+        '************************************************************************
         '   index - button index in btnsAdvSmeta list
         '   Cells(index + 5) - fixture qty in corresponding companies
         '   Cells(index + 22) - fixture qty taken from corresponding company
@@ -22,13 +23,17 @@
         '   Cells(20) - column named "OrderQty"
         '   Cells(21) - column named "Rest"
         '   Cells(22),(23),(24),(25),(26) - how many taken from companies
+        '************************************************************************
 
         Dim index As Integer
         index = (mainForm.btnsAdvSmeta.IndexOf(_sender))
         For Each r As DataGridViewRow In smetaMainForm.dgv_advSmeta.Rows
 
-            If r.Cells(index + 5).Value > 0 Then
+            If (r.Cells(index + 5).Value > 0) And (r.Cells(21).Value > 0) Then
                 r.Cells(27).Value = _sender.Name
+
+                copyRowToCompanySmeta(r, index)
+
                 ' How many fixtures taken
                 If r.Cells(index + 5).Value > r.Cells(21).Value Then
                     r.Cells(index + 22).Value = r.Cells(21).Value
@@ -41,5 +46,17 @@
                 r.Cells(25).Value + r.Cells(26).Value)
             End If
         Next r
+
     End Sub
+
+    Sub copyRowToCompanySmeta(_r As DataGridViewRow, _index As Integer)
+
+        Dim row As DataGridViewRow = CType(_r.Clone(), DataGridViewRow)
+        For i As Integer = 0 To _r.Cells.Count - 1
+            row.Cells(i).Value = _r.Cells(i).Value
+            row.DefaultCellStyle.BackColor = SystemColors.Window
+        Next
+        mainForm.companyDGV(_index).Rows.Add(row)
+    End Sub
+
 End Module

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class smetaMainForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class smetaMainForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGV_db = New System.Windows.Forms.DataGridView()
         Me.tbCtrl_smeta = New System.Windows.Forms.TabControl()
@@ -94,18 +94,6 @@ Partial Class smetaMainForm
         Me.btn_prlighting = New System.Windows.Forms.Button()
         Me.btn_belimlight = New System.Windows.Forms.Button()
         Me.dgv_advSmeta = New System.Windows.Forms.DataGridView()
-        Me.txt_weight = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_pwr = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_event = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btn_advSmeta = New System.Windows.Forms.Button()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -134,6 +122,7 @@ Partial Class smetaMainForm
         Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.dgv_belimlight = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -163,6 +152,7 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn131 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn132 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn133 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.dgv_prlighting = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -192,6 +182,7 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn138 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn139 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn140 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.dgv_blackout = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn64 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -221,6 +212,7 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn145 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn146 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn147 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.dgv_vision = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn85 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn86 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -250,6 +242,7 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn152 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn153 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn154 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.dgv_stage = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn106 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn107 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -279,6 +272,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn159 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn160 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn161 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_weight = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_pwr = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_event = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_advSmeta = New System.Windows.Forms.Button()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -289,14 +289,14 @@ Partial Class smetaMainForm
         Me.TabPage4.SuspendLayout()
         CType(Me.dgv_advSmeta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
-        Me.TabPage6.SuspendLayout()
-        Me.TabPage7.SuspendLayout()
-        Me.TabPage8.SuspendLayout()
-        Me.TabPage9.SuspendLayout()
         CType(Me.dgv_belimlight, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage6.SuspendLayout()
         CType(Me.dgv_prlighting, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
         CType(Me.dgv_blackout, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage8.SuspendLayout()
         CType(Me.dgv_vision, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage9.SuspendLayout()
         CType(Me.dgv_stage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -1013,127 +1013,6 @@ Partial Class smetaMainForm
         Me.dgv_advSmeta.Size = New System.Drawing.Size(888, 603)
         Me.dgv_advSmeta.TabIndex = 2
         '
-        'txt_weight
-        '
-        Me.txt_weight.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_weight.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_weight.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txt_weight.Location = New System.Drawing.Point(415, 667)
-        Me.txt_weight.Name = "txt_weight"
-        Me.txt_weight.Size = New System.Drawing.Size(100, 29)
-        Me.txt_weight.TabIndex = 5
-        Me.txt_weight.Text = "123"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label2.Location = New System.Drawing.Point(411, 644)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 20)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Total weight"
-        '
-        'txt_pwr
-        '
-        Me.txt_pwr.BackColor = System.Drawing.SystemColors.Info
-        Me.txt_pwr.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txt_pwr.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txt_pwr.Location = New System.Drawing.Point(297, 667)
-        Me.txt_pwr.Name = "txt_pwr"
-        Me.txt_pwr.Size = New System.Drawing.Size(100, 29)
-        Me.txt_pwr.TabIndex = 3
-        Me.txt_pwr.Text = "123"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label1.Location = New System.Drawing.Point(293, 644)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Total power"
-        '
-        'txt_event
-        '
-        Me.txt_event.Location = New System.Drawing.Point(16, 667)
-        Me.txt_event.Name = "txt_event"
-        Me.txt_event.Size = New System.Drawing.Size(265, 20)
-        Me.txt_event.TabIndex = 6
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label5.Location = New System.Drawing.Point(12, 644)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 20)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Мероприятие"
-        '
-        'btn_advSmeta
-        '
-        Me.btn_advSmeta.Location = New System.Drawing.Point(981, 649)
-        Me.btn_advSmeta.Name = "btn_advSmeta"
-        Me.btn_advSmeta.Size = New System.Drawing.Size(75, 75)
-        Me.btn_advSmeta.TabIndex = 7
-        Me.btn_advSmeta.Text = "Advanced"
-        Me.btn_advSmeta.UseVisualStyleBackColor = True
-        '
-        'TabPage5
-        '
-        Me.TabPage5.Controls.Add(Me.dgv_belimlight)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1064, 615)
-        Me.TabPage5.TabIndex = 4
-        Me.TabPage5.Text = "Belimlight"
-        Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'TabPage6
-        '
-        Me.TabPage6.Controls.Add(Me.dgv_prlighting)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1064, 615)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "PR LIghting"
-        Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'TabPage7
-        '
-        Me.TabPage7.Controls.Add(Me.dgv_blackout)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1064, 615)
-        Me.TabPage7.TabIndex = 6
-        Me.TabPage7.Text = "Blackout"
-        Me.TabPage7.UseVisualStyleBackColor = True
-        '
-        'TabPage8
-        '
-        Me.TabPage8.Controls.Add(Me.dgv_vision)
-        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Size = New System.Drawing.Size(1064, 615)
-        Me.TabPage8.TabIndex = 7
-        Me.TabPage8.Text = "Vision"
-        Me.TabPage8.UseVisualStyleBackColor = True
-        '
-        'TabPage9
-        '
-        Me.TabPage9.Controls.Add(Me.dgv_stage)
-        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Size = New System.Drawing.Size(1064, 615)
-        Me.TabPage9.TabIndex = 8
-        Me.TabPage9.Text = "Stage"
-        Me.TabPage9.UseVisualStyleBackColor = True
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.HeaderText = "Dep"
@@ -1285,6 +1164,16 @@ Partial Class smetaMainForm
         '
         Me.Column28.HeaderText = "Company"
         Me.Column28.Name = "Column28"
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.dgv_belimlight)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Belimlight"
+        Me.TabPage5.UseVisualStyleBackColor = True
         '
         'dgv_belimlight
         '
@@ -1451,6 +1340,16 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn133.HeaderText = "Company"
         Me.DataGridViewTextBoxColumn133.Name = "DataGridViewTextBoxColumn133"
         '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.dgv_prlighting)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "PR LIghting"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
         'dgv_prlighting
         '
         Me.dgv_prlighting.AllowUserToAddRows = False
@@ -1615,6 +1514,16 @@ Partial Class smetaMainForm
         '
         Me.DataGridViewTextBoxColumn140.HeaderText = "Company"
         Me.DataGridViewTextBoxColumn140.Name = "DataGridViewTextBoxColumn140"
+        '
+        'TabPage7
+        '
+        Me.TabPage7.Controls.Add(Me.dgv_blackout)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "Blackout"
+        Me.TabPage7.UseVisualStyleBackColor = True
         '
         'dgv_blackout
         '
@@ -1781,6 +1690,16 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn147.HeaderText = "Company"
         Me.DataGridViewTextBoxColumn147.Name = "DataGridViewTextBoxColumn147"
         '
+        'TabPage8
+        '
+        Me.TabPage8.Controls.Add(Me.dgv_vision)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage8.TabIndex = 7
+        Me.TabPage8.Text = "Vision"
+        Me.TabPage8.UseVisualStyleBackColor = True
+        '
         'dgv_vision
         '
         Me.dgv_vision.AllowUserToAddRows = False
@@ -1945,6 +1864,16 @@ Partial Class smetaMainForm
         '
         Me.DataGridViewTextBoxColumn154.HeaderText = "Company"
         Me.DataGridViewTextBoxColumn154.Name = "DataGridViewTextBoxColumn154"
+        '
+        'TabPage9
+        '
+        Me.TabPage9.Controls.Add(Me.dgv_stage)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage9.Name = "TabPage9"
+        Me.TabPage9.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage9.TabIndex = 8
+        Me.TabPage9.Text = "Stage"
+        Me.TabPage9.UseVisualStyleBackColor = True
         '
         'dgv_stage
         '
@@ -2111,6 +2040,77 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn161.HeaderText = "Company"
         Me.DataGridViewTextBoxColumn161.Name = "DataGridViewTextBoxColumn161"
         '
+        'txt_weight
+        '
+        Me.txt_weight.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_weight.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txt_weight.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txt_weight.Location = New System.Drawing.Point(415, 667)
+        Me.txt_weight.Name = "txt_weight"
+        Me.txt_weight.Size = New System.Drawing.Size(100, 29)
+        Me.txt_weight.TabIndex = 5
+        Me.txt_weight.Text = "123"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label2.Location = New System.Drawing.Point(411, 644)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(106, 20)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Total weight"
+        '
+        'txt_pwr
+        '
+        Me.txt_pwr.BackColor = System.Drawing.SystemColors.Info
+        Me.txt_pwr.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.txt_pwr.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txt_pwr.Location = New System.Drawing.Point(297, 667)
+        Me.txt_pwr.Name = "txt_pwr"
+        Me.txt_pwr.Size = New System.Drawing.Size(100, 29)
+        Me.txt_pwr.TabIndex = 3
+        Me.txt_pwr.Text = "123"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label1.Location = New System.Drawing.Point(293, 644)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Total power"
+        '
+        'txt_event
+        '
+        Me.txt_event.Location = New System.Drawing.Point(16, 667)
+        Me.txt_event.Name = "txt_event"
+        Me.txt_event.Size = New System.Drawing.Size(265, 20)
+        Me.txt_event.TabIndex = 6
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label5.Location = New System.Drawing.Point(12, 644)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(123, 20)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Мероприятие"
+        '
+        'btn_advSmeta
+        '
+        Me.btn_advSmeta.Location = New System.Drawing.Point(981, 649)
+        Me.btn_advSmeta.Name = "btn_advSmeta"
+        Me.btn_advSmeta.Size = New System.Drawing.Size(75, 75)
+        Me.btn_advSmeta.TabIndex = 7
+        Me.btn_advSmeta.Text = "Advanced"
+        Me.btn_advSmeta.UseVisualStyleBackColor = True
+        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2140,14 +2140,14 @@ Partial Class smetaMainForm
         Me.TabPage4.ResumeLayout(False)
         CType(Me.dgv_advSmeta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
-        Me.TabPage6.ResumeLayout(False)
-        Me.TabPage7.ResumeLayout(False)
-        Me.TabPage8.ResumeLayout(False)
-        Me.TabPage9.ResumeLayout(False)
         CType(Me.dgv_belimlight, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.ResumeLayout(False)
         CType(Me.dgv_prlighting, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage7.ResumeLayout(False)
         CType(Me.dgv_blackout, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage8.ResumeLayout(False)
         CType(Me.dgv_vision, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage9.ResumeLayout(False)
         CType(Me.dgv_stage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
