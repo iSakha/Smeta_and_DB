@@ -578,6 +578,20 @@ Public Class smetaMainForm
     '             === Advanced smeta ===
     '===================================================================================
     Private Sub btn_advSmeta_Click(sender As Object, e As EventArgs) Handles btn_advSmeta.Click
+        tbCtrl_smeta.SelectedIndex = 3
+
+        Dim targetRows = enumRows()
+
+        dgv_advSmeta.Rows.Clear()
+
+        For Each drr As DataGridViewRow In DGV_smeta.Rows
+            Dim row As DataGridViewRow = CType(drr.Clone(), DataGridViewRow)
+            For i As Integer = 0 To drr.Cells.Count - 1
+                row.Cells(i).Value = drr.Cells(i).Value
+                row.DefaultCellStyle.BackColor = SystemColors.Window
+            Next
+            dgv_advSmeta.Rows.Add(row)
+        Next
 
     End Sub
 
