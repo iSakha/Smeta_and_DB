@@ -62,16 +62,35 @@ Public Class smetaMainForm
         mainForm.rusRub_rate = My.Settings.rusRub_rate
         mainForm.BYN_rate = My.Settings.BYN_rate
 
-        '   Create List of companies' buttons
+        '   Create List of companies' buttons and tabs
         '----------------------------------------
         mainForm.btnsAdvSmeta = New List(Of Control)
+        mainForm.tabsSmeta = New List(Of TabPage)
 
-        For Each ctrl As Control In Me.tbCtrl_smeta.TabPages(3).Controls
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(4))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(5))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(6))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(7))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(8))
 
-            If ctrl.Tag = "adv" Then
-                mainForm.btnsAdvSmeta.Add(ctrl)
-            End If
-        Next ctrl
+        tbCtrl_smeta.TabPages.Remove(TabPage9)
+        tbCtrl_smeta.TabPages.Remove(TabPage8)
+        tbCtrl_smeta.TabPages.Remove(TabPage7)
+        tbCtrl_smeta.TabPages.Remove(TabPage6)
+        tbCtrl_smeta.TabPages.Remove(TabPage5)
+
+        'For Each ctrl As Control In Me.tbCtrl_smeta.TabPages(3).Controls
+
+        '    If ctrl.Tag = "adv" Then
+        '        mainForm.btnsAdvSmeta.Add(ctrl)
+        '    End If
+        'Next ctrl
+
+        mainForm.btnsAdvSmeta.Add(Me.btn_belimlight)
+        mainForm.btnsAdvSmeta.Add(Me.btn_prlighting)
+        mainForm.btnsAdvSmeta.Add(Me.btn_blackout)
+        mainForm.btnsAdvSmeta.Add(Me.btn_vision)
+        mainForm.btnsAdvSmeta.Add(Me.btn_stage)
 
         mainForm.color_belimlight = Color.FromArgb(252, 228, 214)
         mainForm.color_PRLighting = Color.FromArgb(221, 235, 247)
@@ -602,6 +621,7 @@ Public Class smetaMainForm
         dgv_advSmeta.Columns.Add("Column 24", "Blct")
         dgv_advSmeta.Columns.Add("Column 25", "Vsn")
         dgv_advSmeta.Columns.Add("Column 26", "Stg")
+        dgv_advSmeta.Columns.Add("Column 27", "Company")
 
         format_advanced_smeta()
     End Sub
@@ -662,6 +682,13 @@ Public Class smetaMainForm
                     btn.BackColor = Color.FromArgb(237, 226, 246)
             End Select
         Next btn
+
+        tbCtrl_smeta.TabPages.Remove(TabPage9)
+        tbCtrl_smeta.TabPages.Remove(TabPage8)
+        tbCtrl_smeta.TabPages.Remove(TabPage7)
+        tbCtrl_smeta.TabPages.Remove(TabPage6)
+        tbCtrl_smeta.TabPages.Remove(TabPage5)
+
     End Sub
 
 

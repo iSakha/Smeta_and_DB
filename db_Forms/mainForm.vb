@@ -64,6 +64,7 @@ Public Class mainForm
     Public selectedCurrency As String = "USD"
 
     Public btnsAdvSmeta As List(Of Control)
+    Public tabsSmeta As List(Of TabPage)
 
     '===================================================================================
     '             === mainForm_Load ===
@@ -659,13 +660,12 @@ Public Class mainForm
         'Console.WriteLine(i_superPivotDict(0)(2)(2).Name)
 
         'extractFiles()
-        btnsAdvSmeta = New List(Of Control)
 
-        For Each ctrl As Control In smetaMainForm.tbCtrl_smeta.TabPages(3).Controls
-            Console.WriteLine(ctrl.Name)
-        Next ctrl
+        'btnsAdvSmeta = New List(Of Control)
 
-
+        'For Each ctrl As Control In smetaMainForm.tbCtrl_smeta.TabPages(3).Controls
+        '    Console.WriteLine(ctrl.Name)
+        'Next ctrl
     End Sub
 
     '=================================================================================== 
