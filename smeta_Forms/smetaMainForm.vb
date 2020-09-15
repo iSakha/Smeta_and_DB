@@ -79,12 +79,6 @@ Public Class smetaMainForm
         tbCtrl_smeta.TabPages.Remove(TabPage6)
         tbCtrl_smeta.TabPages.Remove(TabPage5)
 
-        'For Each ctrl As Control In Me.tbCtrl_smeta.TabPages(3).Controls
-
-        '    If ctrl.Tag = "adv" Then
-        '        mainForm.btnsAdvSmeta.Add(ctrl)
-        '    End If
-        'Next ctrl
 
         mainForm.btnsAdvSmeta.Add(Me.btn_belimlight)
         mainForm.btnsAdvSmeta.Add(Me.btn_prlighting)
@@ -615,15 +609,9 @@ Public Class smetaMainForm
             Next
             dgv_advSmeta.Rows.Add(row)
         Next
-        dgv_advSmeta.Columns.Add("Column 21", "Rest")
-        dgv_advSmeta.Columns.Add("Column 22", "Blml")
-        dgv_advSmeta.Columns.Add("Column 23", "Prltng")
-        dgv_advSmeta.Columns.Add("Column 24", "Blct")
-        dgv_advSmeta.Columns.Add("Column 25", "Vsn")
-        dgv_advSmeta.Columns.Add("Column 26", "Stg")
-        dgv_advSmeta.Columns.Add("Column 27", "Company")
 
         format_advanced_smeta()
+
     End Sub
 
     '===================================================================================
@@ -632,6 +620,7 @@ Public Class smetaMainForm
 
     Private Sub btn_belimlight_Click(sender As Object, e As EventArgs) Handles btn_belimlight.Click
         disableSelected(sender)
+        calculateFixturesByCompanies(sender)
     End Sub
     '===================================================================================
     '             === PRLighting button ===
@@ -639,6 +628,7 @@ Public Class smetaMainForm
 
     Private Sub btn_prlighting_Click(sender As Object, e As EventArgs) Handles btn_prlighting.Click
         disableSelected(sender)
+        calculateFixturesByCompanies(sender)
     End Sub
     '===================================================================================
     '             === Blackout button ===
@@ -646,6 +636,7 @@ Public Class smetaMainForm
 
     Private Sub btn_blackout_Click(sender As Object, e As EventArgs) Handles btn_blackout.Click
         disableSelected(sender)
+        calculateFixturesByCompanies(sender)
     End Sub
     '===================================================================================
     '             === Multivision button ===
@@ -653,6 +644,7 @@ Public Class smetaMainForm
 
     Private Sub btn_vision_Click(sender As Object, e As EventArgs) Handles btn_vision.Click
         disableSelected(sender)
+        calculateFixturesByCompanies(sender)
     End Sub
     '===================================================================================
     '             === Stage Engineering button ===
@@ -660,6 +652,7 @@ Public Class smetaMainForm
 
     Private Sub btn_stage_Click(sender As Object, e As EventArgs) Handles btn_stage.Click
         disableSelected(sender)
+        calculateFixturesByCompanies(sender)
     End Sub
     '===================================================================================
     '             === Reset button ===

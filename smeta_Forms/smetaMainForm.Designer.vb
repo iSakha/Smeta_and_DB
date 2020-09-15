@@ -94,6 +94,18 @@ Partial Class smetaMainForm
         Me.btn_prlighting = New System.Windows.Forms.Button()
         Me.btn_belimlight = New System.Windows.Forms.Button()
         Me.dgv_advSmeta = New System.Windows.Forms.DataGridView()
+        Me.txt_weight = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_pwr = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_event = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_advSmeta = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,18 +127,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_weight = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_pwr = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_event = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btn_advSmeta = New System.Windows.Forms.Button()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.Column22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_belimlight = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -149,6 +156,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn41 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn127 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn128 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn129 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn130 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn131 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn132 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn133 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_prlighting = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -171,6 +185,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn61 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn62 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn63 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn134 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn135 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn136 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn137 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn138 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn139 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn140 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_blackout = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn64 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -193,6 +214,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn82 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn83 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn84 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn141 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn142 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn143 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn144 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn145 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn146 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn147 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_vision = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn85 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn86 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -215,6 +243,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn103 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn104 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn105 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn148 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn149 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn150 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn151 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn152 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn153 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn154 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_stage = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn106 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn107 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -237,6 +272,13 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn124 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn125 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn126 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn155 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn156 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn157 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn158 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn159 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn160 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn161 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -963,130 +1005,13 @@ Partial Class smetaMainForm
         Me.dgv_advSmeta.AllowUserToAddRows = False
         Me.dgv_advSmeta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_advSmeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_advSmeta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21})
+        Me.dgv_advSmeta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.Column22, Me.Column23, Me.Column24, Me.Column25, Me.Column26, Me.Column27, Me.Column28})
         Me.dgv_advSmeta.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.dgv_advSmeta.Location = New System.Drawing.Point(170, 6)
         Me.dgv_advSmeta.Name = "dgv_advSmeta"
         Me.dgv_advSmeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_advSmeta.Size = New System.Drawing.Size(888, 603)
         Me.dgv_advSmeta.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Dep"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Cat"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Fixture"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Qty"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "BelImlight"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Visible = False
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "PRLightigTouring"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Visible = False
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "BlackOut"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Visible = False
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Vision"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Visible = False
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Stage"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Visible = False
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Weight"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Power/Length"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Price"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Result"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.Visible = False
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.HeaderText = "R2"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.Visible = False
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.HeaderText = "R3"
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        Me.DataGridViewTextBoxColumn16.Visible = False
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.HeaderText = "R4"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.Visible = False
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.HeaderText = "R5"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.Visible = False
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.HeaderText = "R6"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.Visible = False
-        '
-        'DataGridViewTextBoxColumn20
-        '
-        Me.DataGridViewTextBoxColumn20.HeaderText = "R7"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        Me.DataGridViewTextBoxColumn20.Visible = False
-        '
-        'DataGridViewTextBoxColumn21
-        '
-        Me.DataGridViewTextBoxColumn21.HeaderText = "OrderQty"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
         '
         'txt_weight
         '
@@ -1209,12 +1134,164 @@ Partial Class smetaMainForm
         Me.TabPage9.Text = "Stage"
         Me.TabPage9.UseVisualStyleBackColor = True
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Dep"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Cat"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Fixture"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Qty"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "BelImlight"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "PRLightigTouring"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "BlackOut"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Visible = False
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Vision"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Visible = False
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Stage"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Visible = False
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Weight"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Power/Length"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Price"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Result"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Visible = False
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.HeaderText = "R2"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.Visible = False
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.HeaderText = "R3"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.Visible = False
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.HeaderText = "R4"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.Visible = False
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.HeaderText = "R5"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.Visible = False
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.HeaderText = "R6"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.Visible = False
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.HeaderText = "R7"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.Visible = False
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.HeaderText = "OrderQty"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        '
+        'Column22
+        '
+        Me.Column22.HeaderText = "Rest"
+        Me.Column22.Name = "Column22"
+        '
+        'Column23
+        '
+        Me.Column23.HeaderText = "Blml"
+        Me.Column23.Name = "Column23"
+        '
+        'Column24
+        '
+        Me.Column24.HeaderText = "Prltng"
+        Me.Column24.Name = "Column24"
+        '
+        'Column25
+        '
+        Me.Column25.HeaderText = "Blct"
+        Me.Column25.Name = "Column25"
+        '
+        'Column26
+        '
+        Me.Column26.HeaderText = "Vsn"
+        Me.Column26.Name = "Column26"
+        '
+        'Column27
+        '
+        Me.Column27.HeaderText = "Stg"
+        Me.Column27.Name = "Column27"
+        '
+        'Column28
+        '
+        Me.Column28.HeaderText = "Company"
+        Me.Column28.Name = "Column28"
+        '
         'dgv_belimlight
         '
         Me.dgv_belimlight.AllowUserToAddRows = False
         Me.dgv_belimlight.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_belimlight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_belimlight.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42})
+        Me.dgv_belimlight.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn127, Me.DataGridViewTextBoxColumn128, Me.DataGridViewTextBoxColumn129, Me.DataGridViewTextBoxColumn130, Me.DataGridViewTextBoxColumn131, Me.DataGridViewTextBoxColumn132, Me.DataGridViewTextBoxColumn133})
         Me.dgv_belimlight.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.dgv_belimlight.Location = New System.Drawing.Point(88, 6)
         Me.dgv_belimlight.Name = "dgv_belimlight"
@@ -1339,12 +1416,47 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn42.HeaderText = "OrderQty"
         Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
         '
+        'DataGridViewTextBoxColumn127
+        '
+        Me.DataGridViewTextBoxColumn127.HeaderText = "Rest"
+        Me.DataGridViewTextBoxColumn127.Name = "DataGridViewTextBoxColumn127"
+        '
+        'DataGridViewTextBoxColumn128
+        '
+        Me.DataGridViewTextBoxColumn128.HeaderText = "Blml"
+        Me.DataGridViewTextBoxColumn128.Name = "DataGridViewTextBoxColumn128"
+        '
+        'DataGridViewTextBoxColumn129
+        '
+        Me.DataGridViewTextBoxColumn129.HeaderText = "Prltng"
+        Me.DataGridViewTextBoxColumn129.Name = "DataGridViewTextBoxColumn129"
+        '
+        'DataGridViewTextBoxColumn130
+        '
+        Me.DataGridViewTextBoxColumn130.HeaderText = "Blct"
+        Me.DataGridViewTextBoxColumn130.Name = "DataGridViewTextBoxColumn130"
+        '
+        'DataGridViewTextBoxColumn131
+        '
+        Me.DataGridViewTextBoxColumn131.HeaderText = "Vsn"
+        Me.DataGridViewTextBoxColumn131.Name = "DataGridViewTextBoxColumn131"
+        '
+        'DataGridViewTextBoxColumn132
+        '
+        Me.DataGridViewTextBoxColumn132.HeaderText = "Stg"
+        Me.DataGridViewTextBoxColumn132.Name = "DataGridViewTextBoxColumn132"
+        '
+        'DataGridViewTextBoxColumn133
+        '
+        Me.DataGridViewTextBoxColumn133.HeaderText = "Company"
+        Me.DataGridViewTextBoxColumn133.Name = "DataGridViewTextBoxColumn133"
+        '
         'dgv_prlighting
         '
         Me.dgv_prlighting.AllowUserToAddRows = False
         Me.dgv_prlighting.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_prlighting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_prlighting.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50, Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53, Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56, Me.DataGridViewTextBoxColumn57, Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn59, Me.DataGridViewTextBoxColumn60, Me.DataGridViewTextBoxColumn61, Me.DataGridViewTextBoxColumn62, Me.DataGridViewTextBoxColumn63})
+        Me.dgv_prlighting.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50, Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53, Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56, Me.DataGridViewTextBoxColumn57, Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn59, Me.DataGridViewTextBoxColumn60, Me.DataGridViewTextBoxColumn61, Me.DataGridViewTextBoxColumn62, Me.DataGridViewTextBoxColumn63, Me.DataGridViewTextBoxColumn134, Me.DataGridViewTextBoxColumn135, Me.DataGridViewTextBoxColumn136, Me.DataGridViewTextBoxColumn137, Me.DataGridViewTextBoxColumn138, Me.DataGridViewTextBoxColumn139, Me.DataGridViewTextBoxColumn140})
         Me.dgv_prlighting.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.dgv_prlighting.Location = New System.Drawing.Point(88, 6)
         Me.dgv_prlighting.Name = "dgv_prlighting"
@@ -1469,12 +1581,47 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn63.HeaderText = "OrderQty"
         Me.DataGridViewTextBoxColumn63.Name = "DataGridViewTextBoxColumn63"
         '
+        'DataGridViewTextBoxColumn134
+        '
+        Me.DataGridViewTextBoxColumn134.HeaderText = "Rest"
+        Me.DataGridViewTextBoxColumn134.Name = "DataGridViewTextBoxColumn134"
+        '
+        'DataGridViewTextBoxColumn135
+        '
+        Me.DataGridViewTextBoxColumn135.HeaderText = "Blml"
+        Me.DataGridViewTextBoxColumn135.Name = "DataGridViewTextBoxColumn135"
+        '
+        'DataGridViewTextBoxColumn136
+        '
+        Me.DataGridViewTextBoxColumn136.HeaderText = "Prltng"
+        Me.DataGridViewTextBoxColumn136.Name = "DataGridViewTextBoxColumn136"
+        '
+        'DataGridViewTextBoxColumn137
+        '
+        Me.DataGridViewTextBoxColumn137.HeaderText = "Blct"
+        Me.DataGridViewTextBoxColumn137.Name = "DataGridViewTextBoxColumn137"
+        '
+        'DataGridViewTextBoxColumn138
+        '
+        Me.DataGridViewTextBoxColumn138.HeaderText = "Vsn"
+        Me.DataGridViewTextBoxColumn138.Name = "DataGridViewTextBoxColumn138"
+        '
+        'DataGridViewTextBoxColumn139
+        '
+        Me.DataGridViewTextBoxColumn139.HeaderText = "Stg"
+        Me.DataGridViewTextBoxColumn139.Name = "DataGridViewTextBoxColumn139"
+        '
+        'DataGridViewTextBoxColumn140
+        '
+        Me.DataGridViewTextBoxColumn140.HeaderText = "Company"
+        Me.DataGridViewTextBoxColumn140.Name = "DataGridViewTextBoxColumn140"
+        '
         'dgv_blackout
         '
         Me.dgv_blackout.AllowUserToAddRows = False
         Me.dgv_blackout.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_blackout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_blackout.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn64, Me.DataGridViewTextBoxColumn65, Me.DataGridViewTextBoxColumn66, Me.DataGridViewTextBoxColumn67, Me.DataGridViewTextBoxColumn68, Me.DataGridViewTextBoxColumn69, Me.DataGridViewTextBoxColumn70, Me.DataGridViewTextBoxColumn71, Me.DataGridViewTextBoxColumn72, Me.DataGridViewTextBoxColumn73, Me.DataGridViewTextBoxColumn74, Me.DataGridViewTextBoxColumn75, Me.DataGridViewTextBoxColumn76, Me.DataGridViewTextBoxColumn77, Me.DataGridViewTextBoxColumn78, Me.DataGridViewTextBoxColumn79, Me.DataGridViewTextBoxColumn80, Me.DataGridViewTextBoxColumn81, Me.DataGridViewTextBoxColumn82, Me.DataGridViewTextBoxColumn83, Me.DataGridViewTextBoxColumn84})
+        Me.dgv_blackout.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn64, Me.DataGridViewTextBoxColumn65, Me.DataGridViewTextBoxColumn66, Me.DataGridViewTextBoxColumn67, Me.DataGridViewTextBoxColumn68, Me.DataGridViewTextBoxColumn69, Me.DataGridViewTextBoxColumn70, Me.DataGridViewTextBoxColumn71, Me.DataGridViewTextBoxColumn72, Me.DataGridViewTextBoxColumn73, Me.DataGridViewTextBoxColumn74, Me.DataGridViewTextBoxColumn75, Me.DataGridViewTextBoxColumn76, Me.DataGridViewTextBoxColumn77, Me.DataGridViewTextBoxColumn78, Me.DataGridViewTextBoxColumn79, Me.DataGridViewTextBoxColumn80, Me.DataGridViewTextBoxColumn81, Me.DataGridViewTextBoxColumn82, Me.DataGridViewTextBoxColumn83, Me.DataGridViewTextBoxColumn84, Me.DataGridViewTextBoxColumn141, Me.DataGridViewTextBoxColumn142, Me.DataGridViewTextBoxColumn143, Me.DataGridViewTextBoxColumn144, Me.DataGridViewTextBoxColumn145, Me.DataGridViewTextBoxColumn146, Me.DataGridViewTextBoxColumn147})
         Me.dgv_blackout.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.dgv_blackout.Location = New System.Drawing.Point(88, 6)
         Me.dgv_blackout.Name = "dgv_blackout"
@@ -1599,12 +1746,47 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn84.HeaderText = "OrderQty"
         Me.DataGridViewTextBoxColumn84.Name = "DataGridViewTextBoxColumn84"
         '
+        'DataGridViewTextBoxColumn141
+        '
+        Me.DataGridViewTextBoxColumn141.HeaderText = "Rest"
+        Me.DataGridViewTextBoxColumn141.Name = "DataGridViewTextBoxColumn141"
+        '
+        'DataGridViewTextBoxColumn142
+        '
+        Me.DataGridViewTextBoxColumn142.HeaderText = "Blml"
+        Me.DataGridViewTextBoxColumn142.Name = "DataGridViewTextBoxColumn142"
+        '
+        'DataGridViewTextBoxColumn143
+        '
+        Me.DataGridViewTextBoxColumn143.HeaderText = "Prltng"
+        Me.DataGridViewTextBoxColumn143.Name = "DataGridViewTextBoxColumn143"
+        '
+        'DataGridViewTextBoxColumn144
+        '
+        Me.DataGridViewTextBoxColumn144.HeaderText = "Blct"
+        Me.DataGridViewTextBoxColumn144.Name = "DataGridViewTextBoxColumn144"
+        '
+        'DataGridViewTextBoxColumn145
+        '
+        Me.DataGridViewTextBoxColumn145.HeaderText = "Vsn"
+        Me.DataGridViewTextBoxColumn145.Name = "DataGridViewTextBoxColumn145"
+        '
+        'DataGridViewTextBoxColumn146
+        '
+        Me.DataGridViewTextBoxColumn146.HeaderText = "Stg"
+        Me.DataGridViewTextBoxColumn146.Name = "DataGridViewTextBoxColumn146"
+        '
+        'DataGridViewTextBoxColumn147
+        '
+        Me.DataGridViewTextBoxColumn147.HeaderText = "Company"
+        Me.DataGridViewTextBoxColumn147.Name = "DataGridViewTextBoxColumn147"
+        '
         'dgv_vision
         '
         Me.dgv_vision.AllowUserToAddRows = False
         Me.dgv_vision.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_vision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_vision.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn85, Me.DataGridViewTextBoxColumn86, Me.DataGridViewTextBoxColumn87, Me.DataGridViewTextBoxColumn88, Me.DataGridViewTextBoxColumn89, Me.DataGridViewTextBoxColumn90, Me.DataGridViewTextBoxColumn91, Me.DataGridViewTextBoxColumn92, Me.DataGridViewTextBoxColumn93, Me.DataGridViewTextBoxColumn94, Me.DataGridViewTextBoxColumn95, Me.DataGridViewTextBoxColumn96, Me.DataGridViewTextBoxColumn97, Me.DataGridViewTextBoxColumn98, Me.DataGridViewTextBoxColumn99, Me.DataGridViewTextBoxColumn100, Me.DataGridViewTextBoxColumn101, Me.DataGridViewTextBoxColumn102, Me.DataGridViewTextBoxColumn103, Me.DataGridViewTextBoxColumn104, Me.DataGridViewTextBoxColumn105})
+        Me.dgv_vision.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn85, Me.DataGridViewTextBoxColumn86, Me.DataGridViewTextBoxColumn87, Me.DataGridViewTextBoxColumn88, Me.DataGridViewTextBoxColumn89, Me.DataGridViewTextBoxColumn90, Me.DataGridViewTextBoxColumn91, Me.DataGridViewTextBoxColumn92, Me.DataGridViewTextBoxColumn93, Me.DataGridViewTextBoxColumn94, Me.DataGridViewTextBoxColumn95, Me.DataGridViewTextBoxColumn96, Me.DataGridViewTextBoxColumn97, Me.DataGridViewTextBoxColumn98, Me.DataGridViewTextBoxColumn99, Me.DataGridViewTextBoxColumn100, Me.DataGridViewTextBoxColumn101, Me.DataGridViewTextBoxColumn102, Me.DataGridViewTextBoxColumn103, Me.DataGridViewTextBoxColumn104, Me.DataGridViewTextBoxColumn105, Me.DataGridViewTextBoxColumn148, Me.DataGridViewTextBoxColumn149, Me.DataGridViewTextBoxColumn150, Me.DataGridViewTextBoxColumn151, Me.DataGridViewTextBoxColumn152, Me.DataGridViewTextBoxColumn153, Me.DataGridViewTextBoxColumn154})
         Me.dgv_vision.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.dgv_vision.Location = New System.Drawing.Point(88, 6)
         Me.dgv_vision.Name = "dgv_vision"
@@ -1729,12 +1911,47 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn105.HeaderText = "OrderQty"
         Me.DataGridViewTextBoxColumn105.Name = "DataGridViewTextBoxColumn105"
         '
+        'DataGridViewTextBoxColumn148
+        '
+        Me.DataGridViewTextBoxColumn148.HeaderText = "Rest"
+        Me.DataGridViewTextBoxColumn148.Name = "DataGridViewTextBoxColumn148"
+        '
+        'DataGridViewTextBoxColumn149
+        '
+        Me.DataGridViewTextBoxColumn149.HeaderText = "Blml"
+        Me.DataGridViewTextBoxColumn149.Name = "DataGridViewTextBoxColumn149"
+        '
+        'DataGridViewTextBoxColumn150
+        '
+        Me.DataGridViewTextBoxColumn150.HeaderText = "Prltng"
+        Me.DataGridViewTextBoxColumn150.Name = "DataGridViewTextBoxColumn150"
+        '
+        'DataGridViewTextBoxColumn151
+        '
+        Me.DataGridViewTextBoxColumn151.HeaderText = "Blct"
+        Me.DataGridViewTextBoxColumn151.Name = "DataGridViewTextBoxColumn151"
+        '
+        'DataGridViewTextBoxColumn152
+        '
+        Me.DataGridViewTextBoxColumn152.HeaderText = "Vsn"
+        Me.DataGridViewTextBoxColumn152.Name = "DataGridViewTextBoxColumn152"
+        '
+        'DataGridViewTextBoxColumn153
+        '
+        Me.DataGridViewTextBoxColumn153.HeaderText = "Stg"
+        Me.DataGridViewTextBoxColumn153.Name = "DataGridViewTextBoxColumn153"
+        '
+        'DataGridViewTextBoxColumn154
+        '
+        Me.DataGridViewTextBoxColumn154.HeaderText = "Company"
+        Me.DataGridViewTextBoxColumn154.Name = "DataGridViewTextBoxColumn154"
+        '
         'dgv_stage
         '
         Me.dgv_stage.AllowUserToAddRows = False
         Me.dgv_stage.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_stage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_stage.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn106, Me.DataGridViewTextBoxColumn107, Me.DataGridViewTextBoxColumn108, Me.DataGridViewTextBoxColumn109, Me.DataGridViewTextBoxColumn110, Me.DataGridViewTextBoxColumn111, Me.DataGridViewTextBoxColumn112, Me.DataGridViewTextBoxColumn113, Me.DataGridViewTextBoxColumn114, Me.DataGridViewTextBoxColumn115, Me.DataGridViewTextBoxColumn116, Me.DataGridViewTextBoxColumn117, Me.DataGridViewTextBoxColumn118, Me.DataGridViewTextBoxColumn119, Me.DataGridViewTextBoxColumn120, Me.DataGridViewTextBoxColumn121, Me.DataGridViewTextBoxColumn122, Me.DataGridViewTextBoxColumn123, Me.DataGridViewTextBoxColumn124, Me.DataGridViewTextBoxColumn125, Me.DataGridViewTextBoxColumn126})
+        Me.dgv_stage.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn106, Me.DataGridViewTextBoxColumn107, Me.DataGridViewTextBoxColumn108, Me.DataGridViewTextBoxColumn109, Me.DataGridViewTextBoxColumn110, Me.DataGridViewTextBoxColumn111, Me.DataGridViewTextBoxColumn112, Me.DataGridViewTextBoxColumn113, Me.DataGridViewTextBoxColumn114, Me.DataGridViewTextBoxColumn115, Me.DataGridViewTextBoxColumn116, Me.DataGridViewTextBoxColumn117, Me.DataGridViewTextBoxColumn118, Me.DataGridViewTextBoxColumn119, Me.DataGridViewTextBoxColumn120, Me.DataGridViewTextBoxColumn121, Me.DataGridViewTextBoxColumn122, Me.DataGridViewTextBoxColumn123, Me.DataGridViewTextBoxColumn124, Me.DataGridViewTextBoxColumn125, Me.DataGridViewTextBoxColumn126, Me.DataGridViewTextBoxColumn155, Me.DataGridViewTextBoxColumn156, Me.DataGridViewTextBoxColumn157, Me.DataGridViewTextBoxColumn158, Me.DataGridViewTextBoxColumn159, Me.DataGridViewTextBoxColumn160, Me.DataGridViewTextBoxColumn161})
         Me.dgv_stage.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
         Me.dgv_stage.Location = New System.Drawing.Point(88, 6)
         Me.dgv_stage.Name = "dgv_stage"
@@ -1859,6 +2076,41 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn126.HeaderText = "OrderQty"
         Me.DataGridViewTextBoxColumn126.Name = "DataGridViewTextBoxColumn126"
         '
+        'DataGridViewTextBoxColumn155
+        '
+        Me.DataGridViewTextBoxColumn155.HeaderText = "Rest"
+        Me.DataGridViewTextBoxColumn155.Name = "DataGridViewTextBoxColumn155"
+        '
+        'DataGridViewTextBoxColumn156
+        '
+        Me.DataGridViewTextBoxColumn156.HeaderText = "Blml"
+        Me.DataGridViewTextBoxColumn156.Name = "DataGridViewTextBoxColumn156"
+        '
+        'DataGridViewTextBoxColumn157
+        '
+        Me.DataGridViewTextBoxColumn157.HeaderText = "Prltng"
+        Me.DataGridViewTextBoxColumn157.Name = "DataGridViewTextBoxColumn157"
+        '
+        'DataGridViewTextBoxColumn158
+        '
+        Me.DataGridViewTextBoxColumn158.HeaderText = "Blct"
+        Me.DataGridViewTextBoxColumn158.Name = "DataGridViewTextBoxColumn158"
+        '
+        'DataGridViewTextBoxColumn159
+        '
+        Me.DataGridViewTextBoxColumn159.HeaderText = "Vsn"
+        Me.DataGridViewTextBoxColumn159.Name = "DataGridViewTextBoxColumn159"
+        '
+        'DataGridViewTextBoxColumn160
+        '
+        Me.DataGridViewTextBoxColumn160.HeaderText = "Stg"
+        Me.DataGridViewTextBoxColumn160.Name = "DataGridViewTextBoxColumn160"
+        '
+        'DataGridViewTextBoxColumn161
+        '
+        Me.DataGridViewTextBoxColumn161.HeaderText = "Company"
+        Me.DataGridViewTextBoxColumn161.Name = "DataGridViewTextBoxColumn161"
+        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1975,6 +2227,17 @@ Partial Class smetaMainForm
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents btn_advSmeta As Button
     Friend WithEvents dgv_advSmeta As DataGridView
+    Friend WithEvents btn_stage As Button
+    Friend WithEvents btn_vision As Button
+    Friend WithEvents btn_blackout As Button
+    Friend WithEvents btn_prlighting As Button
+    Friend WithEvents btn_belimlight As Button
+    Friend WithEvents btn_clr As Button
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents TabPage9 As TabPage
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -1996,17 +2259,13 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
-    Friend WithEvents btn_stage As Button
-    Friend WithEvents btn_vision As Button
-    Friend WithEvents btn_blackout As Button
-    Friend WithEvents btn_prlighting As Button
-    Friend WithEvents btn_belimlight As Button
-    Friend WithEvents btn_clr As Button
-    Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents TabPage7 As TabPage
-    Friend WithEvents TabPage8 As TabPage
-    Friend WithEvents TabPage9 As TabPage
+    Friend WithEvents Column22 As DataGridViewTextBoxColumn
+    Friend WithEvents Column23 As DataGridViewTextBoxColumn
+    Friend WithEvents Column24 As DataGridViewTextBoxColumn
+    Friend WithEvents Column25 As DataGridViewTextBoxColumn
+    Friend WithEvents Column26 As DataGridViewTextBoxColumn
+    Friend WithEvents Column27 As DataGridViewTextBoxColumn
+    Friend WithEvents Column28 As DataGridViewTextBoxColumn
     Friend WithEvents dgv_belimlight As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
@@ -2029,6 +2288,13 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn40 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn41 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn42 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn127 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn128 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn129 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn130 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn131 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn132 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn133 As DataGridViewTextBoxColumn
     Friend WithEvents dgv_prlighting As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn43 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn44 As DataGridViewTextBoxColumn
@@ -2051,6 +2317,13 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn61 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn62 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn63 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn134 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn135 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn136 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn137 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn138 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn139 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn140 As DataGridViewTextBoxColumn
     Friend WithEvents dgv_blackout As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn64 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn65 As DataGridViewTextBoxColumn
@@ -2073,6 +2346,13 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn82 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn83 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn84 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn141 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn142 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn143 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn144 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn145 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn146 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn147 As DataGridViewTextBoxColumn
     Friend WithEvents dgv_vision As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn85 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn86 As DataGridViewTextBoxColumn
@@ -2095,6 +2375,13 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn103 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn104 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn105 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn148 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn149 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn150 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn151 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn152 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn153 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn154 As DataGridViewTextBoxColumn
     Friend WithEvents dgv_stage As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn106 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn107 As DataGridViewTextBoxColumn
@@ -2117,4 +2404,11 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn124 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn125 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn126 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn155 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn156 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn157 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn158 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn159 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn160 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn161 As DataGridViewTextBoxColumn
 End Class

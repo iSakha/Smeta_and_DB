@@ -152,7 +152,7 @@ Module smetaFunc
         Next r
     End Sub
     '===================================================================================
-    '             === Format DGV_smeta and advanced_smeta ===
+    '             === Format DGV_smeta ===
     '===================================================================================
     Sub format_DGV_smeta(_DGV)
         Dim NRFormat As String = "### ### ##0"
@@ -252,7 +252,9 @@ Module smetaFunc
 
 
     End Sub
-
+    '===================================================================================
+    '             === Format advanced_smeta ===
+    '===================================================================================
     Sub format_advanced_smeta()
         Dim NRFormat As String = "### ### ##0"
         smetaMainForm.dgv_advSmeta.RowHeadersVisible = False
