@@ -706,5 +706,8 @@ Public Class smetaMainForm
 
     End Sub
 
+    Private Sub btn_distribute_Click(sender As Object, e As EventArgs) Handles btn_distribute.Click
+        copyRowToCompanySmeta()
+    End Sub
 
 End Class

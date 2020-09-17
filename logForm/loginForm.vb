@@ -25,6 +25,9 @@ Public Class loginForm
 
         If cmb_login.SelectedItem = "superAdmin" Then
             passwordForm.Show()
+        ElseIf cmb_login.SelectedItem = "guest" Then
+            mainForm.Show()
+            Me.Hide()
         End If
         txt_pass.Select()
     End Sub

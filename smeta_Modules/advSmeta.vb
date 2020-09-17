@@ -32,8 +32,6 @@
             If (r.Cells(index + 5).Value > 0) And (r.Cells(21).Value > 0) Then
                 r.Cells(27).Value = _sender.Name
 
-                copyRowToCompanySmeta(r, index)
-
                 ' How many fixtures taken
                 If r.Cells(index + 5).Value > r.Cells(21).Value Then
                     r.Cells(index + 22).Value = r.Cells(21).Value
@@ -45,18 +43,28 @@
                 r.Cells(21).Value = r.Cells(20).Value - (r.Cells(22).Value + r.Cells(23).Value + r.Cells(24).Value +
                 r.Cells(25).Value + r.Cells(26).Value)
             End If
+
         Next r
+        'copyRowToCompanySmeta(index, _sender.Name)
 
     End Sub
 
-    Sub copyRowToCompanySmeta(_r As DataGridViewRow, _index As Integer)
+    Sub copyRowToCompanySmeta()
 
-        Dim row As DataGridViewRow = CType(_r.Clone(), DataGridViewRow)
-        For i As Integer = 0 To _r.Cells.Count - 1
-            row.Cells(i).Value = _r.Cells(i).Value
-            row.DefaultCellStyle.BackColor = SystemColors.Window
+        Dim row As DataGridViewRow
+
+        For Each dgv As DataGridView In mainForm.companyDGV
+            For Each drr As DataGridViewRow In smetaMainForm.dgv_advSmeta.Rows
+                If drr.Cells(27).Value = dgv.Name Then
+                    row = CType(drr.Clone(), DataGridViewRow)
+                    For i As Integer = 0 To drr.Cells.Count - 1
+                        row.Cells(i).Value = drr.Cells(i).Value
+                        row.DefaultCellStyle.BackColor = SystemColors.Window
+                    Next
+                    dgv.Rows.Add(row)
+                End If
+            Next
         Next
-        mainForm.companyDGV(_index).Rows.Add(row)
     End Sub
 
 End Module

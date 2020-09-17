@@ -279,6 +279,7 @@ Partial Class smetaMainForm
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_advSmeta = New System.Windows.Forms.Button()
+        Me.btn_distribute = New System.Windows.Forms.Button()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -918,6 +919,7 @@ Partial Class smetaMainForm
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.btn_distribute)
         Me.TabPage4.Controls.Add(Me.btn_clr)
         Me.TabPage4.Controls.Add(Me.btn_stage)
         Me.TabPage4.Controls.Add(Me.btn_vision)
@@ -938,7 +940,7 @@ Partial Class smetaMainForm
         Me.btn_clr.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btn_clr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btn_clr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_clr.Location = New System.Drawing.Point(19, 159)
+        Me.btn_clr.Location = New System.Drawing.Point(19, 177)
         Me.btn_clr.Name = "btn_clr"
         Me.btn_clr.Size = New System.Drawing.Size(145, 23)
         Me.btn_clr.TabIndex = 4
@@ -2111,6 +2113,18 @@ Partial Class smetaMainForm
         Me.btn_advSmeta.Text = "Advanced"
         Me.btn_advSmeta.UseVisualStyleBackColor = True
         '
+        'btn_distribute
+        '
+        Me.btn_distribute.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_distribute.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btn_distribute.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_distribute.Location = New System.Drawing.Point(19, 206)
+        Me.btn_distribute.Name = "btn_distribute"
+        Me.btn_distribute.Size = New System.Drawing.Size(145, 23)
+        Me.btn_distribute.TabIndex = 4
+        Me.btn_distribute.Text = "Distribute"
+        Me.btn_distribute.UseVisualStyleBackColor = False
+        '
         'smetaMainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2411,4 +2425,5 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn159 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn160 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn161 As DataGridViewTextBoxColumn
+    Friend WithEvents btn_distribute As Button
 End Class
