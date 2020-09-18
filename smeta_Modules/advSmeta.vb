@@ -51,19 +51,31 @@
 
     Sub copyRowToCompanySmeta()
 
+        clear_companyDGV()
         Dim row As DataGridViewRow
+        'Dim dgv As DataGridView = smetaMainForm.dgv_belimlight
 
-        For Each dgv As DataGridView In mainForm.companyDGV
+        For i As Integer = 0 To mainForm.companyDGV.Count - 1
+
             For Each drr As DataGridViewRow In smetaMainForm.dgv_advSmeta.Rows
-                If drr.Cells(27).Value = dgv.Name Then
+                'For Each drr As DataGridViewRow In dgv.Rows
+
+                If drr.Cells(i + 22).Value > 0 Then
                     row = CType(drr.Clone(), DataGridViewRow)
-                    For i As Integer = 0 To drr.Cells.Count - 1
-                        row.Cells(i).Value = drr.Cells(i).Value
+                    For j As Integer = 0 To drr.Cells.Count - 1
+                        row.Cells(j).Value = drr.Cells(j).Value
                         row.DefaultCellStyle.BackColor = SystemColors.Window
                     Next
-                    dgv.Rows.Add(row)
+                    mainForm.companyDGV(i).Rows.Add(row)
                 End If
             Next
+            'format_advanced_smeta(mainForm.companyDGV(i))
+        Next
+    End Sub
+
+    Sub clear_companyDGV()
+        For i As Integer = 0 To mainForm.companyDGV.Count - 1
+            mainForm.companyDGV(i).Rows.Clear()
         Next
     End Sub
 
