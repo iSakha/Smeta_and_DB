@@ -32,7 +32,7 @@ Public Class mainForm
     Public sCompany() As String = {"belimlight", "PRLighting", "blackout", "vision", "stage"}
 
     Public color_belimlight, color_PRLighting, color_blackout, color_vision, color_stage As Color
-
+    Public companyColors(5) As Color
     Public delta As Integer     ' to increase or decrease table when push Add or Delete 
 
     Public exportDir As String

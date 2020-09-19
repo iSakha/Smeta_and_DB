@@ -11,6 +11,7 @@
         _sender.Enabled = False
 
         smetaMainForm.tbCtrl_smeta.TabPages.Add(mainForm.tabsSmeta(index))
+
     End Sub
 
     Sub calculateFixturesByCompanies(_sender As Button)
@@ -42,6 +43,9 @@
                 '   How many rest to take
                 r.Cells(21).Value = r.Cells(20).Value - (r.Cells(22).Value + r.Cells(23).Value + r.Cells(24).Value +
                 r.Cells(25).Value + r.Cells(26).Value)
+
+                '   How many remain in company
+                r.Cells(index + 5).Value = r.Cells(index + 5).Value - r.Cells(index + 22).Value
             End If
 
         Next r
@@ -52,8 +56,8 @@
     Sub copyRowToCompanySmeta()
 
         clear_companyDGV()
+
         Dim row As DataGridViewRow
-        'Dim dgv As DataGridView = smetaMainForm.dgv_belimlight
 
         For i As Integer = 0 To mainForm.companyDGV.Count - 1
 
@@ -66,20 +70,24 @@
                         row.Cells(j).Value = drr.Cells(j).Value
                         row.DefaultCellStyle.BackColor = SystemColors.Window
                     Next
+                    row.Cells(27).Value = mainForm.btnsAdvSmeta(i).Name
                     mainForm.companyDGV(i).Rows.Add(row)
                 End If
+
             Next
-            format_companyDGV(mainForm.companyDGV(i))
+            format_companyDGV(mainForm.companyDGV(i), i)
         Next
+
     End Sub
 
     Sub clear_companyDGV()
         For i As Integer = 0 To mainForm.companyDGV.Count - 1
             mainForm.companyDGV(i).Rows.Clear()
         Next
+        smetaMainForm.dgv_summary.Rows.Clear()
     End Sub
 
-    Sub format_companyDGV(_DGV)
+    Sub format_companyDGV(_DGV, _i)
 
         Dim NRFormat As String = "### ### ##0"
         _DGV.RowHeadersVisible = False
@@ -132,23 +140,10 @@
             r.Cells(8).Style.BackColor = mainForm.color_vision
             r.Cells(9).Style.BackColor = mainForm.color_stage
 
-            _DGV.Columns(21).Visible = False
-
-            r.Cells(22).Style.BackColor = mainForm.color_belimlight
-            'r.Cells(22).Value = 0
-            r.Cells(23).Style.BackColor = mainForm.color_PRLighting
-            'r.Cells(23).Value = 0
-            r.Cells(24).Style.BackColor = mainForm.color_blackout
-            'r.Cells(24).Value = 0
-            r.Cells(25).Style.BackColor = mainForm.color_vision
-            'r.Cells(25).Value = 0
-            r.Cells(26).Style.BackColor = mainForm.color_stage
-            'r.Cells(26).Value = 0
-
-
+            If _i < 6 Then
+                r.Cells(21).Value = r.Cells(_i + 22).Value
+            End If
         Next r
-
-
 
         _DGV.Columns(1).Width = 30
         _DGV.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Cat
@@ -237,7 +232,111 @@
         _DGV.Columns(26).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
         _DGV.Columns(26).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        ' _DGV.Rows(_DGV.Rows.Count - 1).Visible = False
+        ' _DGV.Columns(21).Visible = False
+
+        _DGV.Columns(22).Visible = False
+        _DGV.Columns(23).Visible = False
+        _DGV.Columns(24).Visible = False
+        _DGV.Columns(25).Visible = False
+        _DGV.Columns(26).Visible = False
+
+        Select Case _i
+
+            Case 0
+                _DGV.Columns(22).Visible = True
+            Case 1
+                _DGV.Columns(23).Visible = True
+            Case 2
+                _DGV.Columns(24).Visible = True
+            Case 3
+                _DGV.Columns(25).Visible = True
+            Case 4
+                _DGV.Columns(26).Visible = True
+            Case 6
+                _DGV.Columns(2).Visible = True
+
+                _DGV.Columns(5).Visible = False
+                _DGV.Columns(6).Visible = False
+                _DGV.Columns(7).Visible = False
+                _DGV.Columns(8).Visible = False
+                _DGV.Columns(9).Visible = False
+
+                _DGV.Columns(21).HeaderText = "Taken"
+
+                '_DGV.Columns(22).Visible = True
+                '_DGV.Columns(23).Visible = True
+                '_DGV.Columns(24).Visible = True
+                '_DGV.Columns(25).Visible = True
+                '_DGV.Columns(26).Visible = True
+
+        End Select
+
         _DGV.ClearSelection()
     End Sub
+
+    Sub coloredByCompany()
+
+        mainForm.companyColors(0) = mainForm.color_belimlight
+        mainForm.companyColors(1) = mainForm.color_PRLighting
+        mainForm.companyColors(2) = mainForm.color_blackout
+        mainForm.companyColors(3) = mainForm.color_vision
+        mainForm.companyColors(4) = mainForm.color_stage
+
+        For Each row As DataGridViewRow In smetaMainForm.dgv_summary.Rows
+            Dim colorIndex As Integer
+            For Each btn As Button In mainForm.btnsAdvSmeta
+                If btn.Name = row.Cells(27).Value Then
+                    colorIndex = mainForm.btnsAdvSmeta.IndexOf(btn)
+                    row.Cells(3).Style.BackColor = mainForm.companyColors(colorIndex)
+                    row.Cells(4).Style.BackColor = mainForm.companyColors(colorIndex)
+                    row.Cells(20).Style.BackColor = mainForm.companyColors(colorIndex)
+                    row.Cells(21).Style.BackColor = mainForm.companyColors(colorIndex)
+                    row.Cells(27).Style.BackColor = mainForm.companyColors(colorIndex)
+                End If
+            Next btn
+        Next row
+    End Sub
+
+    Sub resetColor()
+        For Each row As DataGridViewRow In smetaMainForm.dgv_summary.Rows
+            row.Cells(3).Style.BackColor = SystemColors.Window
+            row.Cells(4).Style.BackColor = SystemColors.Window
+            row.Cells(20).Style.BackColor = SystemColors.Window
+            row.Cells(21).Style.BackColor = SystemColors.Window
+            row.Cells(27).Style.BackColor = SystemColors.Window
+        Next row
+    End Sub
+
+    Sub filter_dgv_Summary(_name As String)
+        For Each row As DataGridViewRow In smetaMainForm.dgv_summary.Rows
+            If row.Cells(27).Value = _name Then
+                row.Visible = True
+            Else
+                row.Visible = False
+            End If
+        Next row
+    End Sub
+
+    Sub clearFilter()
+        For Each row As DataGridViewRow In smetaMainForm.dgv_summary.Rows
+            row.Visible = True
+        Next row
+    End Sub
+
+    Function selectedRadioButton(_sender As RadioButton)
+        Dim companyName As String
+        Select Case _sender.Name
+            Case "rbtn_belimlight"
+                companyName = "btn_belimlight"
+            Case "rbtn_prlighting"
+                companyName = "btn_prlighting"
+            Case "rbtn_blackout"
+                companyName = "btn_blackout"
+            Case "rbtn_vision"
+                companyName = "btn_vision"
+            Case "rbtn_stage"
+                companyName = "btn_stage"
+        End Select
+        Return companyName
+    End Function
 End Module

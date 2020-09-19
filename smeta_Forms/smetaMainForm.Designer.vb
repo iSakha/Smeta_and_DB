@@ -87,6 +87,8 @@ Partial Class smetaMainForm
         Me.cmb_eventLocation = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btn_summary = New System.Windows.Forms.Button()
+        Me.btn_distribute = New System.Windows.Forms.Button()
         Me.btn_clr = New System.Windows.Forms.Button()
         Me.btn_stage = New System.Windows.Forms.Button()
         Me.btn_vision = New System.Windows.Forms.Button()
@@ -272,6 +274,46 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn159 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn160 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn161 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbtn_all = New System.Windows.Forms.RadioButton()
+        Me.rbtn_stage = New System.Windows.Forms.RadioButton()
+        Me.rbtn_vision = New System.Windows.Forms.RadioButton()
+        Me.rbtn_blackout = New System.Windows.Forms.RadioButton()
+        Me.rbtn_prlighting = New System.Windows.Forms.RadioButton()
+        Me.rbtn_belimlight = New System.Windows.Forms.RadioButton()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.rbtn_colorOFF = New System.Windows.Forms.RadioButton()
+        Me.rbtn_colorON = New System.Windows.Forms.RadioButton()
+        Me.dgv_summary = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn162 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn163 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn164 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn165 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn166 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn167 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn168 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn169 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn170 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn171 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn172 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn173 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn174 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn175 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn176 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn177 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn178 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn179 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn180 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn181 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn182 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn183 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn184 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn185 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn186 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn187 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn188 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn189 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_weight = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_pwr = New System.Windows.Forms.TextBox()
@@ -279,7 +321,9 @@ Partial Class smetaMainForm
         Me.txt_event = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_advSmeta = New System.Windows.Forms.Button()
-        Me.btn_distribute = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.rbtn_id = New System.Windows.Forms.RadioButton()
+        Me.rbtn_company = New System.Windows.Forms.RadioButton()
         CType(Me.DGV_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbCtrl_smeta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -299,6 +343,11 @@ Partial Class smetaMainForm
         CType(Me.dgv_vision, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage9.SuspendLayout()
         CType(Me.dgv_stage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage10.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.dgv_summary, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGV_db
@@ -325,6 +374,7 @@ Partial Class smetaMainForm
         Me.tbCtrl_smeta.Controls.Add(Me.TabPage7)
         Me.tbCtrl_smeta.Controls.Add(Me.TabPage8)
         Me.tbCtrl_smeta.Controls.Add(Me.TabPage9)
+        Me.tbCtrl_smeta.Controls.Add(Me.TabPage10)
         Me.tbCtrl_smeta.Location = New System.Drawing.Point(0, 0)
         Me.tbCtrl_smeta.Name = "tbCtrl_smeta"
         Me.tbCtrl_smeta.SelectedIndex = 0
@@ -919,6 +969,7 @@ Partial Class smetaMainForm
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.btn_summary)
         Me.TabPage4.Controls.Add(Me.btn_distribute)
         Me.TabPage4.Controls.Add(Me.btn_clr)
         Me.TabPage4.Controls.Add(Me.btn_stage)
@@ -934,6 +985,30 @@ Partial Class smetaMainForm
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Advanced"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'btn_summary
+        '
+        Me.btn_summary.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_summary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btn_summary.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_summary.Location = New System.Drawing.Point(19, 235)
+        Me.btn_summary.Name = "btn_summary"
+        Me.btn_summary.Size = New System.Drawing.Size(145, 23)
+        Me.btn_summary.TabIndex = 4
+        Me.btn_summary.Text = "Summary"
+        Me.btn_summary.UseVisualStyleBackColor = False
+        '
+        'btn_distribute
+        '
+        Me.btn_distribute.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_distribute.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btn_distribute.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_distribute.Location = New System.Drawing.Point(19, 206)
+        Me.btn_distribute.Name = "btn_distribute"
+        Me.btn_distribute.Size = New System.Drawing.Size(145, 23)
+        Me.btn_distribute.TabIndex = 4
+        Me.btn_distribute.Text = "Distribute"
+        Me.btn_distribute.UseVisualStyleBackColor = False
         '
         'btn_clr
         '
@@ -2042,6 +2117,295 @@ Partial Class smetaMainForm
         Me.DataGridViewTextBoxColumn161.HeaderText = "Company"
         Me.DataGridViewTextBoxColumn161.Name = "DataGridViewTextBoxColumn161"
         '
+        'TabPage10
+        '
+        Me.TabPage10.Controls.Add(Me.GroupBox4)
+        Me.TabPage10.Controls.Add(Me.GroupBox3)
+        Me.TabPage10.Controls.Add(Me.GroupBox2)
+        Me.TabPage10.Controls.Add(Me.dgv_summary)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage10.Name = "TabPage10"
+        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage10.Size = New System.Drawing.Size(1064, 615)
+        Me.TabPage10.TabIndex = 9
+        Me.TabPage10.Text = "Summary"
+        Me.TabPage10.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.GroupBox3.Controls.Add(Me.rbtn_all)
+        Me.GroupBox3.Controls.Add(Me.rbtn_stage)
+        Me.GroupBox3.Controls.Add(Me.rbtn_vision)
+        Me.GroupBox3.Controls.Add(Me.rbtn_blackout)
+        Me.GroupBox3.Controls.Add(Me.rbtn_prlighting)
+        Me.GroupBox3.Controls.Add(Me.rbtn_belimlight)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 144)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(82, 159)
+        Me.GroupBox3.TabIndex = 9
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Filter"
+        '
+        'rbtn_all
+        '
+        Me.rbtn_all.AutoSize = True
+        Me.rbtn_all.Location = New System.Drawing.Point(1, 135)
+        Me.rbtn_all.Name = "rbtn_all"
+        Me.rbtn_all.Size = New System.Drawing.Size(36, 17)
+        Me.rbtn_all.TabIndex = 1
+        Me.rbtn_all.Text = "All"
+        Me.rbtn_all.UseVisualStyleBackColor = True
+        '
+        'rbtn_stage
+        '
+        Me.rbtn_stage.AutoSize = True
+        Me.rbtn_stage.Location = New System.Drawing.Point(1, 112)
+        Me.rbtn_stage.Name = "rbtn_stage"
+        Me.rbtn_stage.Size = New System.Drawing.Size(53, 17)
+        Me.rbtn_stage.TabIndex = 2
+        Me.rbtn_stage.Text = "Stage"
+        Me.rbtn_stage.UseVisualStyleBackColor = True
+        '
+        'rbtn_vision
+        '
+        Me.rbtn_vision.AutoSize = True
+        Me.rbtn_vision.Location = New System.Drawing.Point(1, 89)
+        Me.rbtn_vision.Name = "rbtn_vision"
+        Me.rbtn_vision.Size = New System.Drawing.Size(74, 17)
+        Me.rbtn_vision.TabIndex = 0
+        Me.rbtn_vision.Text = "Multivision"
+        Me.rbtn_vision.UseVisualStyleBackColor = True
+        '
+        'rbtn_blackout
+        '
+        Me.rbtn_blackout.AutoSize = True
+        Me.rbtn_blackout.Location = New System.Drawing.Point(1, 66)
+        Me.rbtn_blackout.Name = "rbtn_blackout"
+        Me.rbtn_blackout.Size = New System.Drawing.Size(67, 17)
+        Me.rbtn_blackout.TabIndex = 0
+        Me.rbtn_blackout.Text = "Blackout"
+        Me.rbtn_blackout.UseVisualStyleBackColor = True
+        '
+        'rbtn_prlighting
+        '
+        Me.rbtn_prlighting.AutoSize = True
+        Me.rbtn_prlighting.Location = New System.Drawing.Point(1, 43)
+        Me.rbtn_prlighting.Name = "rbtn_prlighting"
+        Me.rbtn_prlighting.Size = New System.Drawing.Size(77, 17)
+        Me.rbtn_prlighting.TabIndex = 0
+        Me.rbtn_prlighting.Text = "PRLighting"
+        Me.rbtn_prlighting.UseVisualStyleBackColor = True
+        '
+        'rbtn_belimlight
+        '
+        Me.rbtn_belimlight.AutoSize = True
+        Me.rbtn_belimlight.Location = New System.Drawing.Point(1, 20)
+        Me.rbtn_belimlight.Name = "rbtn_belimlight"
+        Me.rbtn_belimlight.Size = New System.Drawing.Size(69, 17)
+        Me.rbtn_belimlight.TabIndex = 0
+        Me.rbtn_belimlight.Text = "Belimlight"
+        Me.rbtn_belimlight.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.GroupBox2.Controls.Add(Me.rbtn_colorOFF)
+        Me.GroupBox2.Controls.Add(Me.rbtn_colorON)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 34)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(82, 86)
+        Me.GroupBox2.TabIndex = 8
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Company color"
+        '
+        'rbtn_colorOFF
+        '
+        Me.rbtn_colorOFF.AutoSize = True
+        Me.rbtn_colorOFF.Checked = True
+        Me.rbtn_colorOFF.Location = New System.Drawing.Point(7, 55)
+        Me.rbtn_colorOFF.Name = "rbtn_colorOFF"
+        Me.rbtn_colorOFF.Size = New System.Drawing.Size(72, 17)
+        Me.rbtn_colorOFF.TabIndex = 10
+        Me.rbtn_colorOFF.TabStop = True
+        Me.rbtn_colorOFF.Text = "Color OFF"
+        Me.rbtn_colorOFF.UseVisualStyleBackColor = True
+        '
+        'rbtn_colorON
+        '
+        Me.rbtn_colorON.AutoSize = True
+        Me.rbtn_colorON.Location = New System.Drawing.Point(7, 31)
+        Me.rbtn_colorON.Name = "rbtn_colorON"
+        Me.rbtn_colorON.Size = New System.Drawing.Size(68, 17)
+        Me.rbtn_colorON.TabIndex = 9
+        Me.rbtn_colorON.Text = "Color ON"
+        Me.rbtn_colorON.UseVisualStyleBackColor = True
+        '
+        'dgv_summary
+        '
+        Me.dgv_summary.AllowUserToAddRows = False
+        Me.dgv_summary.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv_summary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_summary.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn162, Me.DataGridViewTextBoxColumn163, Me.DataGridViewTextBoxColumn164, Me.DataGridViewTextBoxColumn165, Me.DataGridViewTextBoxColumn166, Me.DataGridViewTextBoxColumn167, Me.DataGridViewTextBoxColumn168, Me.DataGridViewTextBoxColumn169, Me.DataGridViewTextBoxColumn170, Me.DataGridViewTextBoxColumn171, Me.DataGridViewTextBoxColumn172, Me.DataGridViewTextBoxColumn173, Me.DataGridViewTextBoxColumn174, Me.DataGridViewTextBoxColumn175, Me.DataGridViewTextBoxColumn176, Me.DataGridViewTextBoxColumn177, Me.DataGridViewTextBoxColumn178, Me.DataGridViewTextBoxColumn179, Me.DataGridViewTextBoxColumn180, Me.DataGridViewTextBoxColumn181, Me.DataGridViewTextBoxColumn182, Me.DataGridViewTextBoxColumn183, Me.DataGridViewTextBoxColumn184, Me.DataGridViewTextBoxColumn185, Me.DataGridViewTextBoxColumn186, Me.DataGridViewTextBoxColumn187, Me.DataGridViewTextBoxColumn188, Me.DataGridViewTextBoxColumn189})
+        Me.dgv_summary.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2
+        Me.dgv_summary.Location = New System.Drawing.Point(88, 6)
+        Me.dgv_summary.Name = "dgv_summary"
+        Me.dgv_summary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_summary.Size = New System.Drawing.Size(888, 603)
+        Me.dgv_summary.TabIndex = 4
+        '
+        'DataGridViewTextBoxColumn162
+        '
+        Me.DataGridViewTextBoxColumn162.HeaderText = "Dep"
+        Me.DataGridViewTextBoxColumn162.Name = "DataGridViewTextBoxColumn162"
+        '
+        'DataGridViewTextBoxColumn163
+        '
+        Me.DataGridViewTextBoxColumn163.HeaderText = "Cat"
+        Me.DataGridViewTextBoxColumn163.Name = "DataGridViewTextBoxColumn163"
+        '
+        'DataGridViewTextBoxColumn164
+        '
+        Me.DataGridViewTextBoxColumn164.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn164.Name = "DataGridViewTextBoxColumn164"
+        '
+        'DataGridViewTextBoxColumn165
+        '
+        Me.DataGridViewTextBoxColumn165.HeaderText = "Fixture"
+        Me.DataGridViewTextBoxColumn165.Name = "DataGridViewTextBoxColumn165"
+        '
+        'DataGridViewTextBoxColumn166
+        '
+        Me.DataGridViewTextBoxColumn166.HeaderText = "Qty"
+        Me.DataGridViewTextBoxColumn166.Name = "DataGridViewTextBoxColumn166"
+        '
+        'DataGridViewTextBoxColumn167
+        '
+        Me.DataGridViewTextBoxColumn167.HeaderText = "BelImlight"
+        Me.DataGridViewTextBoxColumn167.Name = "DataGridViewTextBoxColumn167"
+        Me.DataGridViewTextBoxColumn167.Visible = False
+        '
+        'DataGridViewTextBoxColumn168
+        '
+        Me.DataGridViewTextBoxColumn168.HeaderText = "PRLightigTouring"
+        Me.DataGridViewTextBoxColumn168.Name = "DataGridViewTextBoxColumn168"
+        Me.DataGridViewTextBoxColumn168.Visible = False
+        '
+        'DataGridViewTextBoxColumn169
+        '
+        Me.DataGridViewTextBoxColumn169.HeaderText = "BlackOut"
+        Me.DataGridViewTextBoxColumn169.Name = "DataGridViewTextBoxColumn169"
+        Me.DataGridViewTextBoxColumn169.Visible = False
+        '
+        'DataGridViewTextBoxColumn170
+        '
+        Me.DataGridViewTextBoxColumn170.HeaderText = "Vision"
+        Me.DataGridViewTextBoxColumn170.Name = "DataGridViewTextBoxColumn170"
+        Me.DataGridViewTextBoxColumn170.Visible = False
+        '
+        'DataGridViewTextBoxColumn171
+        '
+        Me.DataGridViewTextBoxColumn171.HeaderText = "Stage"
+        Me.DataGridViewTextBoxColumn171.Name = "DataGridViewTextBoxColumn171"
+        Me.DataGridViewTextBoxColumn171.Visible = False
+        '
+        'DataGridViewTextBoxColumn172
+        '
+        Me.DataGridViewTextBoxColumn172.HeaderText = "Weight"
+        Me.DataGridViewTextBoxColumn172.Name = "DataGridViewTextBoxColumn172"
+        '
+        'DataGridViewTextBoxColumn173
+        '
+        Me.DataGridViewTextBoxColumn173.HeaderText = "Power/Length"
+        Me.DataGridViewTextBoxColumn173.Name = "DataGridViewTextBoxColumn173"
+        '
+        'DataGridViewTextBoxColumn174
+        '
+        Me.DataGridViewTextBoxColumn174.HeaderText = "Price"
+        Me.DataGridViewTextBoxColumn174.Name = "DataGridViewTextBoxColumn174"
+        '
+        'DataGridViewTextBoxColumn175
+        '
+        Me.DataGridViewTextBoxColumn175.HeaderText = "Result"
+        Me.DataGridViewTextBoxColumn175.Name = "DataGridViewTextBoxColumn175"
+        Me.DataGridViewTextBoxColumn175.Visible = False
+        '
+        'DataGridViewTextBoxColumn176
+        '
+        Me.DataGridViewTextBoxColumn176.HeaderText = "R2"
+        Me.DataGridViewTextBoxColumn176.Name = "DataGridViewTextBoxColumn176"
+        Me.DataGridViewTextBoxColumn176.Visible = False
+        '
+        'DataGridViewTextBoxColumn177
+        '
+        Me.DataGridViewTextBoxColumn177.HeaderText = "R3"
+        Me.DataGridViewTextBoxColumn177.Name = "DataGridViewTextBoxColumn177"
+        Me.DataGridViewTextBoxColumn177.Visible = False
+        '
+        'DataGridViewTextBoxColumn178
+        '
+        Me.DataGridViewTextBoxColumn178.HeaderText = "R4"
+        Me.DataGridViewTextBoxColumn178.Name = "DataGridViewTextBoxColumn178"
+        Me.DataGridViewTextBoxColumn178.Visible = False
+        '
+        'DataGridViewTextBoxColumn179
+        '
+        Me.DataGridViewTextBoxColumn179.HeaderText = "R5"
+        Me.DataGridViewTextBoxColumn179.Name = "DataGridViewTextBoxColumn179"
+        Me.DataGridViewTextBoxColumn179.Visible = False
+        '
+        'DataGridViewTextBoxColumn180
+        '
+        Me.DataGridViewTextBoxColumn180.HeaderText = "R6"
+        Me.DataGridViewTextBoxColumn180.Name = "DataGridViewTextBoxColumn180"
+        Me.DataGridViewTextBoxColumn180.Visible = False
+        '
+        'DataGridViewTextBoxColumn181
+        '
+        Me.DataGridViewTextBoxColumn181.HeaderText = "R7"
+        Me.DataGridViewTextBoxColumn181.Name = "DataGridViewTextBoxColumn181"
+        Me.DataGridViewTextBoxColumn181.Visible = False
+        '
+        'DataGridViewTextBoxColumn182
+        '
+        Me.DataGridViewTextBoxColumn182.HeaderText = "OrderQty"
+        Me.DataGridViewTextBoxColumn182.Name = "DataGridViewTextBoxColumn182"
+        '
+        'DataGridViewTextBoxColumn183
+        '
+        Me.DataGridViewTextBoxColumn183.HeaderText = "Rest"
+        Me.DataGridViewTextBoxColumn183.Name = "DataGridViewTextBoxColumn183"
+        '
+        'DataGridViewTextBoxColumn184
+        '
+        Me.DataGridViewTextBoxColumn184.HeaderText = "Blml"
+        Me.DataGridViewTextBoxColumn184.Name = "DataGridViewTextBoxColumn184"
+        '
+        'DataGridViewTextBoxColumn185
+        '
+        Me.DataGridViewTextBoxColumn185.HeaderText = "Prltng"
+        Me.DataGridViewTextBoxColumn185.Name = "DataGridViewTextBoxColumn185"
+        '
+        'DataGridViewTextBoxColumn186
+        '
+        Me.DataGridViewTextBoxColumn186.HeaderText = "Blct"
+        Me.DataGridViewTextBoxColumn186.Name = "DataGridViewTextBoxColumn186"
+        '
+        'DataGridViewTextBoxColumn187
+        '
+        Me.DataGridViewTextBoxColumn187.HeaderText = "Vsn"
+        Me.DataGridViewTextBoxColumn187.Name = "DataGridViewTextBoxColumn187"
+        '
+        'DataGridViewTextBoxColumn188
+        '
+        Me.DataGridViewTextBoxColumn188.HeaderText = "Stg"
+        Me.DataGridViewTextBoxColumn188.Name = "DataGridViewTextBoxColumn188"
+        '
+        'DataGridViewTextBoxColumn189
+        '
+        Me.DataGridViewTextBoxColumn189.HeaderText = "Company"
+        Me.DataGridViewTextBoxColumn189.Name = "DataGridViewTextBoxColumn189"
+        '
         'txt_weight
         '
         Me.txt_weight.BackColor = System.Drawing.SystemColors.Info
@@ -2113,17 +2477,39 @@ Partial Class smetaMainForm
         Me.btn_advSmeta.Text = "Advanced"
         Me.btn_advSmeta.UseVisualStyleBackColor = True
         '
-        'btn_distribute
+        'GroupBox4
         '
-        Me.btn_distribute.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btn_distribute.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btn_distribute.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_distribute.Location = New System.Drawing.Point(19, 206)
-        Me.btn_distribute.Name = "btn_distribute"
-        Me.btn_distribute.Size = New System.Drawing.Size(145, 23)
-        Me.btn_distribute.TabIndex = 4
-        Me.btn_distribute.Text = "Distribute"
-        Me.btn_distribute.UseVisualStyleBackColor = False
+        Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.GroupBox4.Controls.Add(Me.rbtn_company)
+        Me.GroupBox4.Controls.Add(Me.rbtn_id)
+        Me.GroupBox4.Location = New System.Drawing.Point(4, 334)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(82, 86)
+        Me.GroupBox4.TabIndex = 10
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Sorting"
+        '
+        'rbtn_id
+        '
+        Me.rbtn_id.AutoSize = True
+        Me.rbtn_id.Location = New System.Drawing.Point(3, 20)
+        Me.rbtn_id.Name = "rbtn_id"
+        Me.rbtn_id.Size = New System.Drawing.Size(51, 17)
+        Me.rbtn_id.TabIndex = 0
+        Me.rbtn_id.TabStop = True
+        Me.rbtn_id.Text = "By ID"
+        Me.rbtn_id.UseVisualStyleBackColor = True
+        '
+        'rbtn_company
+        '
+        Me.rbtn_company.AutoSize = True
+        Me.rbtn_company.Location = New System.Drawing.Point(3, 43)
+        Me.rbtn_company.Name = "rbtn_company"
+        Me.rbtn_company.Size = New System.Drawing.Size(84, 17)
+        Me.rbtn_company.TabIndex = 0
+        Me.rbtn_company.TabStop = True
+        Me.rbtn_company.Text = "By Company"
+        Me.rbtn_company.UseVisualStyleBackColor = True
         '
         'smetaMainForm
         '
@@ -2163,6 +2549,14 @@ Partial Class smetaMainForm
         CType(Me.dgv_vision, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage9.ResumeLayout(False)
         CType(Me.dgv_stage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage10.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.dgv_summary, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2426,4 +2820,48 @@ Partial Class smetaMainForm
     Friend WithEvents DataGridViewTextBoxColumn160 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn161 As DataGridViewTextBoxColumn
     Friend WithEvents btn_distribute As Button
+    Friend WithEvents TabPage10 As TabPage
+    Friend WithEvents dgv_summary As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn162 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn163 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn164 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn165 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn166 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn167 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn168 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn169 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn170 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn171 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn172 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn173 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn174 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn175 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn176 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn177 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn178 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn179 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn180 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn181 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn182 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn183 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn184 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn185 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn186 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn187 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn188 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn189 As DataGridViewTextBoxColumn
+    Friend WithEvents btn_summary As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents rbtn_all As RadioButton
+    Friend WithEvents rbtn_stage As RadioButton
+    Friend WithEvents rbtn_vision As RadioButton
+    Friend WithEvents rbtn_blackout As RadioButton
+    Friend WithEvents rbtn_prlighting As RadioButton
+    Friend WithEvents rbtn_belimlight As RadioButton
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents rbtn_colorOFF As RadioButton
+    Friend WithEvents rbtn_colorON As RadioButton
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents rbtn_company As RadioButton
+    Friend WithEvents rbtn_id As RadioButton
 End Class

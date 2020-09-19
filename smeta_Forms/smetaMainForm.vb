@@ -628,9 +628,6 @@ Public Class smetaMainForm
     Private Sub btn_belimlight_Click(sender As Object, e As EventArgs) Handles btn_belimlight.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
-        If dgv_belimlight.Rows.Count > 0 Then
-            format_advanced_smeta(dgv_belimlight)
-        End If
     End Sub
     '===================================================================================
     '             === PRLighting button ===
@@ -639,9 +636,6 @@ Public Class smetaMainForm
     Private Sub btn_prlighting_Click(sender As Object, e As EventArgs) Handles btn_prlighting.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
-        If dgv_prlighting.Rows.Count > 0 Then
-            format_advanced_smeta(dgv_prlighting)
-        End If
     End Sub
     '===================================================================================
     '             === Blackout button ===
@@ -650,9 +644,6 @@ Public Class smetaMainForm
     Private Sub btn_blackout_Click(sender As Object, e As EventArgs) Handles btn_blackout.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
-        If dgv_blackout.Rows.Count > 0 Then
-            format_advanced_smeta(dgv_blackout)
-        End If
     End Sub
     '===================================================================================
     '             === Multivision button ===
@@ -661,9 +652,6 @@ Public Class smetaMainForm
     Private Sub btn_vision_Click(sender As Object, e As EventArgs) Handles btn_vision.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
-        If dgv_vision.Rows.Count > 0 Then
-            format_advanced_smeta(dgv_vision)
-        End If
     End Sub
     '===================================================================================
     '             === Stage Engineering button ===
@@ -672,9 +660,6 @@ Public Class smetaMainForm
     Private Sub btn_stage_Click(sender As Object, e As EventArgs) Handles btn_stage.Click
         disableSelected(sender)
         calculateFixturesByCompanies(sender)
-        If dgv_stage.Rows.Count > 0 Then
-            format_advanced_smeta(dgv_stage)
-        End If
     End Sub
     '===================================================================================
     '             === Reset button ===
@@ -710,4 +695,77 @@ Public Class smetaMainForm
         copyRowToCompanySmeta()
     End Sub
 
+    Private Sub btn_summary_Click(sender As Object, e As EventArgs) Handles btn_summary.Click
+
+        dgv_summary.Rows.Clear()
+        Dim row As DataGridViewRow
+        For i As Integer = 0 To mainForm.companyDGV.Count - 1
+
+            For Each drr As DataGridViewRow In mainForm.companyDGV(i).Rows
+                row = CType(drr.Clone(), DataGridViewRow)
+                For j As Integer = 0 To drr.Cells.Count - 1
+                    row.Cells(j).Value = drr.Cells(j).Value
+                    row.DefaultCellStyle.BackColor = SystemColors.Window
+                Next j
+                dgv_summary.Rows.Add(row)
+            Next drr
+        Next i
+
+
+
+
+        For Each drr As DataGridViewRow In dgv_advSmeta.Rows
+            If drr.Cells(21).Value > 0 Then
+                row = CType(drr.Clone(), DataGridViewRow)
+                For j As Integer = 0 To drr.Cells.Count - 1
+                    row.Cells(j).Value = drr.Cells(j).Value
+                    row.DefaultCellStyle.BackColor = SystemColors.Window
+                Next j
+                row.Cells(27).Value = ""
+                dgv_summary.Rows.Add(row)
+            End If
+        Next drr
+
+        format_companyDGV(dgv_summary, 6)
+    End Sub
+
+    Private Sub rbtn_colorON_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_colorON.CheckedChanged
+        If rbtn_colorON.Checked = True Then
+            coloredByCompany()
+        Else
+            resetColor()
+        End If
+    End Sub
+
+    Private Sub rbtn_belimlight_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_belimlight.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_prlighting_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_prlighting.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_blackout_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_blackout.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_vision_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_vision.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_stage_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_stage.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_all_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_all.CheckedChanged
+        clearFilter()
+    End Sub
+
+    Private Sub rbtn_id_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_id.CheckedChanged
+        dgv_summary.Sort(dgv_summary.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub rbtn_company_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_company.CheckedChanged
+        dgv_summary.Sort(dgv_summary.Columns(27), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
 End Class
