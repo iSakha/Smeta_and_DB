@@ -641,6 +641,13 @@ Public Class mainForm
 
     End Sub
 
+    '===================================================================================      
+    '                === Run lost_n_foundForm ===
+    '===================================================================================
+    Private Sub LostAndFoundToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LostAndFoundToolStripMenuItem.Click
+        lost_n_foundForm.Show()
+    End Sub
+
     Private Sub mainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         loginForm.Close()
     End Sub
