@@ -101,9 +101,9 @@ Module smetaFunc
         dt.Columns(11).ColumnName = "Power/Length"
         dt.Columns(12).ColumnName = "Price"
 
-        dt.Columns(13).ColumnName = "R1"
-        dt.Columns(14).ColumnName = "R2"
-        dt.Columns(15).ColumnName = "R3"
+        dt.Columns(13).ColumnName = "Result"
+        dt.Columns(14).ColumnName = "Qty_found"
+        dt.Columns(15).ColumnName = "Ilya_Notes"
         dt.Columns(16).ColumnName = "R4"
         dt.Columns(17).ColumnName = "R5"
         dt.Columns(18).ColumnName = "R6"

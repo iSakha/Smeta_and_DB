@@ -91,6 +91,12 @@
     <Compile Include="db_Forms\editForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="db_Forms\lost_n_foundForm.Designer.vb">
+      <DependentUpon>lost_n_foundForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="db_Forms\lost_n_foundForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="db_Forms\paramForm.Designer.vb">
       <DependentUpon>paramForm.vb</DependentUpon>
     </Compile>
@@ -109,6 +115,7 @@
     <Compile Include="db_Forms\exportExcel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="db_Modules\lost_n_found.vb" />
     <Compile Include="smeta_Modules\advSmeta.vb" />
     <Compile Include="db_Modules\load_and_close.vb" />
     <Compile Include="db_Forms\mainForm.vb">
@@ -180,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="db_Forms\editForm.resx">
       <DependentUpon>editForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="db_Forms\lost_n_foundForm.resx">
+      <DependentUpon>lost_n_foundForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="db_Forms\paramForm.resx">
       <DependentUpon>paramForm.vb</DependentUpon>
