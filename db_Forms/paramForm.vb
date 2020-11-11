@@ -26,7 +26,7 @@ Public Class paramForm
 
         dt = TryCast(dgv.DataSource, DataTable)
 
-        Console.WriteLine(dt.TableName)
+        'Console.WriteLine(dt.TableName)
 
         Dim xlTable As ExcelTable
         Dim startCellAddress As String
@@ -37,19 +37,19 @@ Public Class paramForm
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
         Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
 
-        Console.WriteLine(excelFile.Name)
+        'Console.WriteLine(excelFile.Name)
 
         ws = Excel.Workbook.Worksheets(mainForm.iCategory)
 
-        Console.WriteLine(ws.Name)
+        'Console.WriteLine(ws.Name)
 
         xlTable = ws.Tables(0)
 
-        Console.WriteLine(xlTable.Name)
+        'Console.WriteLine(xlTable.Name)
         startCellAddress = xlTable.Range.Start.Address
         Console.WriteLine(startCellAddress)
         For i As Integer = 0 To dt.Columns.Count - 1
-            Console.WriteLine(dt.Columns(i).ColumnName)
+            'Console.WriteLine(dt.Columns(i).ColumnName)
         Next
         ws.Cells(startCellAddress).LoadFromDataTable(dt, True)
         Excel.SaveAs(excelFile)

@@ -10,6 +10,7 @@ Public Class smetaMainForm
     '             === Load Smeta Form  ===
     '===================================================================================
     Private Sub smetaMainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         createGlobal_dt()
         format_DGV_smeta(DGV_db)
         format_DGV_smeta(DGV_smeta)
@@ -51,6 +52,52 @@ Public Class smetaMainForm
         lbl_depart_value.Text = "Lighting"
         lbl_depart_value.BackColor = btn_lighting_smeta.BackColor
         DGV_db.ClearSelection()
+
+        lbl_currency.Text = "USD"
+
+        '   Save currency rate to settings
+        '----------------------------------------
+        mainForm.USD_rate = My.Settings.USD_rate
+        mainForm.Euro_rate = My.Settings.Euro_rate
+        mainForm.rusRub_rate = My.Settings.rusRub_rate
+        mainForm.BYN_rate = My.Settings.BYN_rate
+
+        '   Create List of companies' buttons and tabs
+        '----------------------------------------
+        mainForm.btnsAdvSmeta = New List(Of Control)
+        mainForm.tabsSmeta = New List(Of TabPage)
+        mainForm.companyDGV = New List(Of DataGridView)
+
+        mainForm.companyDGV.Add(dgv_belimlight)
+        mainForm.companyDGV.Add(dgv_prlighting)
+        mainForm.companyDGV.Add(dgv_blackout)
+        mainForm.companyDGV.Add(dgv_vision)
+        mainForm.companyDGV.Add(dgv_stage)
+
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(4))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(5))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(6))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(7))
+        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(8))
+
+        tbCtrl_smeta.TabPages.Remove(TabPage9)
+        tbCtrl_smeta.TabPages.Remove(TabPage8)
+        tbCtrl_smeta.TabPages.Remove(TabPage7)
+        tbCtrl_smeta.TabPages.Remove(TabPage6)
+        tbCtrl_smeta.TabPages.Remove(TabPage5)
+
+
+        mainForm.btnsAdvSmeta.Add(Me.btn_belimlight)
+        mainForm.btnsAdvSmeta.Add(Me.btn_prlighting)
+        mainForm.btnsAdvSmeta.Add(Me.btn_blackout)
+        mainForm.btnsAdvSmeta.Add(Me.btn_vision)
+        mainForm.btnsAdvSmeta.Add(Me.btn_stage)
+
+        mainForm.color_belimlight = Color.FromArgb(252, 228, 214)
+        mainForm.color_PRLighting = Color.FromArgb(221, 235, 247)
+        mainForm.color_blackout = Color.FromArgb(237, 237, 237)
+        mainForm.color_vision = Color.FromArgb(226, 239, 218)
+        mainForm.color_stage = Color.FromArgb(237, 226, 246)
 
     End Sub
 
@@ -128,7 +175,7 @@ Public Class smetaMainForm
     Private Sub DGV_smeta_Scroll(sender As Object, e As ScrollEventArgs) _
      Handles DGV_db.Scroll
 
-        Console.WriteLine(DGV_db.FirstDisplayedScrollingRowIndex)
+        'Console.WriteLine(DGV_db.FirstDisplayedScrollingRowIndex)
 
     End Sub
     '===================================================================================
@@ -148,19 +195,33 @@ Public Class smetaMainForm
     '===================================================================================
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
 
+        mainForm.USD_val = New Collection
+        mainForm.Euro_val = New Collection
+        mainForm.rusRub_val = New Collection
+        mainForm.BYN_val = New Collection
+
         Dim targetRows = enumRows()
+
         DGV_smeta.Rows.Clear()
+
         For Each drr As DataGridViewRow In enumRows()
             Dim row As DataGridViewRow = CType(drr.Clone(), DataGridViewRow)
-            For i As Int32 = 0 To drr.Cells.Count - 1
+            For i As Integer = 0 To drr.Cells.Count - 1
                 row.Cells(i).Value = drr.Cells(i).Value
                 row.DefaultCellStyle.BackColor = SystemColors.Window
             Next
+
+            mainForm.USD_val.Add(Math.Round(row.Cells(12).Value * mainForm.USD_rate))
+            mainForm.Euro_val.Add(Math.Round(row.Cells(12).Value * mainForm.Euro_rate))
+            mainForm.rusRub_val.Add(Math.Round(row.Cells(12).Value * mainForm.rusRub_rate * 100))
+            mainForm.BYN_val.Add(Math.Round(row.Cells(12).Value * mainForm.BYN_rate))
+
             DGV_smeta.Rows.Add(row)
         Next
 
         tbCtrl_smeta.SelectedIndex = 1
         DGV_smeta.ClearSelection()
+        rbtn_usd.Checked = True
 
     End Sub
 
@@ -348,12 +409,12 @@ Public Class smetaMainForm
                 If DGV_smeta.Rows(i).Cells(0).Value < DGV_smeta.Rows(i + 1).Cells(0).Value Then         'Check that this is last row in department (i.e. department changed)
                     startRow = startRow + 1
                     startRow = writeSummary(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
-                    'startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                    startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
                 Else
                     If DGV_smeta.Rows(i + 1).Cells(0).Value = 0 Then
                         startRow = startRow + 1
                         startRow = writeSummary(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
-                        'startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
+                        startRow = discount(startRow, wsSmeta, DGV_smeta.Rows(i).Cells(0).Value)
                     End If
                     startRow = startRow + 1
                 End If
@@ -432,31 +493,279 @@ Public Class smetaMainForm
         Dim rng As ExcelRange
 
         _ws.Row(_rowIndex).Height = 30
+        _ws.Cells(_rowIndex, 3).Value = "ИТОГО:"
+        _ws.Cells(_rowIndex, 3).Style.Font.Size = 14
+        _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
+        _ws.Cells(_rowIndex, 3).Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+        _ws.Cells(_rowIndex, 3).Style.VerticalAlignment = Style.ExcelVerticalAlignment.Center
+
         _ws.Cells(_rowIndex, 7).Value = mainForm.weight(_depIndex - 1)
         _ws.Cells(_rowIndex, 8).Value = mainForm.qty(_depIndex - 1)
         _ws.Cells(_rowIndex, 9).Value = 0
+        _ws.Cells(_rowIndex, 11).Value = mainForm.price(_depIndex - 1)
 
         rng = _ws.Cells(_rowIndex, 7, _rowIndex, 11)
         rng.Style.Font.Size = 12
         rng.Style.Font.Bold = True
 
-        _rowIndex = _rowIndex + 1
+        rng.Style.HorizontalAlignment = Style.ExcelHorizontalAlignment.Center
+        rng.Style.VerticalAlignment = Style.ExcelVerticalAlignment.Center
+
+        _rowIndex = _rowIndex + 3
 
         Return (_rowIndex)
+
     End Function
+
+
     '===================================================================================
     '             === Discount function ===
     '===================================================================================
     Function discount(_rowIndex As Integer, _ws As ExcelWorksheet, _depIndex As Integer)
         If mainForm.discountStatus(_depIndex - 1) Then
-            _ws.Cells(_rowIndex, 1).Value = "Discount"
-            _rowIndex = _rowIndex + 3
-        End If
+            _ws.Cells(_rowIndex, 3).Value = "Скидка,%"
+            _ws.Cells(_rowIndex, 3).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 3).Style.Font.Color.SetColor(Color.Red)
+            _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
 
+            _ws.Cells(_rowIndex, 4).Value = mainForm.discountValue(_depIndex - 1)
+            _ws.Cells(_rowIndex, 4).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 4).Style.Font.Color.SetColor(Color.Red)
+            _ws.Cells(_rowIndex, 4).Style.Font.Bold = True
+
+            _rowIndex = _rowIndex + 1
+
+            _ws.Cells(_rowIndex, 3).Value = "Цена со скидкой"
+            _ws.Cells(_rowIndex, 3).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 3).Style.Font.Bold = True
+            _ws.Cells(_rowIndex, 3).Style.Font.UnderLine = True
+
+            _ws.Cells(_rowIndex, 5).Value = mainForm.discountPrice(_depIndex - 1)
+            _ws.Cells(_rowIndex, 5).Style.Font.Size = 14
+            _ws.Cells(_rowIndex, 5).Style.Font.Bold = True
+
+
+        End If
+        _rowIndex = _rowIndex + 3
         Return (_rowIndex)
     End Function
 
     Private Sub btn_discount_Click(sender As Object, e As EventArgs) Handles btn_discount.Click
         discountForm.Show()
+    End Sub
+    '===================================================================================
+    '             === Currency select ===
+    '===================================================================================
+    Private Sub rbtn_usd_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_usd.CheckedChanged
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "USD"
+            mainForm.selectedCurrency = "USD"
+            changeCurrency(mainForm.USD_val)
+        End If
+    End Sub
+
+    Private Sub rbtn_euro_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_euro.CheckedChanged
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "Euro"
+            mainForm.selectedCurrency = "Euro"
+            changeCurrency(mainForm.Euro_val)
+        End If
+    End Sub
+
+    Private Sub rbtn_rub_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_rub.CheckedChanged
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "Rub"
+            mainForm.selectedCurrency = "rusRub"
+            changeCurrency(mainForm.rusRub_val)
+        End If
+    End Sub
+
+    Private Sub rbtn_byn_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_byn.CheckedChanged
+        If DGV_smeta.Rows.Count > 1 Then
+            lbl_currency.Text = "BYN"
+            mainForm.selectedCurrency = "BYN"
+            changeCurrency(mainForm.BYN_val)
+        End If
+    End Sub
+    '===================================================================================
+    '             === Show currency rate ===
+    '===================================================================================
+    Private Sub btn_show_curRates_Click(sender As Object, e As EventArgs) Handles btn_show_curRates.Click
+        currencyForm.Show()
+    End Sub
+    '===================================================================================
+    '             === Personnel ===
+    '===================================================================================
+    Private Sub btn_pers_Click(sender As Object, e As EventArgs) Handles btn_pers.Click
+        tbCtrl_smeta.SelectedIndex = 2
+    End Sub
+
+    '===================================================================================
+    '             === Advanced smeta ===
+    '===================================================================================
+    Private Sub btn_advSmeta_Click(sender As Object, e As EventArgs) Handles btn_advSmeta.Click
+        tbCtrl_smeta.SelectedIndex = 3
+
+        dgv_advSmeta.Rows.Clear()
+
+        For Each drr As DataGridViewRow In DGV_smeta.Rows
+            Dim row As DataGridViewRow = CType(drr.Clone(), DataGridViewRow)
+            For i As Integer = 0 To drr.Cells.Count - 1
+                row.Cells(i).Value = drr.Cells(i).Value
+                row.DefaultCellStyle.BackColor = SystemColors.Window
+            Next
+            dgv_advSmeta.Rows.Add(row)
+        Next
+
+        format_advanced_smeta(dgv_advSmeta)
+
+    End Sub
+
+    '===================================================================================
+    '             === Belimlight button ===
+    '===================================================================================
+
+    Private Sub btn_belimlight_Click(sender As Object, e As EventArgs) Handles btn_belimlight.Click
+        disableSelected(sender)
+        calculateFixturesByCompanies(sender)
+    End Sub
+    '===================================================================================
+    '             === PRLighting button ===
+    '===================================================================================
+
+    Private Sub btn_prlighting_Click(sender As Object, e As EventArgs) Handles btn_prlighting.Click
+        disableSelected(sender)
+        calculateFixturesByCompanies(sender)
+    End Sub
+    '===================================================================================
+    '             === Blackout button ===
+    '===================================================================================
+
+    Private Sub btn_blackout_Click(sender As Object, e As EventArgs) Handles btn_blackout.Click
+        disableSelected(sender)
+        calculateFixturesByCompanies(sender)
+    End Sub
+    '===================================================================================
+    '             === Multivision button ===
+    '===================================================================================
+
+    Private Sub btn_vision_Click(sender As Object, e As EventArgs) Handles btn_vision.Click
+        disableSelected(sender)
+        calculateFixturesByCompanies(sender)
+    End Sub
+    '===================================================================================
+    '             === Stage Engineering button ===
+    '===================================================================================
+
+    Private Sub btn_stage_Click(sender As Object, e As EventArgs) Handles btn_stage.Click
+        disableSelected(sender)
+        calculateFixturesByCompanies(sender)
+    End Sub
+    '===================================================================================
+    '             === Reset button ===
+    '===================================================================================
+    Private Sub btn_clr_Click(sender As Object, e As EventArgs) Handles btn_clr.Click
+
+        For Each btn In mainForm.btnsAdvSmeta
+            Console.WriteLine(btn.Name)
+            btn.Enabled = True
+            Select Case btn.Name
+                Case "btn_belimlight"
+                    btn.BackColor = Color.FromArgb(252, 228, 214)
+                Case "btn_prlighting"
+                    btn.BackColor = Color.FromArgb(221, 235, 247)
+                Case "btn_blackout"
+                    btn.BackColor = Color.FromArgb(237, 237, 237)
+                Case "btn_vision"
+                    btn.BackColor = Color.FromArgb(226, 239, 218)
+                Case "btn_stage"
+                    btn.BackColor = Color.FromArgb(237, 226, 246)
+            End Select
+        Next btn
+
+        tbCtrl_smeta.TabPages.Remove(TabPage9)
+        tbCtrl_smeta.TabPages.Remove(TabPage8)
+        tbCtrl_smeta.TabPages.Remove(TabPage7)
+        tbCtrl_smeta.TabPages.Remove(TabPage6)
+        tbCtrl_smeta.TabPages.Remove(TabPage5)
+
+    End Sub
+
+    Private Sub btn_distribute_Click(sender As Object, e As EventArgs) Handles btn_distribute.Click
+        copyRowToCompanySmeta()
+    End Sub
+
+    Private Sub btn_summary_Click(sender As Object, e As EventArgs) Handles btn_summary.Click
+
+        dgv_summary.Rows.Clear()
+        Dim row As DataGridViewRow
+        For i As Integer = 0 To mainForm.companyDGV.Count - 1
+
+            For Each drr As DataGridViewRow In mainForm.companyDGV(i).Rows
+                row = CType(drr.Clone(), DataGridViewRow)
+                For j As Integer = 0 To drr.Cells.Count - 1
+                    row.Cells(j).Value = drr.Cells(j).Value
+                    row.DefaultCellStyle.BackColor = SystemColors.Window
+                Next j
+                dgv_summary.Rows.Add(row)
+            Next drr
+        Next i
+
+
+
+
+        For Each drr As DataGridViewRow In dgv_advSmeta.Rows
+            If drr.Cells(21).Value > 0 Then
+                row = CType(drr.Clone(), DataGridViewRow)
+                For j As Integer = 0 To drr.Cells.Count - 1
+                    row.Cells(j).Value = drr.Cells(j).Value
+                    row.DefaultCellStyle.BackColor = SystemColors.Window
+                Next j
+                row.Cells(27).Value = ""
+                dgv_summary.Rows.Add(row)
+            End If
+        Next drr
+
+        format_companyDGV(dgv_summary, 6)
+    End Sub
+
+    Private Sub rbtn_colorON_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_colorON.CheckedChanged
+        If rbtn_colorON.Checked = True Then
+            coloredByCompany()
+        Else
+            resetColor()
+        End If
+    End Sub
+
+    Private Sub rbtn_belimlight_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_belimlight.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_prlighting_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_prlighting.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_blackout_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_blackout.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_vision_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_vision.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_stage_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_stage.CheckedChanged
+        filter_dgv_Summary(selectedRadioButton(sender))
+    End Sub
+
+    Private Sub rbtn_all_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_all.CheckedChanged
+        clearFilter()
+    End Sub
+
+    Private Sub rbtn_id_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_id.CheckedChanged
+        dgv_summary.Sort(dgv_summary.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub rbtn_company_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_company.CheckedChanged
+        dgv_summary.Sort(dgv_summary.Columns(27), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 End Class

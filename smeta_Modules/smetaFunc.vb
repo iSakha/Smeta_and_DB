@@ -2,6 +2,8 @@
 Imports OfficeOpenXml.Table
 Imports System.IO
 Module smetaFunc
+
+    Public targetRows As List(Of DataGridViewRow)
     Function createGlobal_dt()
 
         Dim dt As DataTable
@@ -89,8 +91,6 @@ Module smetaFunc
         dt.Columns(20).DataType = System.Type.GetType("System.Int32")               ' R8
 
 
-
-
         dt.Columns(0).ColumnName = "Dep"
         dt.Columns(1).ColumnName = "Cat"
         dt.Columns(2).ColumnName = "ID"
@@ -101,9 +101,9 @@ Module smetaFunc
         dt.Columns(11).ColumnName = "Power/Length"
         dt.Columns(12).ColumnName = "Price"
 
-        dt.Columns(13).ColumnName = "R1"
-        dt.Columns(14).ColumnName = "R2"
-        dt.Columns(15).ColumnName = "R3"
+        dt.Columns(13).ColumnName = "Result"
+        dt.Columns(14).ColumnName = "Qty_found"
+        dt.Columns(15).ColumnName = "Ilya_Notes"
         dt.Columns(16).ColumnName = "R4"
         dt.Columns(17).ColumnName = "R5"
         dt.Columns(18).ColumnName = "R6"
@@ -151,9 +151,11 @@ Module smetaFunc
             End If
         Next r
     End Sub
-
+    '===================================================================================
+    '             === Format DGV_smeta ===
+    '===================================================================================
     Sub format_DGV_smeta(_DGV)
-
+        Dim NRFormat As String = "### ### ##0"
         _DGV.RowHeadersVisible = False
 
         _DGV.Columns(0).Width = 30
@@ -233,7 +235,10 @@ Module smetaFunc
         _DGV.Columns(12).MinimumWidth = 60
         _DGV.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         _DGV.Columns(12).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' Price
-        _DGV.Columns(13).Visible = False                                                                            ' Result
+
+        _DGV.Columns(12).DefaultCellStyle.Format = NRFormat
+
+        _DGV.Columns(13).Visible = False                                                                            ' OrderQty
         _DGV.Columns(14).Visible = False                                                                            ' R2
         _DGV.Columns(15).Visible = False                                                                            ' R3
         _DGV.Columns(16).Visible = False                                                                            ' R4          
@@ -244,6 +249,171 @@ Module smetaFunc
         _DGV.Columns(20).MinimumWidth = 60
         _DGV.Columns(20).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         _DGV.Columns(20).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' R8
+
+
+    End Sub
+    '===================================================================================
+    '             === Format advanced_smeta ===
+    '===================================================================================
+    Sub format_advanced_smeta(_DGV)
+        Dim NRFormat As String = "### ### ##0"
+        _DGV.RowHeadersVisible = False
+
+        _DGV.Columns(0).Width = 30
+        _DGV.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Dep
+
+        For Each r As DataGridViewRow In _DGV.Rows
+            Select Case r.Cells(0).Value
+                Case 1
+                    r.Cells(0).Style.BackColor = Color.LemonChiffon
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.LemonChiffon
+                        r.Cells(2).Style.BackColor = Color.LemonChiffon
+                    End If
+                Case 2
+                    r.Cells(0).Style.BackColor = Color.LightSteelBlue
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.LightSteelBlue
+                        r.Cells(2).Style.BackColor = Color.LightSteelBlue
+                    End If
+                Case 3
+                    r.Cells(0).Style.BackColor = Color.MistyRose
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.MistyRose
+                        r.Cells(2).Style.BackColor = Color.MistyRose
+                    End If
+                Case 4
+                    r.Cells(0).Style.BackColor = Color.Honeydew
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.Honeydew
+                        r.Cells(2).Style.BackColor = Color.Honeydew
+                    End If
+                Case 5
+                    r.Cells(0).Style.BackColor = Color.LightCyan
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.LightCyan
+                        r.Cells(2).Style.BackColor = Color.LightCyan
+                    End If
+                Case 6
+                    r.Cells(0).Style.BackColor = Color.Thistle
+                    If odd_even(r.Cells(1).Value) Then
+                        r.Cells(1).Style.BackColor = Color.Thistle
+                        r.Cells(2).Style.BackColor = Color.Thistle
+                    End If
+            End Select
+            r.Cells(5).Style.BackColor = mainForm.color_belimlight
+            r.Cells(6).Style.BackColor = mainForm.color_PRLighting
+            r.Cells(7).Style.BackColor = mainForm.color_blackout
+            r.Cells(8).Style.BackColor = mainForm.color_vision
+            r.Cells(9).Style.BackColor = mainForm.color_stage
+
+            r.Cells(21).Value = r.Cells(20).Value
+
+            r.Cells(22).Style.BackColor = mainForm.color_belimlight
+            r.Cells(22).Value = 0
+            r.Cells(23).Style.BackColor = mainForm.color_PRLighting
+            r.Cells(23).Value = 0
+            r.Cells(24).Style.BackColor = mainForm.color_blackout
+            r.Cells(24).Value = 0
+            r.Cells(25).Style.BackColor = mainForm.color_vision
+            r.Cells(25).Value = 0
+            r.Cells(26).Style.BackColor = mainForm.color_stage
+            r.Cells(26).Value = 0
+
+
+        Next r
+
+
+
+        _DGV.Columns(1).Width = 30
+        _DGV.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter                      ' Cat
+        _DGV.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(2).MinimumWidth = 80
+        _DGV.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(2).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' ID
+        _DGV.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(3).MinimumWidth = 430
+        _DGV.Columns(3).DefaultCellStyle.BackColor = Color.FromArgb(242, 245, 245)
+        _DGV.Columns(3).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' Fixture
+        _DGV.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(4).MinimumWidth = 50
+        _DGV.Columns(4).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)           ' Q-ty
+        _DGV.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(5).Visible = True                                                                             ' BelImlight
+        _DGV.Columns(5).Width = 50
+        _DGV.Columns(5).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(6).Visible = True                                                                             ' PRLightigTouring
+        _DGV.Columns(6).Width = 50
+        _DGV.Columns(6).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(7).Visible = True                                                                             ' BlackOut
+        _DGV.Columns(7).Width = 50
+        _DGV.Columns(7).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(8).Visible = True                                                                             ' Vision
+        _DGV.Columns(8).Width = 50
+        _DGV.Columns(8).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(9).Visible = True                                                                             ' Stage
+        _DGV.Columns(9).Width = 50
+        _DGV.Columns(9).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(10).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(10).MinimumWidth = 60
+        _DGV.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(10).Visible = False          ' Weight
+        _DGV.Columns(11).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(11).MinimumWidth = 68
+        _DGV.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(11).Visible = False          ' Power
+        _DGV.Columns(12).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(12).MinimumWidth = 60
+        _DGV.Columns(12).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(12).Visible = False          ' Price
+
+        _DGV.Columns(12).DefaultCellStyle.Format = NRFormat
+
+        _DGV.Columns(13).Visible = False                                                                            ' OrderQty
+        _DGV.Columns(14).Visible = False                                                                            ' R2
+        _DGV.Columns(15).Visible = False                                                                            ' R3
+        _DGV.Columns(16).Visible = False                                                                            ' R4          
+        _DGV.Columns(17).Visible = False                                                                            ' R5
+        _DGV.Columns(18).Visible = False                                                                            ' R6
+        _DGV.Columns(19).Visible = False                                                                            ' R7
+        _DGV.Columns(20).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        _DGV.Columns(20).MinimumWidth = 60
+        _DGV.Columns(20).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(20).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)          ' R8
+
+        _DGV.Columns(21).Visible = True                                                                             ' BelImlight
+        _DGV.Columns(21).Width = 50
+        _DGV.Columns(21).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(21).DefaultCellStyle.ForeColor = Color.Red
+        _DGV.Columns(21).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(22).Visible = True                                                                             ' BelImlight
+        _DGV.Columns(22).Width = 50
+        _DGV.Columns(22).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(22).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(23).Visible = True                                                                             ' PRLightigTouring
+        _DGV.Columns(23).Width = 50
+        _DGV.Columns(23).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(23).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(24).Visible = True                                                                             ' BlackOut
+        _DGV.Columns(24).Width = 50
+        _DGV.Columns(24).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(24).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(25).Visible = True                                                                             ' Vision
+        _DGV.Columns(25).Width = 50
+        _DGV.Columns(25).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(25).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        _DGV.Columns(26).Visible = True                                                                             ' Stage
+        _DGV.Columns(26).Width = 50
+        _DGV.Columns(26).DefaultCellStyle.Font = New Font("Calibri", 11, FontStyle.Bold, FontStyle.Italic)
+        _DGV.Columns(26).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        _DGV.Rows(_DGV.Rows.Count - 1).Visible = False
+        _DGV.ClearSelection()
 
 
     End Sub
@@ -294,7 +464,7 @@ Module smetaFunc
     '===================================================================================
     Function enumRows()
 
-        Dim targetRows = New List(Of DataGridViewRow)
+        targetRows = New List(Of DataGridViewRow)
 
         Dim row As DataGridViewRow
         Dim totalPwr As Integer = 0
@@ -329,8 +499,6 @@ Module smetaFunc
                 row.DefaultCellStyle.BackColor = Color.Yellow
                 targetRows.Add(row)
 
-
-
                 ' Calculate department price,quantity and weight
                 '---------------------------------------------------------------
 
@@ -338,49 +506,50 @@ Module smetaFunc
 
                 If row.Cells(0).Value = 1 Then
                     mainForm.priceLighting = mainForm.priceLighting + (row.Cells(20).Value * row.Cells(12).Value)
-                    Console.WriteLine(mainForm.priceLighting)
-                    mainForm.qtyLighting = mainForm.qtyLighting = row.Cells(20).Value
-                    mainForm.weightLighting = mainForm.weightLighting = (row.Cells(20).Value * row.Cells(10).Value)
+
+                    mainForm.qtyLighting = mainForm.qtyLighting + row.Cells(20).Value
+                    'Console.WriteLine(mainForm.qtyLighting)
+                    mainForm.weightLighting = mainForm.weightLighting + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Screen 
 
                 If row.Cells(0).Value = 2 Then
                     mainForm.priceScreen = mainForm.priceScreen + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyScreen = mainForm.qtyScreen = row.Cells(20).Value
-                    mainForm.weightScreen = mainForm.weightScreen = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyScreen = mainForm.qtyScreen + row.Cells(20).Value
+                    mainForm.weightScreen = mainForm.weightScreen + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Commutation 
 
                 If row.Cells(0).Value = 3 Then
                     mainForm.priceComm = mainForm.priceComm + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyComm = mainForm.qtyComm = row.Cells(20).Value
-                    mainForm.weightComm = mainForm.weightComm = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyComm = mainForm.qtyComm + row.Cells(20).Value
+                    mainForm.weightComm = mainForm.weightComm + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Truss 
 
                 If row.Cells(0).Value = 4 Then
                     mainForm.priceTruss = mainForm.priceTruss + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyTruss = mainForm.qtyTruss = row.Cells(20).Value
-                    mainForm.weightTruss = mainForm.weightTruss = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyTruss = mainForm.qtyTruss + row.Cells(20).Value
+                    mainForm.weightTruss = mainForm.weightTruss + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Construction 
 
                 If row.Cells(0).Value = 5 Then
                     mainForm.priceConstr = mainForm.priceConstr + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtyConstr = mainForm.qtyConstr = row.Cells(20).Value
-                    mainForm.weightConstr = mainForm.weightConstr = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtyConstr = mainForm.qtyConstr + row.Cells(20).Value
+                    mainForm.weightConstr = mainForm.weightConstr + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
                 ' Calculate Sound 
 
                 If row.Cells(0).Value = 6 Then
                     mainForm.priceSound = mainForm.priceSound + (row.Cells(20).Value * row.Cells(12).Value)
-                    mainForm.qtySound = mainForm.qtySound = row.Cells(20).Value
-                    mainForm.weightSound = mainForm.weightSound = (row.Cells(20).Value * row.Cells(10).Value)
+                    mainForm.qtySound = mainForm.qtySound + row.Cells(20).Value
+                    mainForm.weightSound = mainForm.weightSound + (row.Cells(20).Value * row.Cells(10).Value)
                 End If
 
 
@@ -396,14 +565,21 @@ Module smetaFunc
 
                 totalWeight = totalWeight + (row.Cells(10).Value) * (row.Cells(20).Value)
 
-                smetaMainForm.txt_pwr.Text = totalPwr
-                smetaMainForm.txt_price.Text = totalPrice
-                smetaMainForm.txt_weight.Text = totalWeight
+
             Else
                 row.DefaultCellStyle.BackColor = SystemColors.Window
             End If
 
         Next row
+
+        smetaMainForm.txt_pwr.Text = totalPwr
+        smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
+            mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+        smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
+            mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+        smetaMainForm.txt_weight.Text = totalWeight
 
         mainForm.qty(0) = mainForm.qtyLighting
         mainForm.qty(1) = mainForm.qtyScreen
@@ -419,6 +595,12 @@ Module smetaFunc
         mainForm.weight(4) = mainForm.weightConstr
         mainForm.weight(5) = mainForm.weightSound
 
+        mainForm.price(0) = mainForm.priceLighting
+        mainForm.price(1) = mainForm.priceScreen
+        mainForm.price(2) = mainForm.priceComm
+        mainForm.price(3) = mainForm.priceTruss
+        mainForm.price(4) = mainForm.priceConstr
+        mainForm.price(5) = mainForm.priceSound
 
         Return (targetRows)
 
@@ -437,6 +619,85 @@ Module smetaFunc
         smetaMainForm.lbl_depart_value.BackColor = _sender.BackColor
 
         smetaMainForm.lbl_cat_value.Text = ""
+
+    End Sub
+
+    '===================================================================================
+    '             === changeCurrency function ===
+    '===================================================================================
+    Sub changeCurrency(_colCurrency As Collection)
+        mainForm.priceLighting = 0
+        mainForm.priceScreen = 0
+        mainForm.priceComm = 0
+        mainForm.priceTruss = 0
+        mainForm.priceConstr = 0
+        mainForm.priceSound = 0
+
+        Dim totalPrice As Integer = 0
+
+        For Each row As DataGridViewRow In smetaMainForm.DGV_smeta.Rows
+            If row.Index < smetaMainForm.DGV_smeta.Rows.Count - 1 Then
+
+                row.Cells(12).Value = _colCurrency(row.Index + 1)
+
+                If row.Cells(0).Value = 1 Then
+                    mainForm.priceLighting = mainForm.priceLighting + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 2 Then
+                    mainForm.priceScreen = mainForm.priceScreen + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 3 Then
+                    mainForm.priceComm = mainForm.priceComm + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 4 Then
+                    mainForm.priceTruss = mainForm.priceTruss + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 5 Then
+                    mainForm.priceConstr = mainForm.priceConstr + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+                If row.Cells(0).Value = 6 Then
+                    mainForm.priceSound = mainForm.priceSound + (row.Cells(20).Value * row.Cells(12).Value)
+                End If
+
+
+                totalPrice = totalPrice + (row.Cells(12).Value) * (row.Cells(20).Value)
+            End If
+        Next row
+        smetaMainForm.txt_price.Text = totalPrice
+
+        For Each form In My.Application.OpenForms
+            If (form.name = "discountForm") Then
+
+                discountForm.txt_summary_light.Text = mainForm.priceLighting
+                discountForm.txt_summary_screen.Text = mainForm.priceScreen
+                discountForm.txt_summary_comm.Text = mainForm.priceComm
+                discountForm.txt_summary_truss.Text = mainForm.priceTruss
+                discountForm.txt_summary_constr.Text = mainForm.priceConstr
+                discountForm.txt_summary_sound.Text = mainForm.priceSound
+
+                discountForm.txt_summary_light_discount.Text = Math.Round(mainForm.priceLighting - mainForm.priceLighting * CInt(discountForm.txt_light_discount.Text) / 100)
+                discountForm.txt_summary_screen_discount.Text = Math.Round(mainForm.priceScreen - mainForm.priceScreen * CInt(discountForm.txt_screen_discount.Text) / 100)
+                discountForm.txt_summary_comm_discount.Text = Math.Round(mainForm.priceComm - mainForm.priceComm * CInt(discountForm.txt_commut_discount.Text) / 100)
+                discountForm.txt_summary_truss_discount.Text = Math.Round(mainForm.priceTruss - mainForm.priceTruss * CInt(discountForm.txt_truss_discount.Text) / 100)
+                discountForm.txt_summary_constr_discount.Text = Math.Round(mainForm.priceConstr - mainForm.priceConstr * CInt(discountForm.txt_constr_discount.Text) / 100)
+                discountForm.txt_summary_sound_discount.Text = Math.Round(mainForm.priceSound - mainForm.priceSound * CInt(discountForm.txt_sound_discount.Text) / 100)
+
+                discountForm.lbl_totalPrice.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
+                mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+                discountForm.lbl_totalPrice_discount.Text = CInt(discountForm.txt_summary_light_discount.Text) + CInt(discountForm.txt_summary_screen_discount.Text) +
+                    CInt(discountForm.txt_summary_comm_discount.Text) + CInt(discountForm.txt_summary_truss_discount.Text) +
+                    CInt(discountForm.txt_summary_constr_discount.Text) + CInt(discountForm.txt_summary_sound_discount.Text)
+
+                discountForm.lbl_currency.Text = mainForm.selectedCurrency
+
+            End If
+        Next
 
     End Sub
 

@@ -31,6 +31,8 @@ Public Class mainForm
 
     Public sCompany() As String = {"belimlight", "PRLighting", "blackout", "vision", "stage"}
 
+    Public color_belimlight, color_PRLighting, color_blackout, color_vision, color_stage As Color
+    Public companyColors(5) As Color
     Public delta As Integer     ' to increase or decrease table when push Add or Delete 
 
     Public exportDir As String
@@ -47,17 +49,23 @@ Public Class mainForm
     Public discountValue(6) As Integer
 
     Public priceLighting, priceScreen, priceComm, priceTruss, priceConstr, priceSound As Integer
+
     Public qtyLighting, qtyScreen, qtyComm, qtyTruss, qtyConstr, qtySound As Integer
     Public weightLighting, weightScreen, weightComm, weightTruss, weightConstr, weightSound As Integer
-
-    Public discountPriceLighting, discountPriceScreen, discountPriceComm, discountPriceTruss _
-        , discountPriceConstr, discountPriceSound As Integer
-
 
     Public price(6) As Integer
     Public discountPrice(6) As Integer
     Public qty(6) As Integer
     Public weight(6) As Integer
+
+    Public USD_val, Euro_val, rusRub_val, BYN_val As Collection
+    Public USD_rate, Euro_rate, rusRub_rate, BYN_rate As Single
+
+    Public selectedCurrency As String = "USD"
+
+    Public btnsAdvSmeta As List(Of Control)
+    Public tabsSmeta As List(Of TabPage)
+    Public companyDGV As List(Of DataGridView)
 
     '===================================================================================
     '             === mainForm_Load ===
@@ -633,6 +641,13 @@ Public Class mainForm
 
     End Sub
 
+    '===================================================================================      
+    '                === Run lost_n_foundForm ===
+    '===================================================================================
+    Private Sub LostAndFoundToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LostAndFoundToolStripMenuItem.Click
+        lost_n_foundForm.Show()
+    End Sub
+
     Private Sub mainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         loginForm.Close()
     End Sub
@@ -654,6 +669,11 @@ Public Class mainForm
 
         'extractFiles()
 
+        'btnsAdvSmeta = New List(Of Control)
+
+        'For Each ctrl As Control In smetaMainForm.tbCtrl_smeta.TabPages(3).Controls
+        '    Console.WriteLine(ctrl.Name)
+        'Next ctrl
     End Sub
 
     '=================================================================================== 
