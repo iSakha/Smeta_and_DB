@@ -182,4 +182,4 @@ C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.currencyForm.resources
 C:\Users\Sakha\Source\Repos\Smeta_and_DB\obj\Debug\NF4.lost_n_foundForm.resources
 C:\Users\sakha\Source\Repos\iSakha\Smeta_and_DB\obj\Debug\NF4.currencyForm.resources
 C:\Users\sakha\Source\Repos\iSakha\Smeta_and_DB\obj\Debug\NF4.lost_n_foundForm.resources
-C:\Users\sakha\Source\Repos\iSakha\Smeta_and_DB\obj\Debug\NF4.vbproj.CoreCompileInputs.cache
+C:\Users\Sakha\Source\Repos\iSakha\Smeta_and_DB\obj\Debug\NF4.vbproj.CoreCompileInputs.cache
