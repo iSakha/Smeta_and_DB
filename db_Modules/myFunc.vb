@@ -509,15 +509,15 @@ Module myFunc
             qty = mainForm.dts.Tables(j).Rows(index).Item(6)
 
             sum = sum + qty
-            Console.WriteLine(sum)
+            'Console.WriteLine(sum)
 
             qty = mainForm.dts.Tables(j).Rows(index).Item(8)
-            Console.WriteLine(mainForm.dts.Tables(j).Rows(index).Item(8))
+            'Console.WriteLine(mainForm.dts.Tables(j).Rows(index).Item(8))
             sum = sum + qty
-            Console.WriteLine(sum)
+            'Console.WriteLine(sum)
             qty = mainForm.dts.Tables(j).Rows(index).Item(10)
             sum = sum + qty
-            Console.WriteLine(sum)
+            'Console.WriteLine(sum)
             mainForm.dgv_result.Rows(0).Cells(j).Value = sum
             editForm.dgv_result.Rows(0).Cells(j).Value = sum
         Next j

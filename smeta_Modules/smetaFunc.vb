@@ -44,7 +44,7 @@ Module smetaFunc
 
                 xlTable = ws.Tables(0)
 
-                Console.WriteLine(xlTable.Name)
+                'Console.WriteLine(xlTable.Name)
 
                 adr = xlTable.Address.Address
                 r_xlTable = xlTable.Address.Rows
@@ -117,7 +117,7 @@ Module smetaFunc
         'Add Rows from Excel table
 
         For k As Integer = 1 To rng_Collection.Count            '   Categories
-            Console.WriteLine(k)
+            'Console.WriteLine(k)
             For i = 1 To r_xlTable_Collection(k) - 1
 
                 row = dt.Rows.Add()
@@ -699,6 +699,23 @@ Module smetaFunc
             End If
         Next
 
+    End Sub
+
+    '===================================================================================
+    '             === Show Qty by companies in dgvSmeta_qtyByCompany ===
+    '===================================================================================
+    Sub showSelectedRow(_sender As Object, _e As DataGridViewCellEventArgs)
+        Dim index As Integer
+        Dim row As DataGridViewRow
+        index = _e.RowIndex
+        row = _sender.Rows(index)
+        mainForm.iDepartment = row.Cells(0).Value
+        mainForm.iCategory = row.Cells(1).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(0).Value = row.Cells(5).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(1).Value = row.Cells(6).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(2).Value = row.Cells(7).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(3).Value = row.Cells(8).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(4).Value = row.Cells(9).Value
     End Sub
 
 End Module

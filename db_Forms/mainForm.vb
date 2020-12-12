@@ -27,7 +27,7 @@ Public Class mainForm
     Public iDepartment, iCategory, iCompany As Integer
 
     Public dts As DataSet
-    Public selIndex As Integer      ' Selercted index
+    Public selIndex As Integer      ' Selected index
 
     Public sCompany() As String = {"belimlight", "PRLighting", "blackout", "vision", "stage"}
 
@@ -73,6 +73,24 @@ Public Class mainForm
     Private Sub mainForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         checkExpirationDate()
         settingsForm.txt_pathDB.Text = My.Settings.databasePath
+
+        If settingsForm.txt_pathDB.Text = "" Then
+            MsgBox("Нужно указать путь к базе данных File => Load DB from")
+        Else
+            setParameters()
+            load_db()
+
+            iDepartment = 0
+            iCategory = 0
+            iCompany = 1
+
+            menuItem_department.Enabled = True
+            menuItem_company.Enabled = True
+
+            cancelFlag = False
+
+        End If
+
     End Sub
     '===================================================================================
     '             === File => Load DB from => Backup ===
@@ -89,33 +107,35 @@ Public Class mainForm
             createBackup(timeStampFolder())
         Else
 
-            sDir = My.Settings.databasePath
+            setParameters()
+
+            'sDir = My.Settings.databasePath
 
 
-            filePath = New Collection
-            fileNames = New Collection
-            Try
-                For Each foundFile In My.Computer.FileSystem.GetFiles _
-                (sDir, Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories, "*.omdb")
-                    'Console.WriteLine(foundFile)
-                    filePath.Add(foundFile)
+            'filePath = New Collection
+            'fileNames = New Collection
+            'Try
+            '    For Each foundFile In My.Computer.FileSystem.GetFiles _
+            '    (sDir, Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories, "*.omdb")
+            '        'Console.WriteLine(foundFile)
+            '        filePath.Add(foundFile)
 
-                    Dim dIndex = StrReverse(foundFile).IndexOf("\")
+            '        Dim dIndex = StrReverse(foundFile).IndexOf("\")
 
-                    Dim name As String
+            '        Dim name As String
 
-                    '   !!!!!!!!!!!!!!!!!!!!!!!!!!!!   хз почему не работают функции Right и Left в этом модуле !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            '        '   !!!!!!!!!!!!!!!!!!!!!!!!!!!!   хз почему не работают функции Right и Left в этом модуле !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-                    name = myRight(foundFile, dIndex)
-                    'Console.WriteLine(name)
-                    name = myLeft(name)
-                    'Console.WriteLine(name)
-                    fileNames.Add(name)
+            '        name = myRight(foundFile, dIndex)
+            '        'Console.WriteLine(name)
+            '        name = myLeft(name)
+            '        'Console.WriteLine(name)
+            '        fileNames.Add(name)
 
-                Next
+            '    Next
 
-            Catch
-            End Try
+            'Catch
+            'End Try
 
         End If
         load_db()
@@ -128,6 +148,13 @@ Public Class mainForm
         menuItem_company.Enabled = True
 
         cancelFlag = False
+
+    End Sub
+    '===================================================================================
+    '             === Message after form was loaded  ===
+    '===================================================================================
+    Private Sub mainForm_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        MsgBox("База загружена!")
     End Sub
     '===================================================================================
     '             === Run settings ===
@@ -343,6 +370,10 @@ Public Class mainForm
         iCategory = 3
         writeToLabel("Commutation", sender)
     End Sub
+
+
+
+
 #End Region
 
 #Region "Select Truss and motors"
@@ -681,11 +712,9 @@ Public Class mainForm
     '                === SMETA SECTION ===
     '===================================================================================
     '=================================================================================== 
-
-    Private Sub CreateSmetaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateSmetaToolStripMenuItem.Click
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         smetaMainForm.Show()
     End Sub
-
 
 
 End Class

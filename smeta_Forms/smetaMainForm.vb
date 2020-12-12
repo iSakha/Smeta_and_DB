@@ -11,93 +11,115 @@ Public Class smetaMainForm
     '===================================================================================
     Private Sub smetaMainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        createGlobal_dt()
-        format_DGV_smeta(DGV_db)
-        format_DGV_smeta(DGV_smeta)
-        txt_pwr.Text = 0
-        txt_price.Text = 0
-        txt_weight.Text = 0
-
-        Dim dateOne = DTP_start.Value
-        Dim dateTwo = DTP_end.Value
-        Dim diff As TimeSpan = dateTwo - dateOne
-        Dim days = diff.Days
-
-        txt_daysQty.Text = days
-
-        '           Fill up cities combobox
-        '----------------------------------------------------------------
-        Dim sPath As String
-        sPath = mainForm.sDir & "\Log.txt"
-        Dim ws As ExcelWorksheet
-        Dim excelFile = New FileInfo(sPath)
-        Dim xlTbl As ExcelTable
-        Dim city As String
-        Dim endRow As Integer
-
-        ExcelPackage.LicenseContext = LicenseContext.NonCommercial
-        Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
-
-        ws = Excel.Workbook.Worksheets("Location")
-
-        xlTbl = ws.Tables("Cities")
-        endRow = xlTbl.Address.End.Row
-        For i As Integer = 2 To endRow
-            city = ws.Cells(i, 2).Value
-            cmb_eventCity.Items().Add(city)
-        Next i
-
-        lbl_cat_value.Text = ""
-
-        lbl_depart_value.Text = "Lighting"
-        lbl_depart_value.BackColor = btn_lighting_smeta.BackColor
-        DGV_db.ClearSelection()
-
-        lbl_currency.Text = "USD"
-
-        '   Save currency rate to settings
-        '----------------------------------------
-        mainForm.USD_rate = My.Settings.USD_rate
-        mainForm.Euro_rate = My.Settings.Euro_rate
-        mainForm.rusRub_rate = My.Settings.rusRub_rate
-        mainForm.BYN_rate = My.Settings.BYN_rate
-
-        '   Create List of companies' buttons and tabs
-        '----------------------------------------
-        mainForm.btnsAdvSmeta = New List(Of Control)
-        mainForm.tabsSmeta = New List(Of TabPage)
-        mainForm.companyDGV = New List(Of DataGridView)
-
-        mainForm.companyDGV.Add(dgv_belimlight)
-        mainForm.companyDGV.Add(dgv_prlighting)
-        mainForm.companyDGV.Add(dgv_blackout)
-        mainForm.companyDGV.Add(dgv_vision)
-        mainForm.companyDGV.Add(dgv_stage)
-
-        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(4))
-        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(5))
-        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(6))
-        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(7))
-        mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(8))
-
-        tbCtrl_smeta.TabPages.Remove(TabPage9)
-        tbCtrl_smeta.TabPages.Remove(TabPage8)
-        tbCtrl_smeta.TabPages.Remove(TabPage7)
-        tbCtrl_smeta.TabPages.Remove(TabPage6)
-        tbCtrl_smeta.TabPages.Remove(TabPage5)
+        If mainForm.sDir = "" Then
+            MsgBox("Необходимо указать путь к базе!")
+            Me.Close()
+            settingsForm.Show()
+        Else
 
 
-        mainForm.btnsAdvSmeta.Add(Me.btn_belimlight)
-        mainForm.btnsAdvSmeta.Add(Me.btn_prlighting)
-        mainForm.btnsAdvSmeta.Add(Me.btn_blackout)
-        mainForm.btnsAdvSmeta.Add(Me.btn_vision)
-        mainForm.btnsAdvSmeta.Add(Me.btn_stage)
+            Me.dgvSmeta_qtyByCompany.RowHeadersVisible = False
 
-        mainForm.color_belimlight = Color.FromArgb(252, 228, 214)
-        mainForm.color_PRLighting = Color.FromArgb(221, 235, 247)
-        mainForm.color_blackout = Color.FromArgb(237, 237, 237)
-        mainForm.color_vision = Color.FromArgb(226, 239, 218)
-        mainForm.color_stage = Color.FromArgb(237, 226, 246)
+            Me.dgvSmeta_qtyByCompany.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Me.dgvSmeta_qtyByCompany.Columns(0).DefaultCellStyle.Font = New Font("Calibri", 13, FontStyle.Bold, FontStyle.Italic)
+            Me.dgvSmeta_qtyByCompany.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Me.dgvSmeta_qtyByCompany.Columns(1).DefaultCellStyle.Font = New Font("Calibri", 13, FontStyle.Bold, FontStyle.Italic)
+            Me.dgvSmeta_qtyByCompany.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Me.dgvSmeta_qtyByCompany.Columns(2).DefaultCellStyle.Font = New Font("Calibri", 13, FontStyle.Bold, FontStyle.Italic)
+            Me.dgvSmeta_qtyByCompany.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Me.dgvSmeta_qtyByCompany.Columns(3).DefaultCellStyle.Font = New Font("Calibri", 13, FontStyle.Bold, FontStyle.Italic)
+            Me.dgvSmeta_qtyByCompany.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            Me.dgvSmeta_qtyByCompany.Columns(4).DefaultCellStyle.Font = New Font("Calibri", 13, FontStyle.Bold, FontStyle.Italic)
+
+            createGlobal_dt()
+            format_DGV_smeta(DGV_db)
+            format_DGV_smeta(DGV_smeta)
+            txt_pwr.Text = 0
+            txt_price.Text = 0
+            txt_weight.Text = 0
+
+            Dim dateOne = DTP_start.Value
+            Dim dateTwo = DTP_end.Value
+            Dim diff As TimeSpan = dateTwo - dateOne
+            Dim days = diff.Days
+
+            txt_daysQty.Text = days
+
+            '           Fill up cities combobox
+            '----------------------------------------------------------------
+            Dim sPath As String
+            sPath = mainForm.sDir & "\Log.txt"
+            Dim ws As ExcelWorksheet
+            Dim excelFile = New FileInfo(sPath)
+            Dim xlTbl As ExcelTable
+            Dim city As String
+            Dim endRow As Integer
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial
+            Dim Excel As ExcelPackage = New ExcelPackage(excelFile)
+
+            ws = Excel.Workbook.Worksheets("Location")
+
+            xlTbl = ws.Tables("Cities")
+            endRow = xlTbl.Address.End.Row
+            For i As Integer = 2 To endRow
+                city = ws.Cells(i, 2).Value
+                cmb_eventCity.Items().Add(city)
+            Next i
+
+            lbl_cat_value.Text = ""
+
+            lbl_depart_value.Text = "Lighting"
+            lbl_depart_value.BackColor = btn_lighting_smeta.BackColor
+            DGV_db.ClearSelection()
+
+            lbl_currency.Text = "USD"
+
+            '   Save currency rate to settings
+            '----------------------------------------
+            mainForm.USD_rate = My.Settings.USD_rate
+            mainForm.Euro_rate = My.Settings.Euro_rate
+            mainForm.rusRub_rate = My.Settings.rusRub_rate
+            mainForm.BYN_rate = My.Settings.BYN_rate
+
+            '   Create List of companies' buttons and tabs
+            '----------------------------------------
+            mainForm.btnsAdvSmeta = New List(Of Control)
+            mainForm.tabsSmeta = New List(Of TabPage)
+            mainForm.companyDGV = New List(Of DataGridView)
+
+            mainForm.companyDGV.Add(dgv_belimlight)
+            mainForm.companyDGV.Add(dgv_prlighting)
+            mainForm.companyDGV.Add(dgv_blackout)
+            mainForm.companyDGV.Add(dgv_vision)
+            mainForm.companyDGV.Add(dgv_stage)
+
+            mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(4))
+            mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(5))
+            mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(6))
+            mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(7))
+            mainForm.tabsSmeta.Add(tbCtrl_smeta.TabPages(8))
+
+            tbCtrl_smeta.TabPages.Remove(TabPage9)
+            tbCtrl_smeta.TabPages.Remove(TabPage8)
+            tbCtrl_smeta.TabPages.Remove(TabPage7)
+            tbCtrl_smeta.TabPages.Remove(TabPage6)
+            tbCtrl_smeta.TabPages.Remove(TabPage5)
+
+
+            mainForm.btnsAdvSmeta.Add(Me.btn_belimlight)
+            mainForm.btnsAdvSmeta.Add(Me.btn_prlighting)
+            mainForm.btnsAdvSmeta.Add(Me.btn_blackout)
+            mainForm.btnsAdvSmeta.Add(Me.btn_vision)
+            mainForm.btnsAdvSmeta.Add(Me.btn_stage)
+
+            mainForm.color_belimlight = Color.FromArgb(252, 228, 214)
+            mainForm.color_PRLighting = Color.FromArgb(221, 235, 247)
+            mainForm.color_blackout = Color.FromArgb(237, 237, 237)
+            mainForm.color_vision = Color.FromArgb(226, 239, 218)
+            mainForm.color_stage = Color.FromArgb(237, 226, 246)
+
+        End If
 
     End Sub
 
@@ -183,6 +205,7 @@ Public Class smetaMainForm
     '===================================================================================
     Private Sub DGV_smeta_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_db.CellClick
         DGV_smeta_clickCell(sender, e)
+        showSelectedRow(sender, e)
     End Sub
 
     Private Sub DGV_smeta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DGV_db.KeyPress
@@ -194,6 +217,8 @@ Public Class smetaMainForm
     '             === Go to smeta button ===
     '===================================================================================
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
+
+        btn_advSmeta.Visible = True
 
         mainForm.USD_val = New Collection
         mainForm.Euro_val = New Collection
@@ -667,7 +692,7 @@ Public Class smetaMainForm
     Private Sub btn_clr_Click(sender As Object, e As EventArgs) Handles btn_clr.Click
 
         For Each btn In mainForm.btnsAdvSmeta
-            Console.WriteLine(btn.Name)
+            'Console.WriteLine(btn.Name)
             btn.Enabled = True
             Select Case btn.Name
                 Case "btn_belimlight"
