@@ -259,9 +259,12 @@ Public Class smetaMainForm
         Dim dateTwo = DTP_end.Value
         Dim diff As TimeSpan = dateTwo - dateOne
         Dim days = diff.Days
-        txt_daysQty.Text = days
 
+        If DTP_end.Visible = True Then
+            txt_daysQty.Text = days + 1
+        End If
         DTP_end.Visible = True
+
     End Sub
 
     Private Sub DTP_end_ValueChanged(sender As Object, e As EventArgs) Handles DTP_end.ValueChanged
@@ -269,7 +272,8 @@ Public Class smetaMainForm
         Dim dateTwo = DTP_end.Value
         Dim diff As TimeSpan = dateTwo - dateOne
         Dim days = diff.Days
-        txt_daysQty.Text = days
+        txt_daysQty.Text = days + 1
+        txt_daysQty.Visible = True
     End Sub
     '===================================================================================
     '             === Write Smeta to Excel file ===
@@ -752,6 +756,9 @@ Public Class smetaMainForm
         Next drr
 
         format_companyDGV(dgv_summary, 6)
+
+        dgv_summary.ClearSelection()
+
     End Sub
 
     Private Sub rbtn_colorON_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_colorON.CheckedChanged
@@ -785,12 +792,16 @@ Public Class smetaMainForm
     Private Sub rbtn_all_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_all.CheckedChanged
         clearFilter()
     End Sub
-
+    '===================================================================================
+    '             === Sorting by Fixture or by Company ===
+    '===================================================================================
     Private Sub rbtn_id_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_id.CheckedChanged
         dgv_summary.Sort(dgv_summary.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
+        dgv_summary.ClearSelection()
     End Sub
 
     Private Sub rbtn_company_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_company.CheckedChanged
         dgv_summary.Sort(dgv_summary.Columns(27), System.ComponentModel.ListSortDirection.Ascending)
+        dgv_summary.ClearSelection()
     End Sub
 End Class

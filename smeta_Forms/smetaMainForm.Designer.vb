@@ -22,11 +22,11 @@ Partial Class smetaMainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DGV_db = New System.Windows.Forms.DataGridView()
         Me.tbCtrl_smeta = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -796,6 +796,7 @@ Partial Class smetaMainForm
         Me.txt_daysQty.Name = "txt_daysQty"
         Me.txt_daysQty.Size = New System.Drawing.Size(57, 22)
         Me.txt_daysQty.TabIndex = 13
+        Me.txt_daysQty.Visible = False
         '
         'Label8
         '
@@ -2626,10 +2627,10 @@ Partial Class smetaMainForm
         Me.rbtn_id.Location = New System.Drawing.Point(4, 25)
         Me.rbtn_id.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtn_id.Name = "rbtn_id"
-        Me.rbtn_id.Size = New System.Drawing.Size(62, 21)
+        Me.rbtn_id.Size = New System.Drawing.Size(91, 21)
         Me.rbtn_id.TabIndex = 0
         Me.rbtn_id.TabStop = True
-        Me.rbtn_id.Text = "By ID"
+        Me.rbtn_id.Text = "By Fixture"
         Me.rbtn_id.UseVisualStyleBackColor = True
         '
         'GroupBox3
@@ -3071,8 +3072,8 @@ Partial Class smetaMainForm
         '
         'DataGridViewTextBoxColumn191
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.DataGridViewTextBoxColumn191.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.DataGridViewTextBoxColumn191.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn191.HeaderText = "Belimlight"
         Me.DataGridViewTextBoxColumn191.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn191.Name = "DataGridViewTextBoxColumn191"
@@ -3080,8 +3081,8 @@ Partial Class smetaMainForm
         '
         'DataGridViewTextBoxColumn192
         '
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.DataGridViewTextBoxColumn192.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(247, Byte), Integer))
+        Me.DataGridViewTextBoxColumn192.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridViewTextBoxColumn192.HeaderText = "PRLighting"
         Me.DataGridViewTextBoxColumn192.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn192.Name = "DataGridViewTextBoxColumn192"
@@ -3089,8 +3090,8 @@ Partial Class smetaMainForm
         '
         'DataGridViewTextBoxColumn193
         '
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
-        Me.DataGridViewTextBoxColumn193.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.DataGridViewTextBoxColumn193.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridViewTextBoxColumn193.HeaderText = "Blackout"
         Me.DataGridViewTextBoxColumn193.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn193.Name = "DataGridViewTextBoxColumn193"
@@ -3098,8 +3099,8 @@ Partial Class smetaMainForm
         '
         'DataGridViewTextBoxColumn194
         '
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(218, Byte), Integer))
-        Me.DataGridViewTextBoxColumn194.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(218, Byte), Integer))
+        Me.DataGridViewTextBoxColumn194.DefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridViewTextBoxColumn194.HeaderText = "Multivision"
         Me.DataGridViewTextBoxColumn194.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn194.Name = "DataGridViewTextBoxColumn194"
@@ -3107,8 +3108,8 @@ Partial Class smetaMainForm
         '
         'DataGridViewTextBoxColumn195
         '
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.DataGridViewTextBoxColumn195.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.DataGridViewTextBoxColumn195.DefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridViewTextBoxColumn195.HeaderText = "Stage"
         Me.DataGridViewTextBoxColumn195.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn195.Name = "DataGridViewTextBoxColumn195"
