@@ -245,4 +245,34 @@ Module load_and_close
         Next
 
     End Sub
+
+    Sub setParameters()
+        mainForm.sDir = My.Settings.databasePath
+
+
+        mainForm.filePath = New Collection
+        mainForm.fileNames = New Collection
+        Try
+            For Each foundFile In My.Computer.FileSystem.GetFiles _
+            (mainForm.sDir, Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories, "*.omdb")
+                'Console.WriteLine(foundFile)
+                mainForm.filePath.Add(foundFile)
+
+                Dim dIndex = StrReverse(foundFile).IndexOf("\")
+
+                Dim name As String
+
+                '   !!!!!!!!!!!!!!!!!!!!!!!!!!!!   хз почему не работают функции Right и Left в этом модуле !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                name = myRight(foundFile, dIndex)
+                'Console.WriteLine(name)
+                name = myLeft(name)
+                'Console.WriteLine(name)
+                mainForm.fileNames.Add(name)
+
+            Next
+
+        Catch
+        End Try
+    End Sub
 End Module

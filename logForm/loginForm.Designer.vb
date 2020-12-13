@@ -37,9 +37,10 @@ Partial Class loginForm
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.NF4.My.Resources.Resources.comein
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(16, 15)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 82)
+        Me.PictureBox1.Size = New System.Drawing.Size(133, 101)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -48,9 +49,10 @@ Partial Class loginForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.Location = New System.Drawing.Point(128, 12)
+        Me.Label1.Location = New System.Drawing.Point(171, 15)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 16)
+        Me.Label1.Size = New System.Drawing.Size(50, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Login"
         '
@@ -58,26 +60,28 @@ Partial Class loginForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.Location = New System.Drawing.Point(128, 65)
+        Me.Label2.Location = New System.Drawing.Point(171, 80)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 16)
+        Me.Label2.Size = New System.Drawing.Size(83, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Password"
         '
         'cmb_login
         '
         Me.cmb_login.FormattingEnabled = True
-        Me.cmb_login.Items.AddRange(New Object() {"superAdmin"})
-        Me.cmb_login.Location = New System.Drawing.Point(218, 13)
+        Me.cmb_login.Location = New System.Drawing.Point(291, 16)
+        Me.cmb_login.Margin = New System.Windows.Forms.Padding(4)
         Me.cmb_login.Name = "cmb_login"
-        Me.cmb_login.Size = New System.Drawing.Size(175, 21)
+        Me.cmb_login.Size = New System.Drawing.Size(232, 24)
         Me.cmb_login.TabIndex = 3
         '
         'txt_pass
         '
-        Me.txt_pass.Location = New System.Drawing.Point(218, 65)
+        Me.txt_pass.Location = New System.Drawing.Point(291, 80)
+        Me.txt_pass.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_pass.Name = "txt_pass"
-        Me.txt_pass.Size = New System.Drawing.Size(175, 20)
+        Me.txt_pass.Size = New System.Drawing.Size(232, 22)
         Me.txt_pass.TabIndex = 4
         Me.txt_pass.UseSystemPasswordChar = True
         '
@@ -87,9 +91,10 @@ Partial Class loginForm
         Me.btn_registr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btn_registr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_registr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btn_registr.Location = New System.Drawing.Point(12, 120)
+        Me.btn_registr.Location = New System.Drawing.Point(16, 148)
+        Me.btn_registr.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_registr.Name = "btn_registr"
-        Me.btn_registr.Size = New System.Drawing.Size(95, 38)
+        Me.btn_registr.Size = New System.Drawing.Size(127, 47)
         Me.btn_registr.TabIndex = 5
         Me.btn_registr.Text = "Registration"
         Me.btn_registr.UseVisualStyleBackColor = True
@@ -100,9 +105,10 @@ Partial Class loginForm
         Me.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btn_login.Location = New System.Drawing.Point(107, 120)
+        Me.btn_login.Location = New System.Drawing.Point(143, 148)
+        Me.btn_login.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(95, 38)
+        Me.btn_login.Size = New System.Drawing.Size(127, 47)
         Me.btn_login.TabIndex = 5
         Me.btn_login.Text = "Login"
         Me.btn_login.UseVisualStyleBackColor = True
@@ -113,9 +119,10 @@ Partial Class loginForm
         Me.btn_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_clear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btn_clear.Location = New System.Drawing.Point(202, 120)
+        Me.btn_clear.Location = New System.Drawing.Point(269, 148)
+        Me.btn_clear.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(95, 38)
+        Me.btn_clear.Size = New System.Drawing.Size(127, 47)
         Me.btn_clear.TabIndex = 5
         Me.btn_clear.Text = "Clear"
         Me.btn_clear.UseVisualStyleBackColor = True
@@ -126,18 +133,19 @@ Partial Class loginForm
         Me.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_exit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btn_exit.Location = New System.Drawing.Point(297, 120)
+        Me.btn_exit.Location = New System.Drawing.Point(396, 148)
+        Me.btn_exit.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_exit.Name = "btn_exit"
-        Me.btn_exit.Size = New System.Drawing.Size(95, 38)
+        Me.btn_exit.Size = New System.Drawing.Size(127, 47)
         Me.btn_exit.TabIndex = 5
         Me.btn_exit.Text = "Exit"
         Me.btn_exit.UseVisualStyleBackColor = True
         '
         'loginForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(405, 209)
+        Me.ClientSize = New System.Drawing.Size(540, 257)
         Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_login)
@@ -147,6 +155,7 @@ Partial Class loginForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "loginForm"
         Me.Text = "loginForm"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

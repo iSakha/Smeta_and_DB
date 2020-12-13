@@ -44,7 +44,7 @@ Module smetaFunc
 
                 xlTable = ws.Tables(0)
 
-                Console.WriteLine(xlTable.Name)
+                'Console.WriteLine(xlTable.Name)
 
                 adr = xlTable.Address.Address
                 r_xlTable = xlTable.Address.Rows
@@ -117,7 +117,7 @@ Module smetaFunc
         'Add Rows from Excel table
 
         For k As Integer = 1 To rng_Collection.Count            '   Categories
-            Console.WriteLine(k)
+            'Console.WriteLine(k)
             For i = 1 To r_xlTable_Collection(k) - 1
 
                 row = dt.Rows.Add()
@@ -573,13 +573,15 @@ Module smetaFunc
         Next row
 
         smetaMainForm.txt_pwr.Text = totalPwr
-        smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
-            mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+        smetaMainForm.txt_pwr.Text = Strings.Format(Val(smetaMainForm.txt_pwr.Text), "### ### ##0")
 
         smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
             mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+        smetaMainForm.txt_price.Text = Strings.Format(Val(smetaMainForm.txt_price.Text), "### ### ##0")
 
         smetaMainForm.txt_weight.Text = totalWeight
+        smetaMainForm.txt_weight.Text = Strings.Format(Val(smetaMainForm.txt_weight.Text), "### ### ##0")
 
         mainForm.qty(0) = mainForm.qtyLighting
         mainForm.qty(1) = mainForm.qtyScreen
@@ -698,7 +700,44 @@ Module smetaFunc
 
             End If
         Next
-
+        smetaMainForm.txt_price.Text = Strings.Format(Val(smetaMainForm.txt_price.Text), "### ### ##0")
     End Sub
 
+    '===================================================================================
+    '             === Show Qty by companies in dgvSmeta_qtyByCompany ===
+    '===================================================================================
+    Sub showSelectedRow(_sender As Object, _e As DataGridViewCellEventArgs)
+        Dim index As Integer
+        Dim row As DataGridViewRow
+        index = _e.RowIndex
+        row = _sender.Rows(index)
+        mainForm.iDepartment = row.Cells(0).Value
+        mainForm.iCategory = row.Cells(1).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(0).Value = row.Cells(5).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(1).Value = row.Cells(6).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(2).Value = row.Cells(7).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(3).Value = row.Cells(8).Value
+        smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(4).Value = row.Cells(9).Value
+    End Sub
+    '===================================================================================
+    '             === Copy SmetaTemplate to SmetaOutput folder ===
+    '===================================================================================
+
+    Function copySmetaTemplate()
+
+        Dim sourceFileName As String
+        Dim destFileName As String
+        Dim smetaName As String
+
+        smetaName = InputBox("Введите название сметы", "Smeta Name")
+
+        mainForm.sSmetaDir = My.Settings.smetaDBpath
+        sourceFileName = mainForm.sSmetaDir & "\SmetaTemplate.xlsx"
+        destFileName = mainForm.sSmetaDir & "\SmetaOutput\" & smetaName & ".xlsx"
+
+        My.Computer.FileSystem.CopyFile(sourceFileName, destFileName)
+
+        Return smetaName
+
+    End Function
 End Module
