@@ -687,24 +687,7 @@ Public Class mainForm
     '                === Test button ===
     '===================================================================================
     Private Sub btn_test_Click(sender As Object, e As EventArgs) Handles btn_test.Click
-        'Console.WriteLine(My.Settings.lastRun)
-        'Console.WriteLine(My.Settings.testString)
-        'My.Settings.testString = "Good bye!"
-        'My.Settings.Save()
-
-        'Console.WriteLine(i_pivot_wsDict.Count)
-        'Console.WriteLine(i_superPivotDict.Count)
-        'Console.WriteLine(i_pivotTableDict.Count)
-
-        'Console.WriteLine(i_superPivotDict(0)(2)(2).Name)
-
-        'extractFiles()
-
-        'btnsAdvSmeta = New List(Of Control)
-
-        'For Each ctrl As Control In smetaMainForm.tbCtrl_smeta.TabPages(3).Controls
-        '    Console.WriteLine(ctrl.Name)
-        'Next ctrl
+        'copySmetaTemplate()
     End Sub
 
     '=================================================================================== 

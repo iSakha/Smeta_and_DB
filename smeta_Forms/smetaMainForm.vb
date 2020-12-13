@@ -2,6 +2,7 @@
 Imports OfficeOpenXml.Table
 Imports System.IO
 
+<DebuggerDisplay("{GetDebuggerDisplay(),nq}")>
 Public Class smetaMainForm
 
     Dim dt_Global As DataTable
@@ -282,6 +283,11 @@ Public Class smetaMainForm
     '===================================================================================
     Private Sub btn_writeToExcel_Click(sender As Object, e As EventArgs) Handles btn_writeToExcel.Click
 
+        Dim smetaName As String
+
+        '   Copy SmetaTemplate.xlsx file to SmetaOutput folder and get smetaName
+        smetaName = copySmetaTemplate()
+
         Dim dgv As DataGridView = DGV_smeta
         Dim row As DataGridViewRow
         Dim startRow As Integer = 7
@@ -304,9 +310,9 @@ Public Class smetaMainForm
         currentDepartment = 0
         currentCategory = 0
 
-        mainForm.sSmetaDir = My.Settings.smetaDBpath
+
         Dim path As String
-        path = mainForm.sSmetaDir & "\SmetaTemplate.xlsx"
+        path = mainForm.sSmetaDir & "\SmetaOutput\" & smetaName & ".xlsx"
 
         Dim wsSmeta, wsServ As ExcelWorksheet
         Dim excelFile = New FileInfo(path)
@@ -809,7 +815,7 @@ Public Class smetaMainForm
 
     Private Sub tbCtrl_smeta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tbCtrl_smeta.SelectedIndexChanged
 
-        If tbCtrl_smeta.SelectedIndex = 1 Then
+        If (tbCtrl_smeta.SelectedIndex = 1) Then
             btn_advSmeta.Visible = True
         Else
             btn_advSmeta.Visible = False

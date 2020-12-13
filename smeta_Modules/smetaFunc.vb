@@ -719,5 +719,25 @@ Module smetaFunc
         smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(3).Value = row.Cells(8).Value
         smetaMainForm.dgvSmeta_qtyByCompany.Rows(0).Cells(4).Value = row.Cells(9).Value
     End Sub
+    '===================================================================================
+    '             === Copy SmetaTemplate to SmetaOutput folder ===
+    '===================================================================================
 
+    Function copySmetaTemplate()
+
+        Dim sourceFileName As String
+        Dim destFileName As String
+        Dim smetaName As String
+
+        smetaName = InputBox("Введите название сметы", "Smeta Name")
+
+        mainForm.sSmetaDir = My.Settings.smetaDBpath
+        sourceFileName = mainForm.sSmetaDir & "\SmetaTemplate.xlsx"
+        destFileName = mainForm.sSmetaDir & "\SmetaOutput\" & smetaName & ".xlsx"
+
+        My.Computer.FileSystem.CopyFile(sourceFileName, destFileName)
+
+        Return smetaName
+
+    End Function
 End Module
