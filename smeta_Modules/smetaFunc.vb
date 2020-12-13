@@ -573,13 +573,15 @@ Module smetaFunc
         Next row
 
         smetaMainForm.txt_pwr.Text = totalPwr
-        smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
-            mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+        smetaMainForm.txt_pwr.Text = Strings.Format(Val(smetaMainForm.txt_pwr.Text), "### ### ##0")
 
         smetaMainForm.txt_price.Text = mainForm.priceLighting + mainForm.priceScreen + mainForm.priceComm +
             mainForm.priceTruss + mainForm.priceConstr + mainForm.priceSound
+
+        smetaMainForm.txt_price.Text = Strings.Format(Val(smetaMainForm.txt_price.Text), "### ### ##0")
 
         smetaMainForm.txt_weight.Text = totalWeight
+        smetaMainForm.txt_weight.Text = Strings.Format(Val(smetaMainForm.txt_weight.Text), "### ### ##0")
 
         mainForm.qty(0) = mainForm.qtyLighting
         mainForm.qty(1) = mainForm.qtyScreen
@@ -698,7 +700,7 @@ Module smetaFunc
 
             End If
         Next
-
+        smetaMainForm.txt_price.Text = Strings.Format(Val(smetaMainForm.txt_price.Text), "### ### ##0")
     End Sub
 
     '===================================================================================

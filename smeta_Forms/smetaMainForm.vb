@@ -206,6 +206,8 @@ Public Class smetaMainForm
     Private Sub DGV_smeta_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_db.CellClick
         DGV_smeta_clickCell(sender, e)
         showSelectedRow(sender, e)
+        btn_filter.Enabled = True
+        btn_filter.BackColor = Color.FromArgb(152, 251, 152)
     End Sub
 
     Private Sub DGV_smeta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DGV_db.KeyPress
@@ -803,5 +805,15 @@ Public Class smetaMainForm
     Private Sub rbtn_company_CheckedChanged(sender As Object, e As EventArgs) Handles rbtn_company.CheckedChanged
         dgv_summary.Sort(dgv_summary.Columns(27), System.ComponentModel.ListSortDirection.Ascending)
         dgv_summary.ClearSelection()
+    End Sub
+
+    Private Sub tbCtrl_smeta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tbCtrl_smeta.SelectedIndexChanged
+
+        If tbCtrl_smeta.SelectedIndex = 1 Then
+            btn_advSmeta.Visible = True
+        Else
+            btn_advSmeta.Visible = False
+        End If
+
     End Sub
 End Class

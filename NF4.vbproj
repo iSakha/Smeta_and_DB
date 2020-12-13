@@ -245,6 +245,7 @@
   <ItemGroup>
     <Content Include="pic\comein.jpg" />
     <Content Include="pic\registration.jpg" />
+    <None Include="Resources\calculator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
