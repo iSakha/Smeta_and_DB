@@ -11,11 +11,6 @@ Public Class settingsForm
         Dim result As DialogResult = mainForm.FBD.ShowDialog()
         If (result = DialogResult.OK) Then
 
-            'mainForm.sDir = mainForm.FBD.SelectedPath
-            'My.Settings.databasePath = mainForm.sDir
-
-
-
             txt_pathDB.Text = mainForm.FBD.SelectedPath
 
         Else
@@ -30,11 +25,7 @@ Public Class settingsForm
         mainForm.FBD.SelectedPath = Directory.GetCurrentDirectory()
         Dim result As DialogResult = mainForm.FBD.ShowDialog()
         If (result = DialogResult.OK) Then
-            'mainForm.sSmetaDir = mainForm.FBD.SelectedPath
-
-            'My.Settings.smetaDBpath = mainForm.sSmetaDir
-            '
-
+            txt_path_SmetaDB.Text = mainForm.FBD.SelectedPath
         Else
             mainForm.cancelFlag = True
         End If
@@ -43,7 +34,9 @@ Public Class settingsForm
     Private Sub btn_saveSettings_Click(sender As Object, e As EventArgs) Handles btn_saveSettings.Click
 
         mainForm.sDir = txt_pathDB.Text
+        mainForm.sSmetaDir = txt_path_SmetaDB.Text
         My.Settings.databasePath = mainForm.sDir
+        My.Settings.smetaDBpath = mainForm.sSmetaDir
         Me.Close()
         loginForm.logFormLoad()
     End Sub

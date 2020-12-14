@@ -459,6 +459,8 @@ Public Class smetaMainForm
         Next i
         Excel.Save()
 
+        Process.Start("explorer.exe", mainForm.sSmetaDir)
+
     End Sub
     '===================================================================================
     '             === Load list of Categories ===
